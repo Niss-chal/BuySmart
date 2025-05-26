@@ -14,6 +14,8 @@ public class BuySmart {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        System.out.println("Avay commit work and main projects cloned.");
         // TODO code application logic here
     }
     
