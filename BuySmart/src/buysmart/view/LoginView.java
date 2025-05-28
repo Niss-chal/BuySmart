@@ -49,6 +49,7 @@ public class LoginView extends javax.swing.JFrame {
         loginformPannel.setBackground(new java.awt.Color(255, 229, 209));
 
         loginform.setBackground(new java.awt.Color(230, 255, 250));
+        loginform.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Login_Label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Login_Label.setText("Login");
