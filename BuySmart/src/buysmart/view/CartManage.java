@@ -123,11 +123,11 @@ public class CartManage extends javax.swing.JFrame {
         cartLogoutPanelLayout.setHorizontalGroup(
             cartLogoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartLogoutPanelLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addContainerGap(97, Short.MAX_VALUE)
                 .addComponent(cartLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(447, 447, 447)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 501, Short.MAX_VALUE)
                 .addComponent(cartLogo)
-                .addGap(340, 340, 340)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
                 .addComponent(cartBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -221,7 +221,7 @@ public class CartManage extends javax.swing.JFrame {
                 .addComponent(cartdeleteButton)
                 .addGap(38, 38, 38)
                 .addComponent(cartProductSubtotal)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cartProduct1Layout.setVerticalGroup(
             cartProduct1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -470,15 +470,14 @@ public class CartManage extends javax.swing.JFrame {
                 .addComponent(quantityIndicator)
                 .addGap(121, 121, 121)
                 .addComponent(subtotalIndicator)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 64, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 26, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(cartProduct2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(cartProduct1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cartProduct3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(28, 28, 28))
+                    .addComponent(cartProduct1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cartProduct3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -494,7 +493,7 @@ public class CartManage extends javax.swing.JFrame {
                 .addComponent(cartProduct3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cartProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         cartcheckoutCalculate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
@@ -556,38 +555,49 @@ public class CartManage extends javax.swing.JFrame {
 
         totalMoneyCount.setText("Rs. 2400.00");
 
+        cartcheckoutSign.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
+        cartcheckoutSign.setText("Checkout");
+
         javax.swing.GroupLayout cartcheckoutCalculateLayout = new javax.swing.GroupLayout(cartcheckoutCalculate);
         cartcheckoutCalculate.setLayout(cartcheckoutCalculateLayout);
         cartcheckoutCalculateLayout.setHorizontalGroup(
             cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartcheckoutCalculateLayout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartcheckoutCalculateLayout.createSequentialGroup()
-                        .addGroup(cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(cartcheckoutCalculateLayout.createSequentialGroup()
-                                .addComponent(moneyWalletIndicator)
-                                .addGap(41, 41, 41)
-                                .addComponent(moneyYouHave))
-                            .addGroup(cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(paymentOptionDrop, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(userLocationGet, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE))
-                                .addComponent(userLocationIndicator)
-                                .addComponent(paymentIndicator)
-                                .addGroup(cartcheckoutCalculateLayout.createSequentialGroup()
-                                    .addComponent(totalMoneyCart)
-                                    .addGap(32, 32, 32)
-                                    .addComponent(totalMoneyCount))))
-                        .addGap(36, 36, 36))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartcheckoutCalculateLayout.createSequentialGroup()
-                        .addComponent(placeOrderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(128, 128, 128))))
+                    .addGroup(cartcheckoutCalculateLayout.createSequentialGroup()
+                        .addGap(0, 52, Short.MAX_VALUE)
+                        .addGroup(cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartcheckoutCalculateLayout.createSequentialGroup()
+                                .addGroup(cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(cartcheckoutCalculateLayout.createSequentialGroup()
+                                        .addComponent(moneyWalletIndicator)
+                                        .addGap(41, 41, 41)
+                                        .addComponent(moneyYouHave))
+                                    .addGroup(cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(paymentOptionDrop, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(userLocationGet, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE))
+                                        .addComponent(userLocationIndicator)
+                                        .addComponent(paymentIndicator)
+                                        .addGroup(cartcheckoutCalculateLayout.createSequentialGroup()
+                                            .addComponent(totalMoneyCart)
+                                            .addGap(32, 32, 32)
+                                            .addComponent(totalMoneyCount))))
+                                .addGap(36, 36, 36))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartcheckoutCalculateLayout.createSequentialGroup()
+                                .addComponent(placeOrderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(128, 128, 128))))
+                    .addGroup(cartcheckoutCalculateLayout.createSequentialGroup()
+                        .addComponent(cartcheckoutSign, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         cartcheckoutCalculateLayout.setVerticalGroup(
             cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartcheckoutCalculateLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
+                .addComponent(cartcheckoutSign)
+                .addGap(18, 18, 18)
                 .addGroup(cartcheckoutCalculateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(moneyWalletIndicator)
                     .addComponent(moneyYouHave))
@@ -608,34 +618,27 @@ public class CartManage extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        cartcheckoutSign.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
-        cartcheckoutSign.setText("Checkout");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cartcheckoutCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cartcheckoutSign, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cartcheckoutCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
             .addComponent(cartLogoutPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(cartLogoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cartcheckoutSign)
-                        .addGap(2, 2, 2)
-                        .addComponent(cartcheckoutCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cartcheckoutCalculate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
