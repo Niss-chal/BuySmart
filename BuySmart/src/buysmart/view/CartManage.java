@@ -5,6 +5,7 @@
 package buysmart.view;
 
 import java.awt.Color;
+import javax.swing.JFrame;
 
 /**
  *
@@ -17,6 +18,7 @@ public class CartManage extends javax.swing.JFrame {
      */
     public CartManage() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
