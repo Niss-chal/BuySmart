@@ -5,6 +5,7 @@
 package buysmart.view;
 
 import java.awt.Color;
+import javax.swing.JFrame;
 
 
 /**
@@ -18,6 +19,7 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**

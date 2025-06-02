@@ -4,6 +4,8 @@
  */
 package buysmart.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author user
@@ -15,6 +17,7 @@ public class SellerRegistrationView extends javax.swing.JFrame {
      */
     public SellerRegistrationView() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
