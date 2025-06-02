@@ -57,7 +57,7 @@ public class RegistrationView extends javax.swing.JFrame {
         ShowBox2 = new javax.swing.JCheckBox();
         Logo = new javax.swing.JLabel();
         AlreAccount = new javax.swing.JLabel();
-        LogBackButton = new javax.swing.JButton();
+        logBack = new javax.swing.JButton();
         Reglogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -286,12 +286,12 @@ public class RegistrationView extends javax.swing.JFrame {
         AlreAccount.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         AlreAccount.setText("Already have an account?");
 
-        LogBackButton.setBackground(new java.awt.Color(51, 255, 153));
-        LogBackButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        LogBackButton.setText("Login");
-        LogBackButton.addActionListener(new java.awt.event.ActionListener() {
+        logBack.setBackground(new java.awt.Color(51, 255, 153));
+        logBack.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        logBack.setText("Login");
+        logBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogBackButtonActionPerformed(evt);
+                logBackActionPerformed(evt);
             }
         });
 
@@ -310,7 +310,7 @@ public class RegistrationView extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(AlreAccount)
                         .addGap(18, 18, 18)
-                        .addComponent(LogBackButton)
+                        .addComponent(logBack)
                         .addGap(42, 42, 42))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Reglogo, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -333,7 +333,7 @@ public class RegistrationView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AlreAccount)
-                            .addComponent(LogBackButton))))
+                            .addComponent(logBack))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -415,9 +415,9 @@ public class RegistrationView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ShowBox2ActionPerformed
 
-    private void LogBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogBackButtonActionPerformed
+    private void logBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logBackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LogBackButtonActionPerformed
+    }//GEN-LAST:event_logBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -467,7 +467,6 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JLabel Email;
     private javax.swing.JTextField EmailField;
     private javax.swing.JRadioButton FemaleButton;
-    private javax.swing.JButton LogBackButton;
     private javax.swing.JLabel Logo;
     private javax.swing.JRadioButton MaleButton;
     private javax.swing.JRadioButton OtherButton;
@@ -484,6 +483,7 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JPasswordField confirmPassfield;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton logBack;
     private javax.swing.JPasswordField passField;
     // End of variables declaration//GEN-END:variables
 
@@ -529,5 +529,9 @@ public class RegistrationView extends javax.swing.JFrame {
  
     public void registeruser(ActionListener listener){
         RegisterButton.addActionListener(listener);
+    }
+    
+    public void logBack(ActionListener listener){
+        logBack.addActionListener(listener);
     }
 }
