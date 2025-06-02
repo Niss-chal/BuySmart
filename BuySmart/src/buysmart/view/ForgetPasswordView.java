@@ -4,6 +4,7 @@
  */
 package buysmart.view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 /**
@@ -274,4 +275,33 @@ public class ForgetPasswordView extends javax.swing.JFrame {
     private javax.swing.JLabel SecurityQuestion;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JTextField getemail(){
+        return EmailBox;
+    }
+    
+    public javax.swing.JTextField getanswer(){
+        return SecurityAnswerBox;
+    }
+    
+    public javax.swing.JPasswordField getnewpass(){
+        return NewPasswordBox;
+    }
+    
+    public javax.swing.JPasswordField getconfirmpass(){
+        return CPasswordBox;
+    }
+    
+    public void ChangePass(ActionListener listener){
+    Confirm.addActionListener(listener);
+    }
+    
+    public void loginBack(ActionListener listener){
+    Back.addActionListener(listener);
+    
+}
+
+
+
+
 }
