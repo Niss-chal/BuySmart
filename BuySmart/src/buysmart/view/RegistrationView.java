@@ -4,8 +4,14 @@
  */
 package buysmart.view;
 
+import buysmart.database.MysqlConnection1;
+
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
 
 /**
  *
@@ -390,9 +396,66 @@ public class RegistrationView extends javax.swing.JFrame {
     }//GEN-LAST:event_SecurityQAboxActionPerformed
 
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
-        // TODO add your handling code here:
+        try {
+        // Get input values
+        String username = UsernameField.getText();
+        String email = EmailField.getText();
+        String password = new String(passField.getPassword());
+        String confirmPassword = new String(confirmPassfield.getPassword());
+        String contact = ContactField.getText();
+        String address = AddressField.getText();
+        String gender = MaleButton.isSelected() ? "Male" : 
+                       FemaleButton.isSelected() ? "Female" : "Other";
+        String securityQuestion = (String) SecurityQAbox.getSelectedItem();
+        String securityAnswer = AnswerBox.getText();
+
+       
+        
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Form ko Text BOX khaali xa ta. BHara sabai xito!!");
+            return;
+        }
+        
+        
+        if (!password.equals(confirmPassword)) {
+            JOptionPane.showMessageDialog(this, "Same password Hala na.");
+            return;
+        }
+
+
+    
+        try (Connection conn = MysqlConnection1.getConnection()) {
+            String sql = "INSERT INTO users (username, email, password, contact, address, gender, security_question, security_answer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.setString(1, username);
+                pstmt.setString(2, email);
+                pstmt.setString(3, password);
+                pstmt.setString(4, contact);
+                pstmt.setString(5, address);
+                pstmt.setString(6, gender);
+                pstmt.setString(7, securityQuestion);
+                pstmt.setString(8, securityAnswer);
+                
+                int rowsAffected = pstmt.executeUpdate();
+                if (rowsAffected > 0) {
+                    JOptionPane.showMessageDialog(this, "Registration Bhayo aba login gara.");
+                    clearForm();
+                }
+            }
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Database Error aayo", JOptionPane.ERROR_MESSAGE);
+    }      
+        
     }//GEN-LAST:event_RegisterButtonActionPerformed
 
+
+    
+    
+    
+    
+    
     private void AnswerBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AnswerBoxActionPerformed
@@ -534,4 +597,26 @@ public class RegistrationView extends javax.swing.JFrame {
     public void logBack(ActionListener listener){
         logBack.addActionListener(listener);
     }
+    
+    
+    
+    private void clearForm() {
+        UsernameField.setText("");
+        EmailField.setText("");
+        passField.setText("");
+        confirmPassfield.setText("");
+        ContactField.setText("");
+        AddressField.setText("");
+        AnswerBox.setText("");
+        SecurityQAbox.setSelectedIndex(0);
+        MaleButton.setSelected(false);
+        FemaleButton.setSelected(false);
+        OtherButton.setSelected(false);
+        ShowBox1.setSelected(false);
+        ShowBox2.setSelected(false);
+        passField.setEchoChar('●');
+        confirmPassfield.setEchoChar('●');
+    }
+
+
 }
