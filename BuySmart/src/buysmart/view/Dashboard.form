@@ -652,9 +652,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cart"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartIconMouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="searchIcon">
           <Properties>

@@ -4,10 +4,13 @@
  */
 package buysmart.controller;
 
+import buysmart.view.CartManage;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 
 /**
@@ -22,6 +25,9 @@ public class DashboardController {
         
         Logout logout = new Logout();
         this.dashboard.logout(logout);
+        
+        Cart cart = new Cart();
+        this.dashboard.cart(cart);
                 
     }
 
@@ -44,7 +50,35 @@ public class DashboardController {
             loginController.open();
             
         }
-        
-        
     }
-}
+    
+    class Cart implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            dashboard.dispose();
+            CartManage cartmanage = new CartManage();
+            CartManageController cartmanageController = new CartManageController(cartmanage);
+            cartmanageController.open();
+            
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+    }
+    }
+
+    
