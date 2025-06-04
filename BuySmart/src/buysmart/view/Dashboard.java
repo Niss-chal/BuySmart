@@ -6,6 +6,7 @@ package buysmart.view;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 
 
@@ -465,11 +466,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         cartIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/shopping-cart.png"))); // NOI18N
         cartIcon.setText("Cart");
-        cartIcon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cartIconMouseClicked(evt);
-            }
-        });
 
         searchIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/search.png"))); // NOI18N
 
@@ -1255,10 +1251,6 @@ public class Dashboard extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_searchFieldFocusLost
 
-    private void cartIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartIconMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cartIconMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -1389,5 +1381,8 @@ public class Dashboard extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 public void logout(ActionListener listener){ // Logoutbutton function
     buttonLogout.addActionListener(listener);
+}
+public void cart(MouseListener listener){ 
+    cartIcon.addMouseListener(listener);
 }
 }
