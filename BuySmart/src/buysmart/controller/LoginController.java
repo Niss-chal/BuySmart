@@ -73,7 +73,7 @@ public class LoginController {
             forgotController.open();
             
         }
-
+    
         @Override
         public void mousePressed(MouseEvent e) {
         }
