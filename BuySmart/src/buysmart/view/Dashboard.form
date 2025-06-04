@@ -330,9 +330,6 @@
               </Border>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLogoutActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -655,6 +652,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cart"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartIconMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="searchIcon">
           <Properties>
