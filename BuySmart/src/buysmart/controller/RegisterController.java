@@ -17,6 +17,7 @@ import buysmart.view.LoginView;
 import buysmart.view.RegistrationView;
 import buysmart.dao.UserDAO;
 import java.sql.SQLException;
+import buysmart.model.UserModel;
 
 public class RegisterController {
     private RegistrationView view;
@@ -93,10 +94,13 @@ public class RegisterController {
                 JOptionPane.showMessageDialog(view, "Passwords do not match", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+            
+//            user mdoel ho hai
+            UserModel usermodel = new UserModel(name, email, password, phone, address, gender, securityQuestion, answer);
 
             
             try {
-                boolean success = UserDAO.registerUser(name, email, password, phone, address, gender, securityQuestion, answer);
+                boolean success = UserDAO.registerUser(usermodel);
                 
                 if (success) {
                     JOptionPane.showMessageDialog(view, "Registration Successful", "Success", JOptionPane.INFORMATION_MESSAGE);
