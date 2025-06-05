@@ -60,11 +60,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace pref="97" max="32767" attributes="0"/>
-                  <Component id="cartLogoutButton" min="-2" pref="113" max="-2" attributes="0"/>
+                  <Component id="cartBackButton" min="-2" pref="113" max="-2" attributes="0"/>
                   <EmptySpace pref="501" max="32767" attributes="0"/>
                   <Component id="cartLogo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="341" max="32767" attributes="0"/>
-                  <Component id="cartBackButton" min="-2" pref="113" max="-2" attributes="0"/>
+                  <Component id="cartLogoutButton" min="-2" pref="113" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -74,16 +74,16 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cartLogoutButton" min="-2" pref="51" max="-2" attributes="0"/>
-                      <Component id="cartLogo" min="-2" max="-2" attributes="0"/>
                       <Component id="cartBackButton" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="cartLogo" min="-2" max="-2" attributes="0"/>
+                      <Component id="cartLogoutButton" min="-2" pref="51" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="cartLogoutButton">
+        <Component class="javax.swing.JButton" name="cartBackButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="99" type="rgb"/>
@@ -98,12 +98,12 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartLogoutButtonMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartLogoutButtonMouseExited"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cartLogoutButtonActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartBackButtonMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartBackButtonMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cartBackButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="cartBackButton">
+        <Component class="javax.swing.JButton" name="cartLogoutButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="99" type="rgb"/>
@@ -118,9 +118,9 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartBackButtonMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartBackButtonMouseExited"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cartBackButtonActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartLogoutButtonMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cartLogoutButtonMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cartLogoutButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="cartLogo">
