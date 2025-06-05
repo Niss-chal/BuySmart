@@ -291,6 +291,16 @@ public class ForgetPasswordView extends javax.swing.JFrame {
     public javax.swing.JPasswordField getconfirmpass(){
         return CPasswordBox;
     }
+    public javax.swing. JCheckBox getNpasswordCheckbox(){
+        return NpasswordCheckBox;
+    }
+    public javax.swing.JCheckBox getCpasswordCheckbox(){
+        return CpasswordcheckBox;
+    }
+    public void addPasswordToggleListeners (ActionListener npListener,ActionListener cpListener){
+      NpasswordCheckBox.addActionListener(npListener);
+      CpasswordcheckBox.addActionListener(cpListener);
+    }
     
     public void ChangePass(ActionListener listener){
     Confirm.addActionListener(listener);

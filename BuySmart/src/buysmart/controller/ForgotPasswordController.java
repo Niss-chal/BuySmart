@@ -26,6 +26,10 @@ public class ForgotPasswordController {
 
         LoginBack loginBack = new LoginBack();
         this.view.loginBack(loginBack);
+        
+        this.view.getNpasswordCheckbox().addActionListener(new ToggleNewPassword());
+        this.view.getCpasswordCheckbox().addActionListener(new ToggleConfirmPassword());
+
     }
 
     public void open() {
@@ -84,5 +88,25 @@ public class ForgotPasswordController {
             loginController.open();
             ForgotPasswordController.this.close();
         }
+    }
+    class ToggleNewPassword implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean show=view.getNpasswordCheckbox().isSelected();
+            view.getnewpass().setEchoChar(show ? (char) 0 : '•');
+
+        }
+        
+    }
+    class ToggleConfirmPassword implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean show=view.getCpasswordCheckbox().isSelected();
+            view.getconfirmpass().setEchoChar(show ? (char) 0 : '•');
+
+        }
+        
     }
 }
