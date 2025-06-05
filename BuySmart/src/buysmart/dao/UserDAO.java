@@ -14,6 +14,7 @@ package buysmart.dao;
 //import javax.swing.JOptionPane;
 
 import buysmart.database.MysqlConnection1;
+import buysmart.model.UserModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,9 +22,7 @@ import java.sql.SQLException;
 
 public class UserDAO {
     
-    public static boolean registerUser(String username, String email, String password, 
-                                     String contact, String address, String gender, 
-                                     String securityQuestion, String securityAnswer) throws SQLException {
+    public static boolean registerUser(UserModel usermodel) throws SQLException {
         
         String sql = "INSERT INTO users (username, email, password, contact, address, gender, security_question, security_answer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
@@ -32,14 +31,14 @@ public class UserDAO {
             conn.setAutoCommit(false);
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
-            pstmt.setString(1, username);
-            pstmt.setString(2, email);
-            pstmt.setString(3, password);
-            pstmt.setString(4, contact);
-            pstmt.setString(5, address);
-            pstmt.setString(6, gender);
-            pstmt.setString(7, securityQuestion);
-            pstmt.setString(8, securityAnswer);
+            pstmt.setString(1, usermodel.getUsername());
+                pstmt.setString(2, usermodel.getEmail());
+                pstmt.setString(3, usermodel.getPassword());
+                pstmt.setString(4, usermodel.getContact());
+                pstmt.setString(5, usermodel.getAddress());
+                pstmt.setString(6, usermodel.getGender());
+                pstmt.setString(7, usermodel.getSecurityQuestion());
+                pstmt.setString(8, usermodel.getSecurityAnswer());
             
             int rowsAffected = pstmt.executeUpdate();
             conn.commit();
