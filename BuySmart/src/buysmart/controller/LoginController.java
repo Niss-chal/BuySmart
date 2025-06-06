@@ -54,7 +54,7 @@ public class LoginController {
         @Override
         public void actionPerformed(ActionEvent e) {
        String email = view.getEmail().getText();
-       String password = String.valueOf(view.getPassword().getPassword());
+String password = String.valueOf(view.getPassword().getPassword());
 
 if(email.isEmpty() || password.isEmpty()){
     JOptionPane.showMessageDialog(view, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
@@ -175,4 +175,5 @@ if(email.isEmpty() || password.isEmpty()){
     }
 }
 
+    
   
