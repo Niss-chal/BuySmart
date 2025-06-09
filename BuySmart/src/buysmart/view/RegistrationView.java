@@ -4,19 +4,26 @@
  */
 package buysmart.view;
 
+
+
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+
+
 /**
  *
  * @author user
  */
 public class RegistrationView extends javax.swing.JFrame {
+    
+    public RegistrationView() {
+        initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
 
     /**
      * Creates new form RegistrationView
      */
-    public RegistrationView() {
-        initComponents();
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,9 +41,9 @@ public class RegistrationView extends javax.swing.JFrame {
         Email = new javax.swing.JLabel();
         EmailField = new javax.swing.JTextField();
         Password = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        passField = new javax.swing.JPasswordField();
         ConfPassword = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        confirmPassfield = new javax.swing.JPasswordField();
         ContactNo = new javax.swing.JLabel();
         ContactField = new javax.swing.JTextField();
         MaleButton = new javax.swing.JRadioButton();
@@ -53,7 +60,7 @@ public class RegistrationView extends javax.swing.JFrame {
         ShowBox2 = new javax.swing.JCheckBox();
         Logo = new javax.swing.JLabel();
         AlreAccount = new javax.swing.JLabel();
-        LogBackButton = new javax.swing.JButton();
+        logBack = new javax.swing.JButton();
         Reglogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,7 +68,7 @@ public class RegistrationView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 229, 209));
 
         jPanel2.setBackground(new java.awt.Color(230, 255, 250));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(230, 255, 250), 10, true));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         Registration.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Registration.setText("Registration");
@@ -87,9 +94,9 @@ public class RegistrationView extends javax.swing.JFrame {
         Password.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Password.setText("Password");
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        passField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                passFieldActionPerformed(evt);
             }
         });
 
@@ -210,8 +217,8 @@ public class RegistrationView extends javax.swing.JFrame {
                                 .addComponent(Answer))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPasswordField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(confirmPassfield, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                    .addComponent(passField, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(ShowBox1)
@@ -245,13 +252,13 @@ public class RegistrationView extends javax.swing.JFrame {
                 .addComponent(Password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ShowBox1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ConfPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confirmPassfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ShowBox2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ContactNo)
@@ -282,12 +289,12 @@ public class RegistrationView extends javax.swing.JFrame {
         AlreAccount.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         AlreAccount.setText("Already have an account?");
 
-        LogBackButton.setBackground(new java.awt.Color(51, 255, 153));
-        LogBackButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        LogBackButton.setText("Login");
-        LogBackButton.addActionListener(new java.awt.event.ActionListener() {
+        logBack.setBackground(new java.awt.Color(51, 255, 153));
+        logBack.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        logBack.setText("Login");
+        logBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogBackButtonActionPerformed(evt);
+                logBackActionPerformed(evt);
             }
         });
 
@@ -299,40 +306,38 @@ public class RegistrationView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+                .addContainerGap(49, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(110, 110, 110)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(AlreAccount)
                         .addGap(18, 18, 18)
-                        .addComponent(LogBackButton)
+                        .addComponent(logBack)
                         .addGap(42, 42, 42))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Reglogo, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Logo)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 25, Short.MAX_VALUE)
+                .addGap(0, 34, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Logo)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addComponent(Logo)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Reglogo)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AlreAccount)
-                            .addComponent(LogBackButton))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(logBack))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -359,9 +364,9 @@ public class RegistrationView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_EmailFieldActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void passFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_passFieldActionPerformed
 
     private void ContactFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactFieldActionPerformed
         // TODO add your handling code here:
@@ -386,11 +391,7 @@ public class RegistrationView extends javax.swing.JFrame {
     private void SecurityQAboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecurityQAboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SecurityQAboxActionPerformed
-
-    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterButtonActionPerformed
-
+    
     private void AnswerBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AnswerBoxActionPerformed
@@ -398,29 +399,39 @@ public class RegistrationView extends javax.swing.JFrame {
     private void ShowBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowBox1ActionPerformed
         // TODO add your handling code here:
         if (ShowBox1.isSelected()) {
-            jPasswordField1.setEchoChar((char) 0); // Show password
+            passField.setEchoChar((char) 0); // Show password
         } else {
-            jPasswordField1.setEchoChar('●'); // Mask password
+            passField.setEchoChar('●'); // Mask password
         }
     }//GEN-LAST:event_ShowBox1ActionPerformed
 
     private void ShowBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowBox2ActionPerformed
         // TODO add your handling code here:
         if (ShowBox2.isSelected()) {
-            jPasswordField2.setEchoChar((char) 0); // Show password
+            confirmPassfield.setEchoChar((char) 0); // Show password
         } else {
-            jPasswordField2.setEchoChar('●'); // Mask password
+            confirmPassfield.setEchoChar('●'); // Mask password
         }
     }//GEN-LAST:event_ShowBox2ActionPerformed
 
-    private void LogBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogBackButtonActionPerformed
+    private void logBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logBackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LogBackButtonActionPerformed
+    }//GEN-LAST:event_logBackActionPerformed
 
+    
+    
+    
+    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
+        
+    }//GEN-LAST:event_RegisterButtonActionPerformed
+
+    
+
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -446,10 +457,9 @@ public class RegistrationView extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RegistrationView().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            RegistrationView view = new RegistrationView();
+            view.setVisible(true);
         });
     }
 
@@ -465,7 +475,6 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JLabel Email;
     private javax.swing.JTextField EmailField;
     private javax.swing.JRadioButton FemaleButton;
-    private javax.swing.JButton LogBackButton;
     private javax.swing.JLabel Logo;
     private javax.swing.JRadioButton MaleButton;
     private javax.swing.JRadioButton OtherButton;
@@ -479,9 +488,70 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JCheckBox ShowBox2;
     private javax.swing.JLabel Username;
     private javax.swing.JTextField UsernameField;
+    private javax.swing.JPasswordField confirmPassfield;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JButton logBack;
+    private javax.swing.JPasswordField passField;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JTextField getUsername(){
+        return UsernameField;
+    }
+    
+    public javax.swing.JTextField getEmail(){
+        return EmailField;
+    }
+    
+    public javax.swing.JPasswordField getPassword(){
+        return passField;
+    }
+    
+    public javax.swing.JPasswordField getconfirmPassword(){
+        return confirmPassfield;
+    }
+    
+    public javax.swing.JTextField getContact(){
+        return ContactField;
+    }
+    
+    public javax.swing.JTextField getAddress(){
+        return AddressField;
+    }
+    
+    public javax.swing.JTextField getAnswer(){
+        return AnswerBox;
+    }
+    
+    public javax.swing.JLabel getSecurityQAbox(){
+        return SecurityQA;
+    }
+    
+    public javax.swing.JComboBox<String> getComboSecurityQAbox(){
+        return SecurityQAbox;
+    }
+    
+    public javax.swing.JRadioButton getMale(){
+        return MaleButton;
+    }
+    
+    public javax.swing.JRadioButton getFemale(){
+        return FemaleButton;
+    }
+    
+    public javax.swing.JRadioButton getOthers(){
+        return OtherButton;
+    }
+ 
+    public void registeruser(ActionListener listener){
+        RegisterButton.addActionListener(listener);
+    }
+    
+    public void logBack(ActionListener listener){
+        logBack.addActionListener(listener);
+    }
+
+    
+   
+    
 }
