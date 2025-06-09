@@ -1621,4 +1621,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel statusPanel2;
     private javax.swing.JLabel wishlistIcon;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JLabel getcartIcon() {
+    return cartIcon;
+    }
+    
 }
