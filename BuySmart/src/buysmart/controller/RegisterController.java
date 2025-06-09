@@ -49,7 +49,7 @@ public class RegisterController {
             String securityQuestion = (String) view.getComboSecurityQAbox().getSelectedItem();
 
 
-            
+  
             boolean male = view.getMale().isSelected();
             boolean female = view.getFemale().isSelected();
             boolean others = view.getOthers().isSelected();
