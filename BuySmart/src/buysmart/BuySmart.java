@@ -4,6 +4,9 @@
  */
 package buysmart;
 
+import buysmart.controller.LoginController;
+import buysmart.view.LoginView;
+
 /**
  *
  * @author loq
@@ -14,9 +17,11 @@ public class BuySmart {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        System.out.println("Avay commit work and main projects cloned.");
+        LoginView view = new LoginView();
+        LoginController controller = new LoginController(view);
+        controller.open();
         // TODO code application logic here
+        
     }
     
 }
