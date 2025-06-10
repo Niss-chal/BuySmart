@@ -4,23 +4,26 @@
  */
 package buysmart.view;
 
+
+
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+
 
 /**
  *
  * @author user
  */
 public class RegistrationView extends javax.swing.JFrame {
-
-    /**
-     * Creates new form RegistrationView
-     */
+    
     public RegistrationView() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
+    /**
+     * Creates new form RegistrationView
+     */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -388,11 +391,7 @@ public class RegistrationView extends javax.swing.JFrame {
     private void SecurityQAboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecurityQAboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SecurityQAboxActionPerformed
-
-    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterButtonActionPerformed
-
+    
     private void AnswerBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AnswerBoxActionPerformed
@@ -419,10 +418,20 @@ public class RegistrationView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_logBackActionPerformed
 
+    
+    
+    
+    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
+        
+    }//GEN-LAST:event_RegisterButtonActionPerformed
+
+    
+
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -448,10 +457,9 @@ public class RegistrationView extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RegistrationView().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            RegistrationView view = new RegistrationView();
+            view.setVisible(true);
         });
     }
 
@@ -515,6 +523,14 @@ public class RegistrationView extends javax.swing.JFrame {
         return AnswerBox;
     }
     
+    public javax.swing.JLabel getSecurityQAbox(){
+        return SecurityQA;
+    }
+    
+    public javax.swing.JComboBox<String> getComboSecurityQAbox(){
+        return SecurityQAbox;
+    }
+    
     public javax.swing.JRadioButton getMale(){
         return MaleButton;
     }
@@ -534,4 +550,8 @@ public class RegistrationView extends javax.swing.JFrame {
     public void logBack(ActionListener listener){
         logBack.addActionListener(listener);
     }
+
+    
+   
+    
 }
