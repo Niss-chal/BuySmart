@@ -32,6 +32,8 @@ public class LoginController {
         
        SignUp SignIn = new SignUp();
        this.view.SignIn(SignIn);
+       
+       this.view.ShowPassword().addActionListener(new LoginController.ToggleNewPassword());
     }
 
     public void open(){
@@ -117,9 +119,17 @@ public class LoginController {
         @Override
         public void mouseExited(MouseEvent e) {
         }
+          
+    }
+    class ToggleNewPassword implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean show=view.ShowPassword().isSelected();
+            view.getPassword().setEchoChar(show ? (char) 0 : '•');
+
+        }
         
     }
-    
-
-    }
+}
   
