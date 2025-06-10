@@ -4,15 +4,9 @@
  */
 
 
-/**
- *
- * @author fahmi
- */
-
 package buysmart.dao;
 
 //import javax.swing.JOptionPane;
-
 import buysmart.database.MysqlConnection1;
 import buysmart.model.UserModel;
 import java.sql.Connection;
@@ -56,9 +50,6 @@ public class UserDAO {
 //        JOptionPane.showMessageDialog(null, "Connection bhayena: " + e.getMessage());
 //    }
 //}
-
-}
-
 
 
 

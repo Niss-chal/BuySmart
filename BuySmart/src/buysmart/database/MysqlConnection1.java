@@ -6,9 +6,10 @@ package buysmart.database;
 
 /**
  *
- * @author fahmi
- */
 
+ * @author user
+ */
+ 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -38,6 +39,3 @@ public class MysqlConnection1 {
     }
 }
 
-
-
- 

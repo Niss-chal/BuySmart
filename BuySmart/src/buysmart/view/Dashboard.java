@@ -5,6 +5,8 @@
 package buysmart.view;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 
 
@@ -259,11 +261,6 @@ public class Dashboard extends javax.swing.JFrame {
         buttonLogout.setBackground(new java.awt.Color(153, 204, 255));
         buttonLogout.setText("Logout");
         buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        buttonLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLogoutActionPerformed(evt);
-            }
-        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/user (1).png"))); // NOI18N
 
@@ -1152,10 +1149,6 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogoutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonLogoutActionPerformed
-
     private void buttonAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAllActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonAllActionPerformed
@@ -1385,4 +1378,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel statusPanel2;
     private javax.swing.JLabel wishlistIcon;
     // End of variables declaration//GEN-END:variables
+public void logout(ActionListener listener){ // Logoutbutton function
+    buttonLogout.addActionListener(listener);
+}
+public void cart(MouseListener listener){ 
+    cartIcon.addMouseListener(listener);
+}
 }
