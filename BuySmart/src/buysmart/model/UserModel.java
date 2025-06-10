@@ -6,7 +6,6 @@ package buysmart.model;
 
 /**
  *
- * @author fahmi
  */
 public class UserModel {
     
@@ -95,5 +94,4 @@ public class UserModel {
         this.securityAnswer = securityAnswer;
     }
 }
-    
 
