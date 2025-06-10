@@ -2,12 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
+
 package buysmart.dao;
 
-/**
- *
- * @author user
- */
+//import javax.swing.JOptionPane;
 import buysmart.database.MysqlConnection1;
 import buysmart.model.UserModel;
 import java.sql.Connection;
@@ -52,4 +51,5 @@ public class UserDAO {
 //    }
 //}
 
-}
+
+
