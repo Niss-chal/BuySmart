@@ -120,8 +120,6 @@ public class Dashboard extends javax.swing.JFrame {
         productDescription1 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        rightclickPanel1 = new javax.swing.JPanel();
-        rightclickIcon = new javax.swing.JLabel();
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1052,27 +1050,6 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        rightclickPanel1.setBackground(new java.awt.Color(204, 204, 204,0));
-
-        rightclickIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/right-arrow.png"))); // NOI18N
-
-        javax.swing.GroupLayout rightclickPanel1Layout = new javax.swing.GroupLayout(rightclickPanel1);
-        rightclickPanel1.setLayout(rightclickPanel1Layout);
-        rightclickPanel1Layout.setHorizontalGroup(
-            rightclickPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rightclickPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rightclickIcon)
-                .addContainerGap(10, Short.MAX_VALUE))
-        );
-        rightclickPanel1Layout.setVerticalGroup(
-            rightclickPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightclickPanel1Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(rightclickIcon)
-                .addGap(21, 21, 21))
-        );
-
         javax.swing.GroupLayout productPanel1Layout = new javax.swing.GroupLayout(productPanel1);
         productPanel1.setLayout(productPanel1Layout);
         productPanel1Layout.setHorizontalGroup(
@@ -1094,9 +1071,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(rightclickPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         productPanel1Layout.setVerticalGroup(
             productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1119,10 +1094,6 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(productPanel1Layout.createSequentialGroup()
-                .addGap(206, 206, 206)
-                .addComponent(rightclickPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1378,8 +1349,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel productDescription;
     private javax.swing.JLabel productDescription1;
     private javax.swing.JPanel productPanel1;
-    private javax.swing.JLabel rightclickIcon;
-    private javax.swing.JPanel rightclickPanel1;
     private javax.swing.JTextField searchField;
     private javax.swing.JLabel searchIcon;
     private javax.swing.JPanel statusPanel2;
