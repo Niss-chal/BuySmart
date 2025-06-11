@@ -95,12 +95,13 @@ public class RegisterController {
                 return;
             }
             
-//            user mdoel ho hai
+//            user mdoel 
+            UserDAO dao = new UserDAO();
             UserModel usermodel = new UserModel(name, email, password, phone, address, gender, securityQuestion, answer);
 
             
             try {
-                boolean success = UserDAO.registerUser(usermodel);
+                boolean success = dao.registerUser(usermodel);
                 
                 if (success) {
                     JOptionPane.showMessageDialog(view, "Registration Successful", "Success", JOptionPane.INFORMATION_MESSAGE);

@@ -30,6 +30,10 @@ public class UserModel {
         this.securityQuestion = securityQuestion;
         this.securityAnswer = securityAnswer;
     }
+
+    public UserModel(String email, String password) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     public String getUsername() {
         return username;

@@ -3,23 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package buysmart.controller;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JOptionPane;
-
+import buysmart.dao.UserDAO;
+import buysmart.model.loginRequest;
 import buysmart.view.Dashboard;
 import buysmart.view.ForgetPasswordView;
 import buysmart.view.LoginView;
 import buysmart.view.RegistrationView;
-
+import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import buysmart.database.MysqlConnection1;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,140 +23,112 @@ import buysmart.database.MysqlConnection1;
  */
 public class LoginController {
     private LoginView view;
-    public LoginController(LoginView view){
-        this.view=view;
-        LoginUser loginUser = new LoginUser();
-        this.view.loginUser(loginUser);
-        
-        ForgotPassword forgotPassword = new ForgotPassword();
-        this.view.forgotPassword(forgotPassword);
-        
-       SignUp SignIn = new SignUp();
-       this.view.SignIn(SignIn);
+    UserDAO dao= new UserDAO();
+
+    public LoginController(LoginView view) {
+        this.view = view;
+
+        this.view.loginUser(new LoginUser());
+        this.view.forgotPassword(new ForgotPassword());
+        this.view.SignIn(new SignUp());
     }
 
-    public void open(){
+    public void open() {
         view.setVisible(true);
     }
-    public void close(){
+
+    public void close() {
         view.dispose();
     }
 
-    class LoginUser implements ActionListener{
-
+    class LoginUser implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-       String email = view.getEmail().getText();
-       String password = String.valueOf(view.getPassword().getPassword());
+            String email = view.getEmail().getText();
+            String password = String.valueOf(view.getPassword().getPassword());
 
-if(email.isEmpty() || password.isEmpty()){
-    JOptionPane.showMessageDialog(view, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
-} else {
-    try {
-        Connection conn = MysqlConnection1.getConnection();
-        String query = "SELECT * FROM users WHERE email = ? AND password = ?";
-        PreparedStatement ps = conn.prepareStatement(query);
-        ps.setString(1, email);
-        ps.setString(2, password);
-        ResultSet rs = ps.executeQuery();
+            if (email.isEmpty() || password.isEmpty()) {
+                JOptionPane.showMessageDialog(view, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                loginRequest req = new loginRequest(email, password);
 
-        if (rs.next()) {
-            JOptionPane.showMessageDialog(view, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE);
-            Dashboard dashboard = new Dashboard();
-            DashboardController dashboardController = new DashboardController(dashboard);
-            dashboardController.open();
-            close();
-        } else {
-            JOptionPane.showMessageDialog(view, "Invalid Email or Password", "Error", JOptionPane.ERROR_MESSAGE);
+                try {
+                    
+                    boolean success = dao.loginUser(req);
+
+                    if (success) {
+                        JOptionPane.showMessageDialog(view, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        Dashboard dashboard = new Dashboard();
+                        DashboardController dashboardController = new DashboardController(dashboard);
+                        dashboardController.open();
+                        close();
+                    } else {
+                        JOptionPane.showMessageDialog(view, "Login failed", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (HeadlessException ex) {
+                    JOptionPane.showMessageDialog(view, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
         }
-
-        conn.close();
-    } catch (Exception ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(view, "Database Error", "Error", JOptionPane.ERROR_MESSAGE);
     }
-}
- 
-            }
-            
 
-            }
-            
-    
-    class ForgotPassword implements MouseListener{
-
+    class ForgotPassword implements MouseListener {
         @Override
         public void mouseClicked(MouseEvent e) {
             view.dispose();
-            ForgetPasswordView forgotpassword = new ForgetPasswordView();
-            ForgotPasswordController forgotController = new ForgotPasswordController(forgotpassword);
+            ForgetPasswordView forgotPassword = new ForgetPasswordView();
+            ForgotPasswordController forgotController = new ForgotPasswordController(forgotPassword);
             forgotController.open();
-            
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-            // TODO Auto-generated method stub
-        
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-            // TODO Auto-generated method stub
-            
         }
 
         @Override
         public void mousePressed(MouseEvent e) {
             // TODO Auto-generated method stub
-            
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
             // TODO Auto-generated method stub
-            
         }
-        
-    }
-    
-    class SignUp implements MouseListener{
 
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            // TODO Auto-generated method stub
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            // TODO Auto-generated method stub
+        }
+    }
+
+    class SignUp implements MouseListener {
         @Override
         public void mouseClicked(MouseEvent e) {
             view.dispose();
-            RegistrationView reisterView = new RegistrationView();
-            RegisterController registerController = new RegisterController(reisterView);
+            RegistrationView registerView = new RegistrationView();
+            RegisterController registerController = new RegisterController(registerView);
             registerController.open();
         }
 
         @Override
-        public void mouseEntered(MouseEvent e) {
-            // TODO Auto-generated method stub
-            
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-            // TODO Auto-generated method stub
-            
-        }
-
-        @Override
         public void mousePressed(MouseEvent e) {
             // TODO Auto-generated method stub
-            
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
             // TODO Auto-generated method stub
-         
         }
-        
-    }
-    
-}
 
-    
-  
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            // TODO Auto-generated method stub
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            // TODO Auto-generated method stub
+        }
+    }
+}

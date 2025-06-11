@@ -13,21 +13,25 @@ package buysmart.dao;
 
 //import javax.swing.JOptionPane;
 
+//import buysmart.controller.DashboardController;
 import buysmart.database.MysqlConnection1;
 import buysmart.model.UserModel;
+import buysmart.model.loginRequest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+//import javax.swing.JOptionPane;
 
 public class UserDAO {
     
-    public static boolean registerUser(UserModel usermodel) throws SQLException {
+    public boolean registerUser(UserModel usermodel) throws SQLException {
         
         String sql = "INSERT INTO users (username, email, password, contact, address, gender, security_question, security_answer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
         try (Connection conn = MysqlConnection1.getConnection()){
                 
-            conn.setAutoCommit(false);
+            
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
             pstmt.setString(1, usermodel.getUsername());
@@ -43,19 +47,32 @@ public class UserDAO {
             conn.commit();
             return rowsAffected > 0;
         } catch (SQLException e){
-            conn.rollback();
+
             throw e;
         }
     }
     }
     
-//    public static void main(String[] args) {
-//    try (Connection conn = MysqlConnection1.getConnection()) {
-//        JOptionPane.showMessageDialog(null, "database connect bhayo mazzale");
-//    } catch (SQLException e) {
-//        JOptionPane.showMessageDialog(null, "Connection bhayena: " + e.getMessage());
-//    }
-//}
+    public boolean loginUser(loginRequest loginReq) {
+    String query = "SELECT * FROM users WHERE email=? AND password=?";
+    Connection conn = null;
+
+    try {
+        conn = MysqlConnection1.getConnection();
+        PreparedStatement stmnt = conn.prepareStatement(query);
+        stmnt.setString(1, loginReq.getEmail());
+        stmnt.setString(2, loginReq.getPassword());
+
+        ResultSet result = stmnt.executeQuery();
+        return result.next(); // returns true if user exists
+    } catch (SQLException e) {
+        e.printStackTrace(); 
+        return false;
+    } finally {
+        MysqlConnection1.closeConnection(conn); 
+    }
+}
+
 
 }
 

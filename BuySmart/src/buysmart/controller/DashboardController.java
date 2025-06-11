@@ -6,6 +6,8 @@ package buysmart.controller;
 
 import buysmart.view.Dashboard;
 
+
+
 /**
  *
  * @author loq
@@ -15,16 +17,21 @@ public class DashboardController {
 
     public DashboardController(Dashboard dashboard){
         this.dashboard=dashboard;
+        
+            
     }
 
     public void open(){
         dashboard.setVisible(true);
     }
 
-    public void close(){
+    public void close(){ 
+        
         dashboard.dispose();
     }
 
     
     
 }
+
+
