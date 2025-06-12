@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -18,7 +19,7 @@ import java.awt.event.MouseListener;
  * @author loq
  */
 public class DashboardController {
-    private Dashboard dashboard;
+    private Dashboard dashboard ;
 
     public DashboardController(Dashboard dashboard){
         this.dashboard=dashboard;
@@ -28,6 +29,9 @@ public class DashboardController {
         
         Cart cart = new Cart();
         this.dashboard.cart(cart);
+        
+        AddCart addCart = new AddCart();
+        this.dashboard.addCart(addCart);
                 
     }
 
@@ -78,6 +82,33 @@ public class DashboardController {
         @Override
         public void mouseExited(MouseEvent e) {
         }
+    }
+    
+    class AddCart implements MouseListener {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(dashboard, "Added to cart successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);            
+            
+        }
+            
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
     }
     }
 
