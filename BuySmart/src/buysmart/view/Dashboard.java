@@ -72,29 +72,29 @@ public class Dashboard extends javax.swing.JFrame {
         productPanel1 = new javax.swing.JPanel();
         PanelProductCard = new javax.swing.JPanel();
         PicProduct = new javax.swing.JLabel();
-        DescriptionProductCard = new javax.swing.JTextField();
         ProductAddToCartButton = new javax.swing.JButton();
         ProductCardPrice = new javax.swing.JLabel();
+        DescriptionProductCard = new javax.swing.JLabel();
         PanelProductCard1 = new javax.swing.JPanel();
         PicProduct1 = new javax.swing.JLabel();
-        DescriptionProductCard1 = new javax.swing.JTextField();
         ProductAddToCartButton1 = new javax.swing.JButton();
         ProductCardPrice1 = new javax.swing.JLabel();
+        DescriptionProductCard1 = new javax.swing.JLabel();
         PanelProductCard2 = new javax.swing.JPanel();
         PicProduct2 = new javax.swing.JLabel();
-        DescriptionProductCard2 = new javax.swing.JTextField();
         ProductAddToCartButton2 = new javax.swing.JButton();
         ProductCardPrice2 = new javax.swing.JLabel();
+        DescriptionProductCard2 = new javax.swing.JLabel();
         PanelProductCard3 = new javax.swing.JPanel();
         PicProduct3 = new javax.swing.JLabel();
-        DescriptionProductCard3 = new javax.swing.JTextField();
         ProductAddToCartButton3 = new javax.swing.JButton();
         ProductCardPrice3 = new javax.swing.JLabel();
+        DescriptionProductCard3 = new javax.swing.JLabel();
         PanelProductCard4 = new javax.swing.JPanel();
         PicProduct4 = new javax.swing.JLabel();
-        DescriptionProductCard4 = new javax.swing.JTextField();
         ProductAddToCartButton4 = new javax.swing.JButton();
         ProductCardPrice4 = new javax.swing.JLabel();
+        DescriptionProductCard4 = new javax.swing.JLabel();
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -512,181 +512,171 @@ public class Dashboard extends javax.swing.JFrame {
         PicProduct.setText("pic");
         PicProduct.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        DescriptionProductCard.setText("jTextField1");
-
-        ProductAddToCartButton.setText("jButton1");
+        ProductAddToCartButton.setBackground(new java.awt.Color(153, 204, 255));
+        ProductAddToCartButton.setText("Add To Card");
 
         ProductCardPrice.setBackground(new java.awt.Color(255, 255, 255));
         ProductCardPrice.setText("jLabel2");
-        ProductCardPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        DescriptionProductCard.setText("jLabel2");
 
         javax.swing.GroupLayout PanelProductCardLayout = new javax.swing.GroupLayout(PanelProductCard);
         PanelProductCard.setLayout(PanelProductCardLayout);
         PanelProductCardLayout.setHorizontalGroup(
             PanelProductCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PicProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelProductCardLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelProductCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProductCardLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(PanelProductCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(DescriptionProductCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelProductCardLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
                         .addComponent(ProductCardPrice)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton)
-                        .addGap(16, 16, 16))
-                    .addGroup(PanelProductCardLayout.createSequentialGroup()
-                        .addComponent(DescriptionProductCard)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addComponent(ProductAddToCartButton)))
+                .addGap(16, 16, 16))
         );
         PanelProductCardLayout.setVerticalGroup(
             PanelProductCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelProductCardLayout.createSequentialGroup()
                 .addComponent(PicProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DescriptionProductCard, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DescriptionProductCard, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(PanelProductCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductAddToCartButton)
+                    .addComponent(ProductAddToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ProductCardPrice))
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
 
         PicProduct1.setText("pic");
         PicProduct1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        DescriptionProductCard1.setText("jTextField1");
-
-        ProductAddToCartButton1.setText("jButton1");
+        ProductAddToCartButton1.setBackground(new java.awt.Color(153, 204, 255));
+        ProductAddToCartButton1.setText("Add To Cart");
 
         ProductCardPrice1.setBackground(new java.awt.Color(255, 255, 255));
         ProductCardPrice1.setText("jLabel2");
-        ProductCardPrice1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        DescriptionProductCard1.setText("jLabel2");
 
         javax.swing.GroupLayout PanelProductCard1Layout = new javax.swing.GroupLayout(PanelProductCard1);
         PanelProductCard1.setLayout(PanelProductCard1Layout);
         PanelProductCard1Layout.setHorizontalGroup(
             PanelProductCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PicProduct1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelProductCard1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelProductCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProductCard1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(PanelProductCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PanelProductCard1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
                         .addComponent(ProductCardPrice1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton1)
-                        .addGap(16, 16, 16))
-                    .addGroup(PanelProductCard1Layout.createSequentialGroup()
-                        .addComponent(DescriptionProductCard1)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addComponent(ProductAddToCartButton1))
+                    .addComponent(DescriptionProductCard1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
         PanelProductCard1Layout.setVerticalGroup(
             PanelProductCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelProductCard1Layout.createSequentialGroup()
                 .addComponent(PicProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DescriptionProductCard1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DescriptionProductCard1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(PanelProductCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductAddToCartButton1)
+                    .addComponent(ProductAddToCartButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ProductCardPrice1))
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PicProduct2.setText("pic");
         PicProduct2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        DescriptionProductCard2.setText("jTextField1");
-
-        ProductAddToCartButton2.setText("jButton1");
+        ProductAddToCartButton2.setBackground(new java.awt.Color(153, 204, 255));
+        ProductAddToCartButton2.setText("Add To Cart");
 
         ProductCardPrice2.setBackground(new java.awt.Color(255, 255, 255));
         ProductCardPrice2.setText("jLabel2");
-        ProductCardPrice2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        DescriptionProductCard2.setText("jLabel2");
 
         javax.swing.GroupLayout PanelProductCard2Layout = new javax.swing.GroupLayout(PanelProductCard2);
         PanelProductCard2.setLayout(PanelProductCard2Layout);
         PanelProductCard2Layout.setHorizontalGroup(
             PanelProductCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PicProduct2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelProductCard2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelProductCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProductCard2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(PanelProductCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(DescriptionProductCard2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelProductCard2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
                         .addComponent(ProductCardPrice2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton2)
-                        .addGap(16, 16, 16))
-                    .addGroup(PanelProductCard2Layout.createSequentialGroup()
-                        .addComponent(DescriptionProductCard2)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addComponent(ProductAddToCartButton2)))
+                .addGap(16, 16, 16))
         );
         PanelProductCard2Layout.setVerticalGroup(
             PanelProductCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelProductCard2Layout.createSequentialGroup()
                 .addComponent(PicProduct2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DescriptionProductCard2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DescriptionProductCard2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelProductCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductAddToCartButton2)
+                    .addComponent(ProductAddToCartButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ProductCardPrice2))
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         PicProduct3.setText("pic");
         PicProduct3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        DescriptionProductCard3.setText("jTextField1");
-
-        ProductAddToCartButton3.setText("jButton1");
+        ProductAddToCartButton3.setBackground(new java.awt.Color(153, 204, 255));
+        ProductAddToCartButton3.setText("Add To Cart");
 
         ProductCardPrice3.setBackground(new java.awt.Color(255, 255, 255));
         ProductCardPrice3.setText("jLabel2");
-        ProductCardPrice3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        DescriptionProductCard3.setText("jLabel2");
 
         javax.swing.GroupLayout PanelProductCard3Layout = new javax.swing.GroupLayout(PanelProductCard3);
         PanelProductCard3.setLayout(PanelProductCard3Layout);
         PanelProductCard3Layout.setHorizontalGroup(
             PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PicProduct3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelProductCard3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProductCard3Layout.createSequentialGroup()
+                .addGroup(PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PanelProductCard3Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addContainerGap()
+                        .addComponent(DescriptionProductCard3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelProductCard3Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
                         .addComponent(ProductCardPrice3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton3)
-                        .addGap(16, 16, 16))
-                    .addGroup(PanelProductCard3Layout.createSequentialGroup()
-                        .addComponent(DescriptionProductCard3)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addComponent(ProductAddToCartButton3)))
+                .addGap(16, 16, 16))
         );
         PanelProductCard3Layout.setVerticalGroup(
             PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelProductCard3Layout.createSequentialGroup()
                 .addComponent(PicProduct3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DescriptionProductCard3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DescriptionProductCard3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
                 .addGroup(PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductAddToCartButton3)
-                    .addComponent(ProductCardPrice3))
-                .addGap(0, 14, Short.MAX_VALUE))
+                    .addComponent(ProductCardPrice3)
+                    .addComponent(ProductAddToCartButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         PicProduct4.setText("pic");
         PicProduct4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        DescriptionProductCard4.setText("jTextField1");
-
-        ProductAddToCartButton4.setText("jButton1");
+        ProductAddToCartButton4.setBackground(new java.awt.Color(153, 204, 255));
+        ProductAddToCartButton4.setText("Add To Cart");
 
         ProductCardPrice4.setBackground(new java.awt.Color(255, 255, 255));
         ProductCardPrice4.setText("jLabel2");
-        ProductCardPrice4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        DescriptionProductCard4.setText("jLabel2");
 
         javax.swing.GroupLayout PanelProductCard4Layout = new javax.swing.GroupLayout(PanelProductCard4);
         PanelProductCard4.setLayout(PanelProductCard4Layout);
@@ -694,29 +684,26 @@ public class Dashboard extends javax.swing.JFrame {
             PanelProductCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PicProduct4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelProductCard4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addGroup(PanelProductCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DescriptionProductCard4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelProductCard4Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
                         .addComponent(ProductCardPrice4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton4)
-                        .addGap(16, 16, 16))
-                    .addGroup(PanelProductCard4Layout.createSequentialGroup()
-                        .addComponent(DescriptionProductCard4)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addComponent(ProductAddToCartButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(16, 16, 16))
         );
         PanelProductCard4Layout.setVerticalGroup(
             PanelProductCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelProductCard4Layout.createSequentialGroup()
                 .addComponent(PicProduct4, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DescriptionProductCard4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DescriptionProductCard4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelProductCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductAddToCartButton4)
+                    .addComponent(ProductAddToCartButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ProductCardPrice4))
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addGap(0, 17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout productPanel1Layout = new javax.swing.GroupLayout(productPanel1);
@@ -724,11 +711,9 @@ public class Dashboard extends javax.swing.JFrame {
         productPanel1Layout.setHorizontalGroup(
             productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(productPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(47, 47, 47)
                 .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(productPanel1Layout.createSequentialGroup()
-                        .addComponent(PanelProductCard4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PanelProductCard4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(productPanel1Layout.createSequentialGroup()
                         .addComponent(PanelProductCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
@@ -736,21 +721,22 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(PanelProductCard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PanelProductCard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51))))
+                        .addComponent(PanelProductCard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(51, 51, 51))
         );
         productPanel1Layout.setVerticalGroup(
             productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(productPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PanelProductCard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelProductCard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelProductCard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelProductCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelProductCard3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(PanelProductCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PanelProductCard1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PanelProductCard2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PanelProductCard4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -769,11 +755,11 @@ public class Dashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(logoutPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 24, Short.MAX_VALUE)
                 .addComponent(statusPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(productPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
@@ -910,6 +896,9 @@ public class Dashboard extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -921,11 +910,11 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonComputers;
-    private javax.swing.JTextField DescriptionProductCard;
-    private javax.swing.JTextField DescriptionProductCard1;
-    private javax.swing.JTextField DescriptionProductCard2;
-    private javax.swing.JTextField DescriptionProductCard3;
-    private javax.swing.JTextField DescriptionProductCard4;
+    private javax.swing.JLabel DescriptionProductCard;
+    private javax.swing.JLabel DescriptionProductCard1;
+    private javax.swing.JLabel DescriptionProductCard2;
+    private javax.swing.JLabel DescriptionProductCard3;
+    private javax.swing.JLabel DescriptionProductCard4;
     private javax.swing.JPanel PanelProductCard;
     private javax.swing.JPanel PanelProductCard1;
     private javax.swing.JPanel PanelProductCard2;
@@ -991,7 +980,7 @@ public class Dashboard extends javax.swing.JFrame {
         return PicProduct;
     }
 
-    public javax.swing.JTextField getDescriptionProductCard() {
+    public javax.swing.JLabel getDescriptionProductCard() {
         return DescriptionProductCard;
     }
 
@@ -1004,7 +993,7 @@ public class Dashboard extends javax.swing.JFrame {
         return PicProduct1;
     }
 
-    public javax.swing.JTextField getDescriptionProductCard1() {
+    public javax.swing.JLabel getDescriptionProductCard1() {
         return DescriptionProductCard1;
     }
 
@@ -1018,7 +1007,7 @@ public class Dashboard extends javax.swing.JFrame {
         return PicProduct2;
     }
 
-    public javax.swing.JTextField getDescriptionProductCard2() {
+    public javax.swing.JLabel getDescriptionProductCard2() {
         return DescriptionProductCard2;
     }
 
@@ -1032,7 +1021,7 @@ public class Dashboard extends javax.swing.JFrame {
         return PicProduct3;
     }
 
-    public javax.swing.JTextField getDescriptionProductCard3() {
+    public javax.swing.JLabel getDescriptionProductCard3() {
         return DescriptionProductCard3;
     }
 
@@ -1045,7 +1034,7 @@ public class Dashboard extends javax.swing.JFrame {
         return PicProduct4;
     }
 
-    public javax.swing.JTextField getDescriptionProductCard4() {
+    public javax.swing.JLabel getDescriptionProductCard4() {
         return DescriptionProductCard4;
     }
 
