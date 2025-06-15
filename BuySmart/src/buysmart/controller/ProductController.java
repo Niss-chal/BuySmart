@@ -28,7 +28,7 @@ public class ProductController {
             List<ProductModel> products = ProductDAO.getProduct();
             if (!products.isEmpty()) {
                 
-                // 1st product
+                // 1st product ko lagi
                 if (products.size() > 0) {
                     ProductModel product0 = products.get(0);
                     if (product0 != null) {
@@ -37,8 +37,7 @@ public class ProductController {
                         dashboard.getProductCardPrice().setText("Rs. " + product0.getPrice());
                     }
                 }
-
-                // 2nd product
+                // 2nd product ko lagi
                 if (products.size() > 1) {
                     ProductModel product1 = products.get(1);
                     if (product1 != null) {
@@ -48,7 +47,7 @@ public class ProductController {
                     }
                 }
 
-                // 3rd product
+                // 3rd product ko lagi
                 if (products.size() > 2) {
                     ProductModel product2 = products.get(2);
                     if (product2 != null) {
@@ -58,7 +57,7 @@ public class ProductController {
                     }
                 }
                 
-                // 4th product
+                // 4th product ko lagi
                 if (products.size() > 3) {
                     ProductModel product3 = products.get(3);
                     if (product3 != null) {
@@ -68,7 +67,7 @@ public class ProductController {
                     }
                 }
                 
-                // 5th product
+                // 5th product ko lagi
                 if (products.size() > 4) {
                     ProductModel product4 = products.get(4);
                     if (product4 != null) {
