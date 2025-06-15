@@ -14,6 +14,7 @@ import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 
 
+
 /**
  *
  * @author loq
@@ -23,6 +24,7 @@ public class DashboardController {
 
     public DashboardController(Dashboard dashboard){
         this.dashboard=dashboard;
+
         
         Logout logout = new Logout();
         this.dashboard.logout(logout);
@@ -56,6 +58,7 @@ public class DashboardController {
         }
     }
     
+
     class Cart implements MouseListener{
 
         @Override
@@ -113,3 +116,4 @@ public class DashboardController {
     }
 
     
+
