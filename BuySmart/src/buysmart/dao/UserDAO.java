@@ -42,7 +42,7 @@ public class UserDAO {
         }
     }
     }
-    
+
 //    public static void main(String[] args) {
 //    try (Connection conn = MysqlConnection1.getConnection()) {
 //        JOptionPane.showMessageDialog(null, "database connect bhayo mazzale");
@@ -51,5 +51,6 @@ public class UserDAO {
 //    }
 //}
 
+}
 
 
