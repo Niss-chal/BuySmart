@@ -37,6 +37,8 @@ public class LoginController {
         
        SignUp SignIn = new SignUp();
        this.view.SignIn(SignIn);
+       
+       this.view.ShowPassword().addActionListener(new LoginController.ToggleNewPassword());
     }
 
     public void open(){
@@ -97,7 +99,7 @@ if(email.isEmpty() || password.isEmpty()){
             forgotController.open();
             
         }
-
+    
         @Override
         public void mouseEntered(MouseEvent e) {
             // TODO Auto-generated method stub
@@ -157,10 +159,18 @@ if(email.isEmpty() || password.isEmpty()){
             // TODO Auto-generated method stub
          
         }
+          
+    }
+    class ToggleNewPassword implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean show=view.ShowPassword().isSelected();
+            view.getPassword().setEchoChar(show ? (char) 0 : '•');
+
+        }
         
     }
-    
 }
 
-    
   

@@ -4,6 +4,7 @@
  */
 package buysmart.view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 /**
@@ -290,4 +291,39 @@ public class SellerRegistrationView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
+public javax.swing.JLabel getBusinessname(){
+        return BusinessName3;
+    }
+    public javax.swing.JTextField getBusinessnameField(){
+        return BusinessNameField3;
+    }
+    public javax.swing.JLabel getBusinessAddress(){
+        return BusinessAddress3;
+    }
+    public javax.swing.JTextField getBusinessAddressfield(){
+        return BusinessAddressField3;
+    }
+    public javax.swing.JLabel getContactNumber(){
+        return ContactNumber3;
+    } 
+    public javax.swing.JTextField getContactfield(){
+        return ContactField3;
+    }
+    public javax.swing.JLabel getPanNumber(){
+        return PanNumber3;
+    }
+    public javax.swing.JTextField getPanNumberfield(){
+        return PanNumberField3;
+    }
+    public javax.swing.JLabel getBusinessType(){
+        return BusinessType3;
+    }
+    public javax.swing.JComboBox<String> getBusinessTypeBox(){
+        return BusinessTypebox3;
+    }
+    public void registerSeller(ActionListener listener){
+        RegisterButton3.addActionListener(listener);
+    }
+    
 }
+
