@@ -246,6 +246,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+
           <Group type="102" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -254,18 +255,22 @@
                   <Component id="productPanel1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Component id="logoutPanel1" min="-2" max="-2" attributes="0"/>
+
               <EmptySpace type="separate" pref="24" max="32767" attributes="0"/>
               <Component id="statusPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="12" max="32767" attributes="0"/>
               <Component id="productPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="12" max="32767" attributes="0"/>
+
           </Group>
       </Group>
     </DimensionLayout>
@@ -282,13 +287,13 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="dashboardLogo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="buttonLogout" min="-2" pref="113" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -328,9 +333,6 @@
               </Border>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLogoutActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -375,10 +377,12 @@
                   <Component id="orderlistIcon" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
+
               <Group type="102" alignment="0" attributes="0">
                   <Component id="buttonPanel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
+
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -402,7 +406,7 @@
                           <Component id="wishlistIcon" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="buttonPanel3" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -422,19 +426,19 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="buttonAll" min="-2" pref="105" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
-                      <Component id="buttonElectronics" pref="192" max="32767" attributes="0"/>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="buttonElectronics" min="-2" pref="114" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
                       <Component id="ButtonComputers" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="buttonClothing" min="-2" pref="113" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
                       <Component id="buttonBooks" min="-2" pref="116" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="buttonBeauties" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
                       <Component id="buttonToys" min="-2" pref="106" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="buttonSports" min="-2" pref="109" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -446,8 +450,10 @@
                       <EmptySpace pref="11" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="buttonSports" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
-                          <Component id="buttonToys" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
-                          <Component id="buttonBeauties" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                              <Component id="buttonToys" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="buttonBeauties" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="buttonAll" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                               <Component id="buttonBooks" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
@@ -540,6 +546,7 @@
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttonBooksMouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttonBooksMouseExited"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBooksActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonClothing">
@@ -702,6 +709,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="PanelProductCard4" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -716,11 +724,13 @@
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
+
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -734,6 +744,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="PanelProductCard4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="16" max="32767" attributes="0"/>
+
               </Group>
           </Group>
         </DimensionLayout>
@@ -744,6 +755,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+
                   <Component id="PicProduct" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -756,12 +768,14 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+
                       <Component id="PicProduct" min="-2" pref="167" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="DescriptionProductCard" min="-2" pref="44" max="-2" attributes="0"/>
@@ -771,6 +785,7 @@
                           <Component id="ProductCardPrice" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
@@ -785,8 +800,10 @@
                   </Border>
                 </Property>
               </Properties>
+
             </Component>
             <Component class="javax.swing.JButton" name="ProductAddToCartButton">
+
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="99" type="rgb"/>
@@ -807,6 +824,22 @@
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="AddCartButton8">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add To Cart"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton16">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Buy"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="PanelProductCard1">
@@ -814,6 +847,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+
                   <Component id="PicProduct1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -826,12 +860,14 @@
                           <Component id="DescriptionProductCard1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+
                       <Component id="PicProduct1" min="-2" pref="167" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="DescriptionProductCard1" min="-2" pref="41" max="-2" attributes="0"/>
@@ -839,6 +875,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ProductAddToCartButton1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="ProductCardPrice1" alignment="3" min="-2" max="-2" attributes="0"/>
+
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -864,17 +901,40 @@
                 <Property name="text" type="java.lang.String" value="Add To Cart"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="ProductCardPrice1">
+
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
+
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="DescriptionProductCard1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="AddCartButton6">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add To Cart"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCartButton6ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton12">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Buy"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -884,6 +944,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+
                   <Component id="PicProduct2" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -893,6 +954,13 @@
                               <Component id="ProductCardPrice2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="40" max="32767" attributes="0"/>
                               <Component id="ProductAddToCartButton2" min="-2" max="-2" attributes="0"/>
+
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                              <Component id="AddCartButton5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButton10" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -904,6 +972,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="PicProduct2" min="-2" pref="167" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+
                       <Component id="DescriptionProductCard2" min="-2" pref="47" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -911,6 +980,7 @@
                           <Component id="ProductCardPrice2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
@@ -925,6 +995,8 @@
                   </Border>
                 </Property>
               </Properties>
+
+
             </Component>
             <Component class="javax.swing.JButton" name="ProductAddToCartButton2">
               <Properties>
@@ -934,18 +1006,44 @@
                 <Property name="text" type="java.lang.String" value="Add To Cart"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="ProductCardPrice2">
+
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
+
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="DescriptionProductCard2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="AddCartButton2">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add To Cart"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCartButton2ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton4">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Buy"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -954,6 +1052,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                
                   <Component id="PicProduct3" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -969,6 +1068,7 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
@@ -977,6 +1077,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="PicProduct3" min="-2" pref="167" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+
                       <Component id="DescriptionProductCard3" min="-2" pref="47" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -984,6 +1085,7 @@
                           <Component id="ProductAddToCartButton3" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
@@ -998,6 +1100,8 @@
                   </Border>
                 </Property>
               </Properties>
+
+
             </Component>
             <Component class="javax.swing.JButton" name="ProductAddToCartButton3">
               <Properties>
@@ -1007,18 +1111,44 @@
                 <Property name="text" type="java.lang.String" value="Add To Cart"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="ProductCardPrice3">
+
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
+
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="DescriptionProductCard3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="AddCartButton3">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add To Cart"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCartButton3ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton6">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Buy"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1027,6 +1157,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+
                   <Component id="PicProduct4" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -1039,12 +1170,14 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+
                       <Component id="PicProduct4" min="-2" pref="167" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="DescriptionProductCard4" min="-2" pref="47" max="-2" attributes="0"/>
@@ -1054,6 +1187,7 @@
                           <Component id="ProductCardPrice4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1068,6 +1202,8 @@
                   </Border>
                 </Property>
               </Properties>
+
+
             </Component>
             <Component class="javax.swing.JButton" name="ProductAddToCartButton4">
               <Properties>
@@ -1085,10 +1221,26 @@
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="DescriptionProductCard4">
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
+
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCartButton1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton2">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Buy"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
