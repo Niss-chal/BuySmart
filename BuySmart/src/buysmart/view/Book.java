@@ -30,20 +30,53 @@ public class Book extends javax.swing.JFrame {
         BookMainPannel = new javax.swing.JPanel();
         Book1 = new javax.swing.JPanel();
         Book1image = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Book1AddToCart = new javax.swing.JButton();
+        Book1Price = new javax.swing.JLabel();
+        Book1Buy = new javax.swing.JButton();
         Book2 = new javax.swing.JPanel();
         Book2image = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Book2AddToCart = new javax.swing.JButton();
+        Book2Price = new javax.swing.JLabel();
+        Book2Buy = new javax.swing.JButton();
         Book3 = new javax.swing.JPanel();
         Book3image = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Book3AddToCart = new javax.swing.JButton();
+        Book3Price = new javax.swing.JLabel();
+        Book3Buy = new javax.swing.JButton();
         Book4 = new javax.swing.JPanel();
         Book4image = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Book4AddToCart = new javax.swing.JButton();
+        Book4Price = new javax.swing.JLabel();
+        Book3Buy1 = new javax.swing.JButton();
         Book5 = new javax.swing.JPanel();
         Book5image = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Book5AddToCart = new javax.swing.JButton();
+        Book5Price = new javax.swing.JLabel();
+        Book5Buy = new javax.swing.JButton();
         Book6 = new javax.swing.JPanel();
         Book6image = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        Book6AddToCart = new javax.swing.JButton();
+        Book6Price = new javax.swing.JLabel();
+        Book6Buy = new javax.swing.JButton();
         Book7 = new javax.swing.JPanel();
         Book7image = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        Book7AddToCart = new javax.swing.JButton();
+        Book7Price = new javax.swing.JLabel();
+        Book7Buy = new javax.swing.JButton();
         Book8 = new javax.swing.JPanel();
         Book8image = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        Book8AddToCart = new javax.swing.JButton();
+        Book8Price = new javax.swing.JLabel();
+        Book8Buy = new javax.swing.JButton();
+        BookDashbardbackbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,13 +84,46 @@ public class Book extends javax.swing.JFrame {
 
         Book1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        Book1image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel1.setText("The Alchemist");
+
+        Book1AddToCart.setBackground(new java.awt.Color(153, 204, 255));
+        Book1AddToCart.setText("Add To Cart");
+        Book1AddToCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Book1AddToCartActionPerformed(evt);
+            }
+        });
+
+        Book1Price.setText("jLabel9");
+
+        Book1Buy.setBackground(new java.awt.Color(153, 204, 255));
+        Book1Buy.setText("Buy");
+
         javax.swing.GroupLayout Book1Layout = new javax.swing.GroupLayout(Book1);
         Book1.setLayout(Book1Layout);
         Book1Layout.setHorizontalGroup(
             Book1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Book1image, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                .addGroup(Book1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Book1Layout.createSequentialGroup()
+                        .addComponent(Book1image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(Book1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(Book1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(Book1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(Book1Price)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Book1Buy, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Book1AddToCart)
                 .addContainerGap())
         );
         Book1Layout.setVerticalGroup(
@@ -65,19 +131,52 @@ public class Book extends javax.swing.JFrame {
             .addGroup(Book1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Book1image, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Book1Price)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Book1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Book1AddToCart)
+                    .addComponent(Book1Buy))
+                .addContainerGap())
         );
 
         Book2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Book2.setPreferredSize(new java.awt.Dimension(160, 82));
+
+        Book2image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel2.setText("Sapiens");
+
+        Book2AddToCart.setBackground(new java.awt.Color(153, 204, 255));
+        Book2AddToCart.setText("Add To Cart");
+
+        Book2Price.setText("jLabel9");
+
+        Book2Buy.setBackground(new java.awt.Color(153, 204, 255));
+        Book2Buy.setText("Buy");
 
         javax.swing.GroupLayout Book2Layout = new javax.swing.GroupLayout(Book2);
         Book2.setLayout(Book2Layout);
         Book2Layout.setHorizontalGroup(
             Book2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Book2image, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                .addGroup(Book2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Book2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Book2image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Book2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Book2Buy, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Book2AddToCart))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Book2Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(Book2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Book2Price)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         Book2Layout.setVerticalGroup(
@@ -85,18 +184,50 @@ public class Book extends javax.swing.JFrame {
             .addGroup(Book2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Book2image, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(Book2Price)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Book2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Book2AddToCart)
+                    .addComponent(Book2Buy))
+                .addContainerGap())
         );
 
         Book3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        Book3image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel3.setText("Ikigai");
+
+        Book3AddToCart.setBackground(new java.awt.Color(153, 204, 255));
+        Book3AddToCart.setText("Add To Cart");
+
+        Book3Price.setText("jLabel9");
+
+        Book3Buy.setBackground(new java.awt.Color(153, 204, 255));
+        Book3Buy.setText("Buy");
 
         javax.swing.GroupLayout Book3Layout = new javax.swing.GroupLayout(Book3);
         Book3.setLayout(Book3Layout);
         Book3Layout.setHorizontalGroup(
             Book3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book3Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(Book3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Book3Price)
+                    .addComponent(jLabel3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Book3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Book3image, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                .addGroup(Book3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Book3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Book3Buy, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Book3AddToCart))
+                    .addComponent(Book3image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         Book3Layout.setVerticalGroup(
@@ -104,18 +235,50 @@ public class Book extends javax.swing.JFrame {
             .addGroup(Book3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Book3image, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(Book3Price)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Book3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Book3AddToCart)
+                    .addComponent(Book3Buy))
+                .addContainerGap())
         );
 
         Book4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        Book4image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel4.setText("Rich Dad Poor Dad");
+
+        Book4AddToCart.setBackground(new java.awt.Color(153, 204, 255));
+        Book4AddToCart.setText("Add To Cart");
+
+        Book4Price.setText("jLabel9");
+
+        Book3Buy1.setBackground(new java.awt.Color(153, 204, 255));
+        Book3Buy1.setText("Buy");
 
         javax.swing.GroupLayout Book4Layout = new javax.swing.GroupLayout(Book4);
         Book4.setLayout(Book4Layout);
         Book4Layout.setHorizontalGroup(
             Book4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book4Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Book4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Book4image, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                .addGroup(Book4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Book4image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Book3Buy1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Book4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Book4Price)
+                            .addComponent(Book4AddToCart))))
                 .addContainerGap())
         );
         Book4Layout.setVerticalGroup(
@@ -123,10 +286,30 @@ public class Book extends javax.swing.JFrame {
             .addGroup(Book4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Book4image, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Book4Price)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Book4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Book4AddToCart)
+                    .addComponent(Book3Buy1))
+                .addContainerGap())
         );
 
         Book5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        Book5image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel5.setText("Buy The Damn Flower");
+
+        Book5AddToCart.setBackground(new java.awt.Color(153, 204, 255));
+        Book5AddToCart.setText("Add To Cart");
+
+        Book5Price.setText("jLabel9");
+
+        Book5Buy.setBackground(new java.awt.Color(153, 204, 255));
+        Book5Buy.setText("Buy");
 
         javax.swing.GroupLayout Book5Layout = new javax.swing.GroupLayout(Book5);
         Book5.setLayout(Book5Layout);
@@ -134,17 +317,52 @@ public class Book extends javax.swing.JFrame {
             Book5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Book5image, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(Book5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Book5Layout.createSequentialGroup()
+                        .addComponent(Book5image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book5Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book5Layout.createSequentialGroup()
+                        .addComponent(Book5Buy, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Book5AddToCart)
+                        .addContainerGap())))
+            .addGroup(Book5Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(Book5Price)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         Book5Layout.setVerticalGroup(
             Book5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book5Layout.createSequentialGroup()
                 .addComponent(Book5image, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Book5Price)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Book5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Book5AddToCart)
+                    .addComponent(Book5Buy))
+                .addContainerGap())
         );
 
         Book6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        Book6image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel6.setText("The Way Of White Clouds");
+
+        Book6AddToCart.setBackground(new java.awt.Color(153, 204, 255));
+        Book6AddToCart.setText("Add To Cart");
+
+        Book6Price.setText("jLabel9");
+
+        Book6Buy.setBackground(new java.awt.Color(153, 204, 255));
+        Book6Buy.setText("Buy");
 
         javax.swing.GroupLayout Book6Layout = new javax.swing.GroupLayout(Book6);
         Book6.setLayout(Book6Layout);
@@ -152,18 +370,54 @@ public class Book extends javax.swing.JFrame {
             Book6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Book6image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Book6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Book6Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel6)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Book6Layout.createSequentialGroup()
+                        .addComponent(Book6image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Book6Buy, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Book6AddToCart)
                 .addContainerGap())
+            .addGroup(Book6Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(Book6Price)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Book6Layout.setVerticalGroup(
             Book6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Book6image, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Book6Price)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Book6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Book6AddToCart)
+                    .addComponent(Book6Buy))
+                .addContainerGap())
         );
 
         Book7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        Book7image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel7.setText("AutoBiography Of a Yogi");
+
+        Book7AddToCart.setBackground(new java.awt.Color(153, 204, 255));
+        Book7AddToCart.setText("Add To Cart");
+
+        Book7Price.setText("jLabel9");
+
+        Book7Buy.setBackground(new java.awt.Color(153, 204, 255));
+        Book7Buy.setText("Buy");
 
         javax.swing.GroupLayout Book7Layout = new javax.swing.GroupLayout(Book7);
         Book7.setLayout(Book7Layout);
@@ -171,18 +425,51 @@ public class Book extends javax.swing.JFrame {
             Book7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Book7image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Book7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Book7image, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book7Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Book7Buy, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Book7AddToCart))
+                    .addGroup(Book7Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(Book7Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(Book7Price)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Book7Layout.setVerticalGroup(
             Book7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Book7image, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(Book7Price)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Book7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Book7AddToCart)
+                    .addComponent(Book7Buy))
+                .addContainerGap())
         );
 
         Book8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        Book8image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel8.setText("Art Of War");
+
+        Book8AddToCart.setBackground(new java.awt.Color(153, 204, 255));
+        Book8AddToCart.setText("Add To Cart");
+
+        Book8Price.setText("jLabel9");
+
+        Book8Buy.setBackground(new java.awt.Color(153, 204, 255));
+        Book8Buy.setText("Buy");
 
         javax.swing.GroupLayout Book8Layout = new javax.swing.GroupLayout(Book8);
         Book8.setLayout(Book8Layout);
@@ -190,15 +477,35 @@ public class Book extends javax.swing.JFrame {
             Book8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Book8image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Book8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Book8image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book8Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Book8Buy, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Book8AddToCart)))
                 .addContainerGap())
+            .addGroup(Book8Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(Book8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Book8Price)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Book8Layout.setVerticalGroup(
             Book8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Book8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Book8image, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Book8Price)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Book8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Book8AddToCart)
+                    .addComponent(Book8Buy))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout BookMainPannelLayout = new javax.swing.GroupLayout(BookMainPannel);
@@ -207,39 +514,42 @@ public class Book extends javax.swing.JFrame {
             BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BookMainPannelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Book1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Book5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Book5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Book1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(60, 60, 60)
                 .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Book2, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                    .addComponent(Book2, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(Book6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(62, 62, 62)
-                .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Book3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Book7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Book7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Book3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(62, 62, 62)
                 .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Book4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Book8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BookMainPannelLayout.setVerticalGroup(
             BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BookMainPannelLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Book4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Book1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Book2, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                     .addComponent(Book3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Book2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                    .addComponent(Book1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(59, 59, 59)
-                .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Book5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Book6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Book7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Book8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(27, 27, 27))
+                    .addComponent(Book4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Book8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(BookMainPannelLayout.createSequentialGroup()
+                        .addGroup(BookMainPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(Book7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Book6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Book5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -253,30 +563,50 @@ public class Book extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BookMainPannel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(BookMainPannel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        BookDashbardbackbutton.setText("Back ");
+        BookDashbardbackbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookDashbardbackbuttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BookDashbardbackbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(BookDashbardbackbutton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BookDashbardbackbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookDashbardbackbuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookDashbardbackbuttonActionPerformed
+
+    private void Book1AddToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Book1AddToCartActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Book1AddToCartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,23 +645,62 @@ public class Book extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Book1;
+    private javax.swing.JButton Book1AddToCart;
+    private javax.swing.JButton Book1AddToCart1;
+    private javax.swing.JButton Book1Buy;
+    private javax.swing.JButton Book1Buy1;
+    private javax.swing.JLabel Book1Price;
+    private javax.swing.JLabel Book1Price1;
     private javax.swing.JLabel Book1image;
+    private javax.swing.JLabel Book1image1;
     private javax.swing.JPanel Book2;
+    private javax.swing.JButton Book2AddToCart;
+    private javax.swing.JButton Book2Buy;
+    private javax.swing.JLabel Book2Price;
     private javax.swing.JLabel Book2image;
     private javax.swing.JPanel Book3;
+    private javax.swing.JButton Book3AddToCart;
+    private javax.swing.JButton Book3Buy;
+    private javax.swing.JButton Book3Buy1;
+    private javax.swing.JLabel Book3Price;
     private javax.swing.JLabel Book3image;
     private javax.swing.JPanel Book4;
+    private javax.swing.JButton Book4AddToCart;
+    private javax.swing.JLabel Book4Price;
     private javax.swing.JLabel Book4image;
     private javax.swing.JPanel Book5;
+    private javax.swing.JButton Book5AddToCart;
+    private javax.swing.JButton Book5Buy;
+    private javax.swing.JLabel Book5Price;
     private javax.swing.JLabel Book5image;
     private javax.swing.JPanel Book6;
+    private javax.swing.JButton Book6AddToCart;
+    private javax.swing.JButton Book6Buy;
+    private javax.swing.JLabel Book6Price;
     private javax.swing.JLabel Book6image;
     private javax.swing.JPanel Book7;
+    private javax.swing.JButton Book7AddToCart;
+    private javax.swing.JButton Book7Buy;
+    private javax.swing.JLabel Book7Price;
     private javax.swing.JLabel Book7image;
     private javax.swing.JPanel Book8;
+    private javax.swing.JButton Book8AddToCart;
+    private javax.swing.JButton Book8Buy;
+    private javax.swing.JLabel Book8Price;
     private javax.swing.JLabel Book8image;
+    private javax.swing.JPanel Book9;
+    private javax.swing.JButton BookDashbardbackbutton;
     private javax.swing.JPanel BookMainPannel;
+    private javax.swing.JPanel BookMainPannel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }
