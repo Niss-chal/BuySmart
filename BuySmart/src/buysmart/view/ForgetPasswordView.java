@@ -7,12 +7,10 @@ package buysmart.view;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
-import buysmart.controller.ForgetPasswordController;
-
-import buysmart.controller.OtpService;
 
 
-import java.awt.event.ActionEvent;
+
+
 
 /**
  *
@@ -56,6 +54,7 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         otpButton = new javax.swing.JButton();
         otpBox = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        ClickButton = new javax.swing.JButton();
         ResetPassword = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,6 +70,7 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         Email.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Email.setText("Email");
 
+        CPasswordBox.setEnabled(false);
         CPasswordBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CPasswordBoxActionPerformed(evt);
@@ -80,12 +80,15 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         NewPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NewPassword.setText("New Password");
 
+        NewPasswordBox.setEnabled(false);
+
         ConfirmPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ConfirmPassword.setText("Confirm Password");
 
         Confirm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Confirm.setText("Confirm");
         Confirm.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        Confirm.setEnabled(false);
 
         Back.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Back.setText("Back ");
@@ -94,7 +97,7 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         SecurityQuestion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         SecurityQuestion.setText("Secuity Question");
 
-        SecurityBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is my nickname?", "What is my favourite color?", "When is my birthday?", " ", " " }));
+        SecurityBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is my nickname ?", "What is my favourite color ?", "When is my birthday ?", " ", " " }));
         SecurityBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SecurityBoxActionPerformed(evt);
@@ -117,8 +120,14 @@ public class ForgetPasswordView extends javax.swing.JFrame {
             }
         });
 
+        otpBox.setEnabled(false);
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("OTP");
+
+        ClickButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ClickButton.setText("Click");
+        ClickButton.setEnabled(false);
 
         javax.swing.GroupLayout ResetEmailLayout = new javax.swing.GroupLayout(ResetEmail);
         ResetEmail.setLayout(ResetEmailLayout);
@@ -126,25 +135,6 @@ public class ForgetPasswordView extends javax.swing.JFrame {
             ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ResetEmailLayout.createSequentialGroup()
                 .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ResetEmailLayout.createSequentialGroup()
-                        .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ResetEmailLayout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addComponent(jLabel1)
-                                .addGap(40, 40, 40))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResetEmailLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NewPassword, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(ConfirmPassword, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewPasswordBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CPasswordBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16)
-                        .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CpasswordcheckBox)
-                            .addComponent(NpasswordCheckBox)))
                     .addGroup(ResetEmailLayout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,11 +154,37 @@ public class ForgetPasswordView extends javax.swing.JFrame {
                                 .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(EmailBox, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(SecurityAnswerBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SecurityBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(otpBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(SecurityBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(ResetEmailLayout.createSequentialGroup()
                         .addGap(160, 160, 160)
-                        .addComponent(otpButton)))
+                        .addComponent(otpButton))
+                    .addGroup(ResetEmailLayout.createSequentialGroup()
+                        .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ResetEmailLayout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addComponent(jLabel1)
+                                .addGap(40, 40, 40))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResetEmailLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NewPassword, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ConfirmPassword, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NewPasswordBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CPasswordBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResetEmailLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(otpBox, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(ResetEmailLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CpasswordcheckBox)
+                                    .addComponent(NpasswordCheckBox)))
+                            .addGroup(ResetEmailLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ClickButton, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)))))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
         ResetEmailLayout.setVerticalGroup(
@@ -191,13 +207,13 @@ public class ForgetPasswordView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(otpBox, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(ClickButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ResetEmailLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(ResetEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NpasswordCheckBox, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                            .addComponent(NpasswordCheckBox, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                             .addGroup(ResetEmailLayout.createSequentialGroup()
                                 .addComponent(NewPassword)
                                 .addGap(0, 0, Short.MAX_VALUE)))
@@ -308,6 +324,7 @@ public class ForgetPasswordView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JPasswordField CPasswordBox;
+    private javax.swing.JButton ClickButton;
     private javax.swing.JButton Confirm;
     private javax.swing.JLabel ConfirmPassword;
     private javax.swing.JCheckBox CpasswordcheckBox;
@@ -334,11 +351,18 @@ public class ForgetPasswordView extends javax.swing.JFrame {
     public javax.swing.JTextField getemail() {
         return EmailBox;
     }
+    public javax.swing.JComboBox<String> getSecurityBox(){
+        return SecurityBox;
+    }
+    
     public javax.swing.JTextField getotpBox(){
         return otpBox;
     }
     public javax.swing.JButton getotpButton(){
         return otpButton;
+    }
+    public javax.swing.JButton getClickButton(){
+        return ClickButton;
     }
 
     public javax.swing.JTextField getanswer() {
@@ -375,7 +399,19 @@ public class ForgetPasswordView extends javax.swing.JFrame {
     public void loginBack(ActionListener listener) {
         Back.addActionListener(listener);
     }
-
- 
-    
+    public void sendOtpListener(ActionListener listener){
+        otpButton.addActionListener(listener);
     }
+    public void verifyOtpListener(ActionListener listener){
+      ClickButton.addActionListener(listener);  
+    }
+    public void enableOtpInputs(){
+        otpBox.setEnabled(true);
+        ClickButton.setEnabled(true);
+    }
+    public void enablePasswordInputs(){
+        NewPasswordBox.setEnabled(true);
+        CPasswordBox.setEnabled(true);
+        Confirm.setEnabled(true);
+    }
+}
