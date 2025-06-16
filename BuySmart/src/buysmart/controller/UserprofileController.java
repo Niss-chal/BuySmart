@@ -4,16 +4,16 @@
  */
 package buysmart.controller;
 
-import buysmart.view.UserprofileView;
+import buysmart.view.userprofileview;
 
 /**
  *
  * @author loq
  */
 public class UserprofileController { 
-    private UserprofileView view;
+    private userprofileview view;
 
-    public UserprofileController(UserprofileView view){
+    public UserprofileController(userprofileview view){
         this.view = view;
     }
 
