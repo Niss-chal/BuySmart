@@ -94,6 +94,14 @@ public class UserModel {
     public void setSecurityAnswer(String securityAnswer) {
         this.securityAnswer = securityAnswer;
     }
+    
+    public UserModel(String username, String email, String address, String contact){
+        this.username = username;
+        this.email=email;
+        this.address=address;
+        this.contact=contact;
+    }
+    
 }
     
 
