@@ -30,7 +30,6 @@ public class ForgotPasswordController {
         this.view.getNpasswordCheckbox().addActionListener(new ToggleNewPassword());
         this.view.getCpasswordCheckbox().addActionListener(new ToggleConfirmPassword());
 
-    }
 
     public void open() {
         view.setVisible(true);

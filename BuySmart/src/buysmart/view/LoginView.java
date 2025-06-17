@@ -73,11 +73,6 @@ public class LoginView extends javax.swing.JFrame {
         Password_Label.setText("Password");
 
         ShowPassword.setText("Show ");
-        ShowPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowPasswordActionPerformed(evt);
-            }
-        });
 
         signUp.setText("Don't have an account register?");
 
@@ -197,15 +192,6 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordFieldActionPerformed
 
-    private void ShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowPasswordActionPerformed
-    if (ShowPassword.isSelected()) {
-        PasswordField.setEchoChar((char) 0); // Show password
-    } else {
-        PasswordField.setEchoChar('●'); // Mask password
-      // TODO add your handling code here:
-    }        // TODO add your handling code here:
-    }//GEN-LAST:event_ShowPasswordActionPerformed
-
     private void emailLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailLoginActionPerformed
@@ -286,5 +272,13 @@ public void forgotPassword(MouseListener listener){
 
 public void SignIn(MouseListener listener){
     signUp.addMouseListener(listener);
+}
+
+public javax.swing.JCheckBox ShowPassword(){
+    return ShowPassword;
+}
+
+public void addPasswordToggleListeners (ActionListener listener){
+    ShowPassword.addActionListener(listener); 
 }
 }
