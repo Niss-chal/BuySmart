@@ -11,7 +11,8 @@
 
 package buysmart.dao;
 
-//import javax.swing.JOptionPane;
+
+
 
 import buysmart.database.MysqlConnection1;
 import buysmart.model.UserModel;
@@ -22,7 +23,7 @@ import java.sql.SQLException;
 
 public class UserDAO {
     
-    public static boolean registerUser(UserModel usermodel) throws SQLException {
+    public boolean registerUser(UserModel usermodel) throws SQLException {
         
         String sql = "INSERT INTO users (username, email, password, contact, address, gender, security_question, security_answer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package buysmart.controller;
+import buysmart.dao.UserDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,6 +21,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import buysmart.database.MysqlConnection1;
+import buysmart.model.UserModel;
 
 
 /**
@@ -60,24 +62,20 @@ if(email.isEmpty() || password.isEmpty()){
     JOptionPane.showMessageDialog(view, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
 } else {
     try {
-        Connection conn = MysqlConnection1.getConnection();
-        String query = "SELECT * FROM users WHERE email = ? AND password = ?";
-        PreparedStatement ps = conn.prepareStatement(query);
-        ps.setString(1, email);
-        ps.setString(2, password);
-        ResultSet rs = ps.executeQuery();
-
-        if (rs.next()) {
+        UserDAO dao = new UserDAO();
+        UserModel usermodel = dao.loginUser(email, password);
+ 
+        if (usermodel!=null) {
+            String username = usermodel.getUsername();
             JOptionPane.showMessageDialog(view, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE);
             Dashboard dashboard = new Dashboard();
-            DashboardController dashboardController = new DashboardController(dashboard);
+            DashboardController dashboardController = new DashboardController(dashboard,username);
             dashboardController.open();
             close();
         } else {
             JOptionPane.showMessageDialog(view, "Invalid Email or Password", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
-        conn.close();
     } catch (Exception ex) {
         ex.printStackTrace();
         JOptionPane.showMessageDialog(view, "Database Error", "Error", JOptionPane.ERROR_MESSAGE);
