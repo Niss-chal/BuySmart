@@ -364,7 +364,9 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         return NewPasswordBox;
     }
 
-   
+   public javax.swing.JPasswordField getconfirmpass(){
+       return CPasswordBox;
+   }
 
    
     
