@@ -4,9 +4,17 @@
  */
 package buysmart.view;
 
+import buysmart.dao.ProductDAO;
+import buysmart.model.ProductModel;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.util.List;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+import java.sql.SQLException;
+import javax.swing.JLabel;
+import javax.swing.JTable;
 
 /**
  *
@@ -18,6 +26,8 @@ public class CartManage extends javax.swing.JFrame {
      * Creates new form CartManage
      */
     public CartManage() {
+        deleteButton = new JButton("Delete Selected");
+        add(deleteButton); // Add to layout appropriately
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
@@ -37,7 +47,8 @@ public class CartManage extends javax.swing.JFrame {
         cartLogo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        CartTable = new javax.swing.JTable();
+        deleteButton = new javax.swing.JButton();
         cartcheckoutCalculate = new javax.swing.JPanel();
         userLocationGet = new javax.swing.JTextField();
         paymentOptionDrop = new javax.swing.JComboBox<>();
@@ -101,7 +112,7 @@ public class CartManage extends javax.swing.JFrame {
                 .addComponent(cartLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
                 .addComponent(cartLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         cartLogoutPanelLayout.setVerticalGroup(
             cartLogoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,40 +127,65 @@ public class CartManage extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        CartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Product", "Quantity", "Amount"
+                "description", "price"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.String.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(CartTable);
+
+        deleteButton.setBackground(new java.awt.Color(153, 204, 255));
+        deleteButton.setText("Delete");
+        deleteButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
+        deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteButtonMouseExited(evt);
+            }
+        });
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 702, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(293, 293, 293)
+                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(296, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 493, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(425, Short.MAX_VALUE)
+                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 80, Short.MAX_VALUE)))
         );
 
         cartcheckoutCalculate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
@@ -359,6 +395,18 @@ public class CartManage extends javax.swing.JFrame {
         cartBackButton.setBackground(new Color(153,204,255));// TODO add your handling code here:
     }//GEN-LAST:event_cartBackButtonMouseExited
 
+    private void deleteButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonMouseEntered
+
+    private void deleteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonMouseExited
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -395,15 +443,16 @@ public class CartManage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable CartTable;
     private javax.swing.JButton cartBackButton;
     private javax.swing.JLabel cartLogo;
     private javax.swing.JButton cartLogoutButton;
     private javax.swing.JPanel cartLogoutPanel;
     private javax.swing.JPanel cartcheckoutCalculate;
     private javax.swing.JLabel cartcheckoutSign;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel moneyWalletIndicator;
     private javax.swing.JLabel moneyYouHave;
     private javax.swing.JLabel paymentIndicator;
@@ -414,10 +463,68 @@ public class CartManage extends javax.swing.JFrame {
     private javax.swing.JTextField userLocationGet;
     private javax.swing.JLabel userLocationIndicator;
     // End of variables declaration//GEN-END:variables
-public void logout(ActionListener listener){ 
-    cartLogoutButton.addActionListener(listener);
-}
-public void back(ActionListener listener){
-    cartBackButton.addActionListener(listener);
-}
+public void loadCartData() {
+        try {
+            DefaultTableModel model = (DefaultTableModel) CartTable.getModel();
+            model.setRowCount(0); // Clear existing rows
+            List<ProductModel> cartItems = ProductDAO.getCartItems();
+            for (ProductModel item : cartItems) {
+                model.addRow(new Object[]{item.getDescription(), item.getPrice()});
+            }
+            
+            // Update total money count
+            updateTotalPrice();
+        } catch (SQLException e) {
+            System.out.println("Error loading cart data: " + e.getMessage());
+        } 
+    }
+    
+    // Calculate total price from CartTable
+    public double calculateTotalPrice() {
+        DefaultTableModel model = (DefaultTableModel) CartTable.getModel();
+        double total = 0.0;
+        for (int i = 0; i < model.getRowCount(); i++) {
+            Object priceObj = model.getValueAt(i, 1); // Price is in column 1
+            if (priceObj instanceof Double) {
+                total += (Double) priceObj;
+            }
+        }
+        return total;
+    }
+
+    // Update total price label
+    public void updateTotalPrice() {
+        double total = calculateTotalPrice();
+        totalMoneyCount.setText("Rs. " + String.format("%.2f", total));
+    }
+    public void logout(ActionListener listener) {
+        cartLogoutButton.addActionListener(listener);
+    }
+
+    public void back(ActionListener listener) {
+        cartBackButton.addActionListener(listener);
+    }
+    
+    // Getter methods for buttons
+    public JButton getCartBackButton() {
+        return cartBackButton;
+    }
+
+    public JButton getCartLogoutButton() {
+        return cartLogoutButton;
+    }
+
+    public JButton getPlaceOrderButton() {
+        return placeOrderButton;
+    }
+    public JButton getDeleteButton() {
+    return deleteButton;
+    }
+
+    public JTable getCartTable() {
+    return CartTable;
+    }
+    public JLabel getTotalMoneyCount() {
+        return totalMoneyCount;
+    }
 }

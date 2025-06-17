@@ -25,12 +25,37 @@ public class Dashboard extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         cartButtons = new JButton[] {
-        ProductAddToCartButton, ProductAddToCartButton1, ProductAddToCartButton2, 
-        ProductAddToCartButton3, ProductAddToCartButton4
-    };
+            ProductAddToCartButton, ProductAddToCartButton1, ProductAddToCartButton2, 
+            ProductAddToCartButton3, ProductAddToCartButton4
+        };
 
         productController = new ProductController(this);
         productController.loadProduct();
+    }
+    // Getter methods for Add to Cart buttons
+    public JButton getProductAddToCartButton() {
+        return ProductAddToCartButton;
+    }
+
+    public JButton getProductAddToCartButton1() {
+        return ProductAddToCartButton1;
+    }
+
+    public JButton getProductAddToCartButton2() {
+        return ProductAddToCartButton2;
+    }
+
+    public JButton getProductAddToCartButton3() {
+        return ProductAddToCartButton3;
+    }
+
+    public JButton getProductAddToCartButton4() {
+        return ProductAddToCartButton4;
+    }
+
+    // Getter for cartButtons array
+    public JButton[] getCartButtons() {
+        return cartButtons;
     }
     
     /**

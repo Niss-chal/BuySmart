@@ -9,6 +9,9 @@ import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -19,25 +22,37 @@ import java.awt.event.ActionListener;
 public class CartManageController {
     private CartManage cartmanage;
 
-    public CartManageController(CartManage cartmanage){
-        this.cartmanage=cartmanage;
-        Logout logout = new Logout();
-        this.cartmanage.logout(logout);
-        Back back = new Back();
-        this.cartmanage.back(back);
+    public CartManageController(CartManage cartmanage) {
+    this.cartmanage = cartmanage;
+    Logout logout = new Logout();
+    this.cartmanage.logout(logout);
+    Back back = new Back();
+    this.cartmanage.back(back);
+    this.cartmanage.getDeleteButton().addActionListener(new DeleteRowAction());
+    cartmanage.loadCartData(); // Load initial data
 }
 
+// Add a method to refresh cart (call this after adding items if needed)
+    public void refreshCart() {
+    cartmanage.loadCartData();
+}
     public void open(){
         cartmanage.setVisible(true);
+        refreshCart();
     }
 
     public void close(){
         cartmanage.dispose();
     }
+    private void clearCart() {
+        cartmanage.getTotalMoneyCount().setText("Rs. 0.00"); // Update total to reflect empty cart
+    }
+    
     class Logout implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            clearCart();
             cartmanage.dispose();
             LoginView loginview = new LoginView();
             LoginController loginController = new LoginController(loginview);
@@ -56,4 +71,18 @@ public class CartManageController {
             
         }
     }
+    class DeleteRowAction implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JTable table = cartmanage.getCartTable();
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        int selectedRow = table.getSelectedRow();
+
+        if (selectedRow != -1) {
+            model.removeRow(selectedRow);
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row to delete.");
+        }
+    }
+}
 }
