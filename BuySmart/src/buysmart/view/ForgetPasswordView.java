@@ -368,9 +368,16 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         return CPasswordBox;
     }
 
+
     public javax.swing.JCheckBox getNpasswordCheckbox() {
         return NpasswordCheckBox;
-    }
+
+    
+    
+    
+    
+    
+    
 
     public javax.swing.JCheckBox getCpasswordCheckbox() {
         return CpasswordcheckBox;

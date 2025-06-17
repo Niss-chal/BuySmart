@@ -4,15 +4,9 @@
  */
 
 
-/**
- *
- * @author fahmi
- */
-
 package buysmart.dao;
 
 //import javax.swing.JOptionPane;
-
 import buysmart.database.MysqlConnection1;
 import buysmart.model.UserModel;
 import java.sql.Connection;
@@ -49,7 +43,7 @@ public class UserDAO {
         }
     }
     }
-    
+
 //    public static void main(String[] args) {
 //    try (Connection conn = MysqlConnection1.getConnection()) {
 //        JOptionPane.showMessageDialog(null, "database connect bhayo mazzale");
@@ -88,7 +82,5 @@ public boolean updatePassword(String email,String newPassword){
     }
 }
 }
-
-
 
 

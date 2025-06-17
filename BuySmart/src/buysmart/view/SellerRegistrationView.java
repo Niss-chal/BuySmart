@@ -302,7 +302,9 @@ public class SellerRegistrationView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
+
     public javax.swing.JLabel getBusinessname(){
+
         return BusinessName3;
     }
     public javax.swing.JTextField getBusinessnameField(){
@@ -337,3 +339,4 @@ public class SellerRegistrationView extends javax.swing.JFrame {
     }
     
 }
+
