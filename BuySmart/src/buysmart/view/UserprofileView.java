@@ -4,6 +4,8 @@
  */
 package buysmart.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author loq
@@ -15,6 +17,7 @@ public class UserprofileView extends javax.swing.JFrame {
      */
     public UserprofileView() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -32,7 +35,6 @@ public class UserprofileView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         emailupdatebox = new javax.swing.JTextField();
         addressupdatebox = new javax.swing.JTextField();
-        passwordupdatebox = new javax.swing.JTextField();
         changeprofilebutton = new javax.swing.JButton();
         deleteaccbutton = new javax.swing.JButton();
         changepassbutton = new javax.swing.JButton();
@@ -41,9 +43,8 @@ public class UserprofileView extends javax.swing.JFrame {
         Username = new javax.swing.JLabel();
         Email1 = new javax.swing.JLabel();
         ContactNumber3 = new javax.swing.JLabel();
-        Password = new javax.swing.JLabel();
         BusinessAddress3 = new javax.swing.JLabel();
-        contactupdatebox1 = new javax.swing.JTextField();
+        contactupdatebox = new javax.swing.JTextField();
 
         jMenu1.setText("jMenu1");
 
@@ -61,8 +62,6 @@ public class UserprofileView extends javax.swing.JFrame {
         emailupdatebox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         addressupdatebox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        passwordupdatebox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         changeprofilebutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         changeprofilebutton.setText("Change Profile ");
@@ -108,13 +107,10 @@ public class UserprofileView extends javax.swing.JFrame {
         ContactNumber3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         ContactNumber3.setText("Contact Number");
 
-        Password.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        Password.setText("Password");
-
         BusinessAddress3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         BusinessAddress3.setText("Address");
 
-        contactupdatebox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        contactupdatebox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -123,9 +119,9 @@ public class UserprofileView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(changeprofilebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                 .addComponent(changepassbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(25, 25, 25))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -134,21 +130,19 @@ public class UserprofileView extends javax.swing.JFrame {
                             .addComponent(ContactNumber3)
                             .addComponent(Username)
                             .addComponent(BusinessAddress3)
-                            .addComponent(Email1)
-                            .addComponent(Password))
+                            .addComponent(Email1))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nameupdatebox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailupdatebox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addressupdatebox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(contactupdatebox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordupdatebox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(deleteaccbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(contactupdatebox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(166, 166, 166)
-                        .addComponent(jLabel2)))
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(deleteaccbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -171,19 +165,15 @@ public class UserprofileView extends javax.swing.JFrame {
                             .addComponent(addressupdatebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BusinessAddress3))
                         .addGap(18, 18, 18)
-                        .addComponent(contactupdatebox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(contactupdatebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(ContactNumber3))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(passwordupdatebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Password))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addGap(75, 75, 75)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(changeprofilebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(changepassbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(63, 63, 63)
                 .addComponent(deleteaccbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -286,12 +276,11 @@ public class UserprofileView extends javax.swing.JFrame {
     private javax.swing.JLabel BusinessAddress3;
     private javax.swing.JLabel ContactNumber3;
     private javax.swing.JLabel Email1;
-    private javax.swing.JLabel Password;
     private javax.swing.JLabel Username;
     private javax.swing.JTextField addressupdatebox;
     private javax.swing.JButton changepassbutton;
     private javax.swing.JButton changeprofilebutton;
-    private javax.swing.JTextField contactupdatebox1;
+    private javax.swing.JTextField contactupdatebox;
     private javax.swing.JButton deleteaccbutton;
     private javax.swing.JTextField emailupdatebox;
     private javax.swing.JButton jButton1;
@@ -300,6 +289,23 @@ public class UserprofileView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField nameupdatebox;
-    private javax.swing.JTextField passwordupdatebox;
     // End of variables declaration//GEN-END:variables
+
+    public javax.swing.JTextField getUpdatename(){
+        return nameupdatebox;
+    }
+    
+    public javax.swing.JTextField getUpdateemail(){
+        return emailupdatebox;
+    }
+    
+    public javax.swing.JTextField getUpdateaddress(){
+        return addressupdatebox;
+    }
+    
+    public javax.swing.JTextField getUpdatecontact(){
+        return contactupdatebox;
+    }
+
+
 }

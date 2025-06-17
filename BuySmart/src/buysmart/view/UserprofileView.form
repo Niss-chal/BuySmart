@@ -106,12 +106,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="changeprofilebutton" min="-2" pref="170" max="-2" attributes="0"/>
-                      <EmptySpace pref="119" max="32767" attributes="0"/>
+                      <EmptySpace pref="113" max="32767" attributes="0"/>
                       <Component id="changepassbutton" min="-2" pref="170" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -122,24 +122,22 @@
                                   <Component id="Username" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="BusinessAddress3" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="Email1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Password" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="nameupdatebox" min="-2" pref="200" max="-2" attributes="0"/>
                                   <Component id="emailupdatebox" min="-2" pref="200" max="-2" attributes="0"/>
                                   <Component id="addressupdatebox" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="contactupdatebox1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="passwordupdatebox" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="contactupdatebox" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                              <Component id="deleteaccbutton" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                              <Component id="deleteaccbutton" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -169,23 +167,18 @@
                                   <Component id="BusinessAddress3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="contactupdatebox1" min="-2" max="-2" attributes="0"/>
+                              <Component id="contactupdatebox" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="ContactNumber3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="passwordupdatebox" min="-2" max="-2" attributes="0"/>
-                          <Component id="Password" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="103" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="changeprofilebutton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="changepassbutton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Component id="deleteaccbutton" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <EmptySpace pref="63" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -199,13 +192,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="addressupdatebox">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="passwordupdatebox">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -288,14 +274,6 @@
                 <Property name="text" type="java.lang.String" value="Contact Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Password">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Password"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="BusinessAddress3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -304,7 +282,7 @@
                 <Property name="text" type="java.lang.String" value="Address"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="contactupdatebox1">
+            <Component class="javax.swing.JTextField" name="contactupdatebox">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
