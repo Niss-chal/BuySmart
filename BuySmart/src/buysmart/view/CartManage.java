@@ -7,7 +7,7 @@ package buysmart.view;
 import buysmart.dao.ProductDAO;
 import buysmart.model.ProductModel;
 import java.awt.Color;
-import java.awt.Component;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -18,8 +18,6 @@ import java.sql.SQLException;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
 
 /**
  *
@@ -220,9 +218,7 @@ public class CartManage extends javax.swing.JFrame {
                 .addComponent(DecreaseQuantityButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -577,6 +573,15 @@ public void loadCartData() {
             System.out.println("Error loading cart data: " + e.getMessage());
         }
     }
+    public void customizeTableHeader() {
+        CartTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
+        DefaultTableModel model = (DefaultTableModel) CartTable.getModel();
+        String[] headers = new String[model.getColumnCount()];
+        for (int i = 0; i < model.getColumnCount(); i++) {
+            headers[i] = model.getColumnName(i).toUpperCase();
+        }
+        model.setColumnIdentifiers(headers);
+    }
 
     private void updateQuantity(String description, double price, int newQuantity) {
         try {
@@ -609,7 +614,7 @@ public void loadCartData() {
         }
         return total;
     }
-
+   
     // Update total price label
     public void updateTotalPrice() {
         double total = calculateTotalPrice();
