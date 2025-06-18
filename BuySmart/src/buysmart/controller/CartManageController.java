@@ -4,6 +4,7 @@
  */
 package buysmart.controller;
 
+import buysmart.dao.ProductDAO;
 import buysmart.view.CartManage;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
@@ -52,14 +53,19 @@ public class CartManageController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            clearCart();
+        try {
+            ProductDAO.clearCart(); // Clear database cart
+            clearCart(); // Reset UI total
             cartmanage.dispose();
             LoginView loginview = new LoginView();
             LoginController loginController = new LoginController(loginview);
             loginController.open();
-            
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error clearing cart: " + ex.getMessage());
         }
+    }
 }
+
     class Back implements ActionListener{
 
         @Override
@@ -79,10 +85,21 @@ public class CartManageController {
         int selectedRow = table.getSelectedRow();
 
         if (selectedRow != -1) {
-            model.removeRow(selectedRow);
+            String description = (String) model.getValueAt(selectedRow, 0);
+            double price = (Double) model.getValueAt(selectedRow, 1);
+            try {
+                // Delete from database
+                ProductDAO.deleteCartItem(description, price);
+                // Remove from table
+                model.removeRow(selectedRow);
+                // Update total price
+                cartmanage.updateTotalPrice();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Error deleting item: " + ex.getMessage());
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Please select a row to delete.");
         }
     }
-}
+    }
 }
