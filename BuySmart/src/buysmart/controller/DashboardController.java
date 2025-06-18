@@ -24,14 +24,7 @@ public class DashboardController {
     public DashboardController(Dashboard dashboard){
         this.dashboard=dashboard;
         
-        Logout logout = new Logout();
-        this.dashboard.logout(logout);
         
-        Cart cart = new Cart();
-        this.dashboard.cart(cart);
-        
-        AddCart addCart = new AddCart();
-        this.dashboard.addCart(addCart);
                 
     }
 
