@@ -32,10 +32,12 @@ public class CartManageController {
         this.cartmanage.getIncreaseQuantityButton().addActionListener(new IncreaseQuantityAction());
         this.cartmanage.getDecreaseQuantityButton().addActionListener(new DecreaseQuantityAction());
         cartmanage.loadCartData(); // Load initial data
+        cartmanage.customizeTableHeader();
     }
 
     public void refreshCart() {
         cartmanage.loadCartData();
+        cartmanage.customizeTableHeader();
     }
 
     public void open() {
@@ -91,6 +93,7 @@ public class CartManageController {
                     ProductDAO.deleteCartItem(description, price);
                     model.removeRow(selectedRow);
                     cartmanage.updateTotalPrice();
+                    cartmanage.customizeTableHeader();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Error deleting item: " + ex.getMessage());
                 }
@@ -114,6 +117,7 @@ public class CartManageController {
                 try {
                     ProductDAO.updateCartItemQuantity(description, price, currentQuantity + 1);
                     cartmanage.loadCartData(); // Refresh table and total price
+                    cartmanage.customizeTableHeader();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Error increasing quantity: " + ex.getMessage());
                 }
@@ -141,6 +145,7 @@ public class CartManageController {
                         ProductDAO.deleteCartItem(description, price);
                     }
                     cartmanage.loadCartData(); // Refresh table and total price
+                    cartmanage.customizeTableHeader();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Error decreasing quantity: " + ex.getMessage());
                 }
