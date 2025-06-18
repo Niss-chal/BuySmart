@@ -4,9 +4,11 @@
  */
 package buysmart.view;
 
+import buysmart.controller.ProductController;
 import java.awt.Color;
 
 import javax.swing.JFrame;
+
 
 
 
@@ -16,6 +18,7 @@ import javax.swing.JFrame;
  */
 public class Dashboard extends javax.swing.JFrame {
     
+    private ProductController productController;
 
     /**
      * Creates new form Dashboard
@@ -23,6 +26,8 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        productController = new ProductController(this);
+        productController.loadProduct();
         
     }
 
@@ -964,7 +969,76 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel wishlistIcon;
     // End of variables declaration//GEN-END:variables
 
+    public javax.swing.JLabel getcartIcon() {
+    return cartIcon;
+    }
     
+    //Product1 added
+    public javax.swing.JLabel getPicProduct() {
+        return PicProduct;
+    }
+
+    public javax.swing.JLabel getDescriptionProductCard() {
+        return DescriptionProductCard;
+    }
+
+    public javax.swing.JLabel getProductCardPrice() {
+        return ProductCardPrice;
+    }
+    
+    //Product2 added
+    public javax.swing.JLabel getPicProduct1() {
+        return PicProduct1;
+    }
+
+    public javax.swing.JLabel getDescriptionProductCard1() {
+        return DescriptionProductCard1;
+    }
+
+    public javax.swing.JLabel getProductCardPrice1() {
+        return ProductCardPrice1;
+    }
+
+    
+    //Product3 added
+    public javax.swing.JLabel getPicProduct2() {
+        return PicProduct2;
+    }
+
+    public javax.swing.JLabel getDescriptionProductCard2() {
+        return DescriptionProductCard2;
+    }
+
+    public javax.swing.JLabel getProductCardPrice2() {
+        return ProductCardPrice2;
+    }
+    
+    
+    //Product4 added
+    public javax.swing.JLabel getPicProduct3() {
+        return PicProduct3;
+    }
+
+    public javax.swing.JLabel getDescriptionProductCard3() {
+        return DescriptionProductCard3;
+    }
+
+    public javax.swing.JLabel getProductCardPrice3() {
+        return ProductCardPrice3;
+    }
+    
+    //Product4 added
+    public javax.swing.JLabel getPicProduct4() {
+        return PicProduct4;
+    }
+
+    public javax.swing.JLabel getDescriptionProductCard4() {
+        return DescriptionProductCard4;
+    }
+
+    public javax.swing.JLabel getProductCardPrice4() {
+        return ProductCardPrice4;
+    }
     
     
     
