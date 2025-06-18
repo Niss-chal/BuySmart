@@ -4,6 +4,7 @@
  */
 package buysmart.view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 /**
@@ -46,7 +47,7 @@ public class Profileview extends javax.swing.JFrame {
         Password = new javax.swing.JLabel();
         ContactNumber3 = new javax.swing.JLabel();
         PanNumber3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        backDashboard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -189,8 +190,8 @@ public class Profileview extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton2.setText("Back");
+        backDashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        backDashboard.setText("Back");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -200,7 +201,7 @@ public class Profileview extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(backDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(284, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -210,7 +211,7 @@ public class Profileview extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(95, Short.MAX_VALUE))
@@ -289,12 +290,12 @@ public class Profileview extends javax.swing.JFrame {
     private javax.swing.JLabel Password;
     private javax.swing.JLabel Username;
     private javax.swing.JTextField addressupdatebox;
+    private javax.swing.JButton backDashboard;
     private javax.swing.JButton changepassbutton;
     private javax.swing.JButton changeprofilebutton;
     private javax.swing.JTextField contactupdatebox;
     private javax.swing.JButton deleteaccbutton;
     private javax.swing.JTextField emailupdatebox;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -316,5 +317,9 @@ public javax.swing.JTextField getUpdateaddress(){
 
 public javax.swing.JTextField getUpdatecontact(){
     return contactupdatebox;
+}
+
+public void backDashboard(ActionListener listener){
+    backDashboard.addActionListener(listener);    
 }
 }

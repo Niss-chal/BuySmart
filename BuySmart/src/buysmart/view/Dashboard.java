@@ -6,9 +6,14 @@ package buysmart.view;
 
 import buysmart.controller.ProductController;
 import java.awt.Color;
+<<<<<<< HEAD
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
+=======
+import java.awt.event.MouseListener;
+
+>>>>>>> 2948974 (minor changes and integrated with other controllers)
 import javax.swing.JFrame;
 
 
@@ -84,7 +89,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         logoutPanel1 = new javax.swing.JPanel();
         buttonLogout = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        userProfile = new javax.swing.JLabel();
         dashboardLogo = new javax.swing.JLabel();
         statusPanel2 = new javax.swing.JPanel();
         buttonPanel3 = new javax.swing.JPanel();
@@ -266,8 +271,16 @@ public class Dashboard extends javax.swing.JFrame {
         buttonLogout.setBackground(new java.awt.Color(153, 204, 255));
         buttonLogout.setText("Logout");
         buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+<<<<<<< HEAD
+=======
+        buttonLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogoutActionPerformed(evt);
+            }
+        });
+>>>>>>> 2948974 (minor changes and integrated with other controllers)
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/user (1).png"))); // NOI18N
+        userProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/user (1).png"))); // NOI18N
 
         dashboardLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/logo40.png"))); // NOI18N
 
@@ -280,9 +293,15 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(dashboardLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
                 .addGap(15, 15, 15))
+=======
+                .addGap(30, 30, 30)
+                .addComponent(userProfile)
+                .addGap(50, 50, 50))
+>>>>>>> 2948974 (minor changes and integrated with other controllers)
         );
         logoutPanel1Layout.setVerticalGroup(
             logoutPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,7 +315,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(logoutPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel1)
+                .addComponent(userProfile)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -997,7 +1016,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton buttonToys;
     private javax.swing.JLabel cartIcon;
     private javax.swing.JLabel dashboardLogo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1020,6 +1038,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField searchField;
     private javax.swing.JLabel searchIcon;
     private javax.swing.JPanel statusPanel2;
+    private javax.swing.JLabel userProfile;
     private javax.swing.JLabel wishlistIcon;
     // End of variables declaration//GEN-END:variables
 public void logout(ActionListener listener){ // Logoutbutton function
@@ -1102,5 +1121,10 @@ public javax.swing.JLabel getDescriptionProductCard4() {
 public javax.swing.JLabel getProductCardPrice4() {
     return ProductCardPrice4;
 }
+    
+    public void openProfile(MouseListener listener){
+    userProfile.addMouseListener(listener); 
+}
+    
     
 }

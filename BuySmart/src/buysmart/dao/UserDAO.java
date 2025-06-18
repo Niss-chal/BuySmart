@@ -51,13 +51,30 @@ public class UserDAO {
     }
     }
     
-//    public static void main(String[] args) {
-//    try (Connection conn = MysqlConnection1.getConnection()) {
-//        JOptionPane.showMessageDialog(null, "database connect bhayo mazzale");
-//    } catch (SQLException e) {
-//        JOptionPane.showMessageDialog(null, "Connection bhayena: " + e.getMessage());
-//    }
-//}
+    public UserModel loginUser(String email, String password) throws SQLException {
+    String query = "SELECT * FROM users WHERE email = ? AND password = ?";
+    try (Connection conn = MysqlConnection1.getConnection();
+         PreparedStatement ps = conn.prepareStatement(query)) {
+        ps.setString(1, email);
+        ps.setString(2, password);
+        try (ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+                return new UserModel(
+                    rs.getString("username"),
+                    rs.getString("email"),
+                    rs.getString("password"),
+                    rs.getString("contact"),
+                    rs.getString("address"),
+                    rs.getString("gender"),
+                    rs.getString("security_question"),
+                    rs.getString("security_answer")
+                );
+            }
+        }
+    }
+    return null; 
+}
+    
 public boolean validateSecurityAnswer(String email,String security_question,String security_answer){
     try(Connection conn=MysqlConnection1.getConnection()){
         String query="SELECT * FROM users WHERE " +

@@ -9,6 +9,7 @@ import buysmart.model.ProductModel;
 import buysmart.view.CartManage;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
+import buysmart.view.Profileview;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -25,6 +26,7 @@ import javax.swing.JOptionPane;
 public class DashboardController {
     private Dashboard dashboard;
     private List<ProductModel> products; // Store products for mapping buttons
+    private String username;
 
     public DashboardController(Dashboard dashboard) {
         this.dashboard = dashboard;
@@ -47,7 +49,15 @@ public class DashboardController {
         this.dashboard.addCart(addCart);
     }
 
-    public void open() {
+    
+    public DashboardController(Dashboard dashboard,String username){
+        this.dashboard=dashboard;
+        this.username=username;
+        OpenProfile openProfile = new OpenProfile();
+        this.dashboard.openProfile(openProfile);      
+    }
+
+    public void open(){
         dashboard.setVisible(true);
     }
 
@@ -143,6 +153,35 @@ public class DashboardController {
         public void mouseExited(MouseEvent e) {
         }
     }
+    
+     class OpenProfile implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            dashboard.setVisible(false);
+            Profileview userprofileview = new Profileview();
+            UserprofileController userprofilecontroller = new UserprofileController(userprofileview,username);
+            userprofilecontroller.open();
+            
+        }
+        
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+    
+    }
 }
 
-    
+
