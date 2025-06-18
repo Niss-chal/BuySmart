@@ -110,13 +110,11 @@ if(email.isEmpty() || password.isEmpty()){
         @Override
         public void mousePressed(MouseEvent e) {
             // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'mousePressed'");
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
             // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'mouseReleased'");
         }
 
         
