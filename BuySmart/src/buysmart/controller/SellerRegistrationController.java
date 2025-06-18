@@ -4,10 +4,7 @@
  */
 package buysmart.controller;
 
-/**
- *
- * @author user
- */
+
 import buysmart.view.SellerRegistrationView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

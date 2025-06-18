@@ -97,7 +97,7 @@ if(email.isEmpty() || password.isEmpty()){
         public void mouseClicked(MouseEvent e) {
             view.dispose();
             ForgetPasswordView forgotpassword = new ForgetPasswordView();
-            ForgotPasswordController forgotController = new ForgotPasswordController(forgotpassword);
+            ForgetPasswordController forgotController = new ForgetPasswordController(forgotpassword);
             forgotController.open();
             
         }

@@ -1,6 +1,4 @@
 /*
- * Click nbfs://SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package buysmart.dao;
 
@@ -34,11 +32,16 @@ public class ProductDAO {
             }
             return products;
         } catch (SQLException e) {
+
             System.err.println("Database Error in getProducts: " + e.getMessage());
+
+            System.out.println("Database Error in getProducts: " + e.getMessage());
+
             throw e;
         }
     }
     
+
     public static void addToCart(String description, double price, int quantity) throws SQLException {
         System.out.println("Attempting to add to cart: " + description + ", " + price + ", Quantity: " + quantity);
         String sqlCheck = "SELECT quantity FROM cart WHERE description = ? AND price = ?";
@@ -158,4 +161,5 @@ public class ProductDAO {
         }
     }
 }
+
 
