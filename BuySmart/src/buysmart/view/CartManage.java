@@ -7,6 +7,8 @@ package buysmart.view;
 import buysmart.dao.ProductDAO;
 import buysmart.model.ProductModel;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JButton;
@@ -14,7 +16,10 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import java.sql.SQLException;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 /**
  *
@@ -49,6 +54,8 @@ public class CartManage extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         CartTable = new javax.swing.JTable();
         deleteButton = new javax.swing.JButton();
+        DecreaseQuantityButton = new javax.swing.JButton();
+        IncreaseQuantityButton = new javax.swing.JButton();
         cartcheckoutCalculate = new javax.swing.JPanel();
         userLocationGet = new javax.swing.JTextField();
         paymentOptionDrop = new javax.swing.JComboBox<>();
@@ -127,19 +134,20 @@ public class CartManage extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
+        CartTable.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         CartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "description", "price"
+                "description", "price", "quantity"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -165,22 +173,65 @@ public class CartManage extends javax.swing.JFrame {
             }
         });
 
+        DecreaseQuantityButton.setBackground(new java.awt.Color(153, 204, 255));
+        DecreaseQuantityButton.setText("-");
+        DecreaseQuantityButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
+        DecreaseQuantityButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DecreaseQuantityButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DecreaseQuantityButtonMouseExited(evt);
+            }
+        });
+        DecreaseQuantityButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DecreaseQuantityButtonActionPerformed(evt);
+            }
+        });
+
+        IncreaseQuantityButton.setBackground(new java.awt.Color(153, 204, 255));
+        IncreaseQuantityButton.setText("+");
+        IncreaseQuantityButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
+        IncreaseQuantityButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                IncreaseQuantityButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                IncreaseQuantityButtonMouseExited(evt);
+            }
+        });
+        IncreaseQuantityButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IncreaseQuantityButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(293, 293, 293)
+                .addGap(50, 50, 50)
+                .addComponent(IncreaseQuantityButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(130, 130, 130)
                 .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(296, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addComponent(DecreaseQuantityButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(425, Short.MAX_VALUE)
-                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DecreaseQuantityButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IncreaseQuantityButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -407,6 +458,30 @@ public class CartManage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteButtonActionPerformed
 
+    private void DecreaseQuantityButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DecreaseQuantityButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DecreaseQuantityButtonMouseEntered
+
+    private void DecreaseQuantityButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DecreaseQuantityButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DecreaseQuantityButtonMouseExited
+
+    private void DecreaseQuantityButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecreaseQuantityButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DecreaseQuantityButtonActionPerformed
+
+    private void IncreaseQuantityButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IncreaseQuantityButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IncreaseQuantityButtonMouseEntered
+
+    private void IncreaseQuantityButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IncreaseQuantityButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IncreaseQuantityButtonMouseExited
+
+    private void IncreaseQuantityButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IncreaseQuantityButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IncreaseQuantityButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -444,6 +519,8 @@ public class CartManage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable CartTable;
+    private javax.swing.JButton DecreaseQuantityButton;
+    private javax.swing.JButton IncreaseQuantityButton;
     private javax.swing.JButton cartBackButton;
     private javax.swing.JLabel cartLogo;
     private javax.swing.JButton cartLogoutButton;
@@ -469,24 +546,65 @@ public void loadCartData() {
             model.setRowCount(0); // Clear existing rows
             List<ProductModel> cartItems = ProductDAO.getCartItems();
             for (ProductModel item : cartItems) {
-                model.addRow(new Object[]{item.getDescription(), item.getPrice()});
+                JPanel buttonPanel = new JPanel();
+                JButton increaseButton = new JButton("+");
+                JButton decreaseButton = new JButton("-");
+                increaseButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        updateQuantity(item.getDescription(), item.getPrice(), item.getQuantity() + 1);
+                    }
+                });
+                decreaseButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (item.getQuantity() > 1) {
+                            updateQuantity(item.getDescription(), item.getPrice(), item.getQuantity() - 1);
+                        } else {
+                            // Optionally delete item if quantity becomes 0
+                            deleteCartItem(item.getDescription(), item.getPrice());
+                        }
+                    }
+                });
+                buttonPanel.add(increaseButton);
+                buttonPanel.add(decreaseButton);
+                model.addRow(new Object[]{item.getDescription(), item.getPrice(), item.getQuantity(), buttonPanel});
             }
-            
+           
             // Update total money count
             updateTotalPrice();
         } catch (SQLException e) {
             System.out.println("Error loading cart data: " + e.getMessage());
-        } 
+        }
     }
-    
+
+    private void updateQuantity(String description, double price, int newQuantity) {
+        try {
+            ProductDAO.updateCartItemQuantity(description, price, newQuantity);
+            loadCartData(); // Refresh table
+        } catch (SQLException e) {
+            System.out.println("Error updating quantity: " + e.getMessage());
+        }
+    }
+
+    private void deleteCartItem(String description, double price) {
+        try {
+            ProductDAO.deleteCartItem(description, price);
+            loadCartData(); // Refresh table
+        } catch (SQLException e) {
+            System.out.println("Error deleting cart item: " + e.getMessage());
+        }
+    }
+
     // Calculate total price from CartTable
     public double calculateTotalPrice() {
         DefaultTableModel model = (DefaultTableModel) CartTable.getModel();
         double total = 0.0;
         for (int i = 0; i < model.getRowCount(); i++) {
             Object priceObj = model.getValueAt(i, 1); // Price is in column 1
-            if (priceObj instanceof Double) {
-                total += (Double) priceObj;
+            Object quantityObj = model.getValueAt(i, 2); // Quantity is in column 2
+            if (priceObj instanceof Double && quantityObj instanceof Integer) {
+                total += (Double) priceObj * (Integer) quantityObj;
             }
         }
         return total;
@@ -497,6 +615,7 @@ public void loadCartData() {
         double total = calculateTotalPrice();
         totalMoneyCount.setText("Rs. " + String.format("%.2f", total));
     }
+
     public void logout(ActionListener listener) {
         cartLogoutButton.addActionListener(listener);
     }
@@ -504,7 +623,7 @@ public void loadCartData() {
     public void back(ActionListener listener) {
         cartBackButton.addActionListener(listener);
     }
-    
+
     // Getter methods for buttons
     public JButton getCartBackButton() {
         return cartBackButton;
@@ -517,14 +636,24 @@ public void loadCartData() {
     public JButton getPlaceOrderButton() {
         return placeOrderButton;
     }
+
     public JButton getDeleteButton() {
-    return deleteButton;
+        return deleteButton;
     }
 
     public JTable getCartTable() {
-    return CartTable;
+        return CartTable;
     }
+
     public JLabel getTotalMoneyCount() {
         return totalMoneyCount;
+    }
+
+    public JButton getIncreaseQuantityButton() {
+        return IncreaseQuantityButton;
+    }
+
+    public JButton getDecreaseQuantityButton() {
+        return DecreaseQuantityButton;
     }
 }
