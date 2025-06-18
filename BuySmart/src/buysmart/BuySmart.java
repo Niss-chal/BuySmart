@@ -17,11 +17,11 @@ public class BuySmart {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
         LoginView view = new LoginView();
         LoginController controller = new LoginController(view);
         controller.open();
-
+        // TODO code application logic here
+        
         
     }
     
