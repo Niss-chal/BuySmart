@@ -42,23 +42,23 @@ public class ProductDAO {
    public static void addToCart(String description, double price) throws SQLException {
     System.out.println("Attempting to add to cart: " + description + ", " + price);
     String sql = "INSERT INTO cart (description, price) VALUES (?, ?)";
-    Connection conn = null;
-    try {
-        conn = MysqlConnection1.getConnection();
-        System.out.println("Connection established: " + (conn != null));
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, description);
-            pstmt.setDouble(2, price);
-            int rowsAffected = pstmt.executeUpdate();
-            System.out.println("Rows affected in cart: " + rowsAffected);
+        Connection conn = null;
+        try {
+            conn = MysqlConnection1.getConnection();
+            System.out.println("Connection established: " + (conn != null));
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.setString(1, description);
+                pstmt.setDouble(2, price);
+                int rowsAffected = pstmt.executeUpdate();
+                System.out.println("Rows affected in cart: " + rowsAffected);
+            }
+        } catch (SQLException e) {
+            System.err.println("Database Error in addToCart: " + e.getMessage());
+            throw e;
+        } finally {
+            if (conn != null) try { conn.close(); } catch (SQLException e) { /* ignore */ }
         }
-    } catch (SQLException e) {
-        System.err.println("Database Error in addToCart: " + e.getMessage());
-        throw e;
-    } finally {
-        if (conn != null) try { conn.close(); } catch (SQLException e) { /* ignore */ }
     }
-}
     
     public static List<ProductModel> getCartItems() throws SQLException {
         String sql = "SELECT description, price FROM cart";
@@ -79,4 +79,38 @@ public class ProductDAO {
             throw e;
         }
     }
+    public static void clearCart() throws SQLException {
+    String sql = "DELETE FROM cart";
+    Connection conn = null;
+    try {
+        conn = MysqlConnection1.getConnection();
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            int rowsAffected = pstmt.executeUpdate();
+            System.out.println("Cleared cart, rows affected: " + rowsAffected);
+        }
+    } catch (SQLException e) {
+        System.err.println("Database Error in clearCart: " + e.getMessage());
+        throw e;
+    } finally {
+        if (conn != null) try { conn.close(); } catch (SQLException e) { /* ignore */ }
+    }
+}
+    public static void deleteCartItem(String description, double price) throws SQLException {
+    String sql = "DELETE FROM cart WHERE description = ? AND price = ?";
+    Connection conn = null;
+    try {
+        conn = MysqlConnection1.getConnection();
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, description);
+            pstmt.setDouble(2, price);
+            int rowsAffected = pstmt.executeUpdate();
+            System.out.println("Deleted cart item, rows affected: " + rowsAffected);
+        }
+    } catch (SQLException e) {
+        System.err.println("Database Error in deleteCartItem: " + e.getMessage());
+        throw e;
+    } finally {
+        if (conn != null) try { conn.close(); } catch (SQLException e) { /* ignore */ }
+    }
+}
 }
