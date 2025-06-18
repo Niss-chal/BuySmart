@@ -117,7 +117,7 @@ public class DashboardController {
             if (productIndex >= 0 && productIndex < products.size()) {
                 ProductModel product = products.get(productIndex);
                 try {
-                    ProductDAO.addToCart(product.getDescription(), product.getPrice());
+                    ProductDAO.addToCart(product.getDescription(), product.getPrice(), 1); // Default quantity is 1
                     JOptionPane.showMessageDialog(dashboard, "Added to cart successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(dashboard, "Error adding to cart: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
