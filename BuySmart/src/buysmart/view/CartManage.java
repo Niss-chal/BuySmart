@@ -25,6 +25,7 @@ import javax.swing.JTable;
  */
 public class CartManage extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form CartManage
      */
