@@ -4,6 +4,7 @@
  */
 package buysmart.controller;
 
+import buysmart.model.UserModel;
 import buysmart.dao.ProductDAO;
 import buysmart.view.CartManage;
 import buysmart.view.Dashboard;
@@ -73,9 +74,11 @@ public class CartManageController {
     class Back implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            UserModel usermodel = new UserModel();
+            String username = usermodel.getUsername();
             cartmanage.dispose();
             Dashboard dashboard = new Dashboard();
-            DashboardController dashboardController = new DashboardController(dashboard);
+            DashboardController dashboardController = new DashboardController(dashboard,username);
             dashboardController.open();
         }
     }
