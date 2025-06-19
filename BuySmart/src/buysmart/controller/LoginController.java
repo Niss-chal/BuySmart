@@ -22,6 +22,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import buysmart.database.MysqlConnection1;
 
+
 /**
  *
  * @author loq
