@@ -6,10 +6,10 @@ package buysmart.view;
 
 import buysmart.controller.ProductController;
 import java.awt.Color;
-
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
-
-
 
 
 /**
@@ -17,7 +17,7 @@ import javax.swing.JFrame;
  * @author fahmi
  */
 public class Dashboard extends javax.swing.JFrame {
-    
+
     private ProductController productController;
 
     /**
@@ -26,9 +26,19 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        cartButtons = new JButton[] {
+            ProductAddToCartButton, ProductAddToCartButton1, ProductAddToCartButton2, 
+            ProductAddToCartButton3, ProductAddToCartButton4
+        };
+
         productController = new ProductController(this);
         productController.loadProduct();
-        
+    }
+    // Getter methods for Add to Cart buttons
+    public JButton getProductAddToCartButton() {
+        return ProductAddToCartButton;
+
     }
 
     /**
@@ -75,6 +85,9 @@ public class Dashboard extends javax.swing.JFrame {
         searchField = new javax.swing.JTextField();
         jPanel25 = new javax.swing.JPanel();
         productPanel1 = new javax.swing.JPanel();
+
+        productPanel2 = new javax.swing.JPanel();
+
         PanelProductCard = new javax.swing.JPanel();
         PicProduct = new javax.swing.JLabel();
         ProductAddToCartButton = new javax.swing.JButton();
@@ -236,11 +249,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonLogout.setBackground(new java.awt.Color(153, 204, 255));
         buttonLogout.setText("Logout");
-        buttonLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLogoutActionPerformed(evt);
-            }
-        });
+        buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/user (1).png"))); // NOI18N
 
@@ -251,13 +260,13 @@ public class Dashboard extends javax.swing.JFrame {
         logoutPanel1Layout.setHorizontalGroup(
             logoutPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoutPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(16, 16, 16)
                 .addComponent(dashboardLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addGap(50, 50, 50))
+                .addGap(15, 15, 15))
         );
         logoutPanel1Layout.setVerticalGroup(
             logoutPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,6 +290,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonSports.setBackground(new java.awt.Color(153, 204, 255));
         buttonSports.setText("Sports");
+        buttonSports.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         buttonSports.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonSportsMouseEntered(evt);
@@ -297,6 +307,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonToys.setBackground(new java.awt.Color(153, 204, 255));
         buttonToys.setText("Toys");
+        buttonToys.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         buttonToys.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonToysMouseEntered(evt);
@@ -309,6 +320,7 @@ public class Dashboard extends javax.swing.JFrame {
         buttonBeauties.setBackground(new java.awt.Color(153, 204, 255));
         buttonBeauties.setForeground(new java.awt.Color(51, 51, 51));
         buttonBeauties.setText("Beauties");
+        buttonBeauties.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         buttonBeauties.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonBeautiesMouseEntered(evt);
@@ -320,6 +332,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonBooks.setBackground(new java.awt.Color(153, 204, 255));
         buttonBooks.setText("Books");
+        buttonBooks.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         buttonBooks.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonBooksMouseEntered(evt);
@@ -328,9 +341,15 @@ public class Dashboard extends javax.swing.JFrame {
                 buttonBooksMouseExited(evt);
             }
         });
+        buttonBooks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBooksActionPerformed(evt);
+            }
+        });
 
         buttonClothing.setBackground(new java.awt.Color(153, 204, 255));
         buttonClothing.setText("Clothing");
+        buttonClothing.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         buttonClothing.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonClothingMouseEntered(evt);
@@ -347,6 +366,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         ButtonComputers.setBackground(new java.awt.Color(153, 204, 255));
         ButtonComputers.setText("Computers");
+        ButtonComputers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         ButtonComputers.setBorderPainted(true);
         ButtonComputers.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -364,6 +384,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonElectronics.setBackground(new java.awt.Color(153, 204, 255));
         buttonElectronics.setText("Electronics");
+        buttonElectronics.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         buttonElectronics.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonElectronicsMouseEntered(evt);
@@ -375,6 +396,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonAll.setBackground(new java.awt.Color(153, 204, 255));
         buttonAll.setText("All");
+        buttonAll.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         buttonAll.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         buttonAll.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -397,19 +419,21 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonAll, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(buttonElectronics, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-                .addGap(18, 18, Short.MAX_VALUE)
+
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(buttonElectronics, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 22, Short.MAX_VALUE)
                 .addComponent(ButtonComputers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(buttonClothing, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 22, Short.MAX_VALUE)
                 .addComponent(buttonBooks, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(buttonBeauties, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 22, Short.MAX_VALUE)
                 .addComponent(buttonToys, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+
                 .addComponent(buttonSports, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -419,8 +443,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(11, Short.MAX_VALUE)
                 .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(buttonSports, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonToys, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonBeauties, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonToys, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonBeauties, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(buttonAll, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(buttonBooks, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -443,6 +468,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         searchField.setForeground(new java.awt.Color(153, 153, 153));
         searchField.setText("    Search for products ....");
+        searchField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 153, 255), 2, true));
         searchField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 searchFieldFocusGained(evt);
@@ -475,9 +501,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(orderlistIcon)
                 .addGap(18, 18, 18))
-            .addGroup(statusPanel2Layout.createSequentialGroup()
-                .addComponent(buttonPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(buttonPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         statusPanel2Layout.setVerticalGroup(
             statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -495,7 +519,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(orderlistIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(cartIcon)
                         .addComponent(wishlistIcon)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -503,6 +527,9 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel25.setLayout(new java.awt.CardLayout());
 
         productPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+
+        productPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
         PicProduct.setText("pic");
         PicProduct.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -636,6 +663,9 @@ public class Dashboard extends javax.swing.JFrame {
         PanelProductCard3.setLayout(PanelProductCard3Layout);
         PanelProductCard3Layout.setHorizontalGroup(
             PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
+            .addComponent(PicProduct3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProductCard3Layout.createSequentialGroup()
                 .addGroup(PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PanelProductCard3Layout.createSequentialGroup()
@@ -647,7 +677,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addComponent(ProductAddToCartButton3)))
                 .addGap(16, 16, 16))
-            .addComponent(PicProduct3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
         );
         PanelProductCard3Layout.setVerticalGroup(
             PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -699,31 +729,32 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(ProductAddToCartButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ProductCardPrice4))
                 .addGap(0, 17, Short.MAX_VALUE))
+
         );
 
-        javax.swing.GroupLayout productPanel1Layout = new javax.swing.GroupLayout(productPanel1);
-        productPanel1.setLayout(productPanel1Layout);
-        productPanel1Layout.setHorizontalGroup(
-            productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(productPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout productPanel2Layout = new javax.swing.GroupLayout(productPanel2);
+        productPanel2.setLayout(productPanel2Layout);
+        productPanel2Layout.setHorizontalGroup(
+            productPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(productPanel2Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(productPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelProductCard4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(productPanel1Layout.createSequentialGroup()
+                    .addGroup(productPanel2Layout.createSequentialGroup()
                         .addComponent(PanelProductCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                         .addComponent(PanelProductCard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                         .addComponent(PanelProductCard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                         .addComponent(PanelProductCard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(51, 51, 51))
         );
-        productPanel1Layout.setVerticalGroup(
-            productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(productPanel1Layout.createSequentialGroup()
+        productPanel2Layout.setVerticalGroup(
+            productPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(productPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(productPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PanelProductCard3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelProductCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelProductCard1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -731,37 +762,56 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PanelProductCard4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
+
+        );
+
+        javax.swing.GroupLayout productPanel1Layout = new javax.swing.GroupLayout(productPanel1);
+        productPanel1.setLayout(productPanel1Layout);
+        productPanel1Layout.setHorizontalGroup(
+            productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
+            .addGap(0, 1037, Short.MAX_VALUE)
+            .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(productPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(productPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        productPanel1Layout.setVerticalGroup(
+            productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 637, Short.MAX_VALUE)
+            .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(productPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(productPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(productPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(statusPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(logoutPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(statusPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(productPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(logoutPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
                 .addComponent(logoutPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 24, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(statusPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(productPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(productPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void buttonLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogoutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonLogoutActionPerformed
 
     private void buttonAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAllActionPerformed
         // TODO add your handling code here:
@@ -864,6 +914,11 @@ public class Dashboard extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_searchFieldFocusLost
 
+
+    private void buttonBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBooksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonBooksActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -889,13 +944,6 @@ public class Dashboard extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -968,78 +1016,87 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel statusPanel2;
     private javax.swing.JLabel wishlistIcon;
     // End of variables declaration//GEN-END:variables
+public void logout(ActionListener listener){ // Logoutbutton function
+    buttonLogout.addActionListener(listener);
+}
+public void cart(MouseListener listener){ 
+    cartIcon.addMouseListener(listener);
+}
+private javax.swing.JButton[] cartButtons;
 
-    public javax.swing.JLabel getcartIcon() {
-    return cartIcon;
+public void addCart(MouseListener listener){ 
+    for (JButton button : cartButtons){
+        button.addMouseListener(listener);
     }
+}
+
+
+//Product1 added
+public javax.swing.JLabel getPicProduct() {
+    return PicProduct;
+}
+
+public javax.swing.JLabel getDescriptionProductCard() {
+    return DescriptionProductCard;
+}
+
+public javax.swing.JLabel getProductCardPrice() {
+    return ProductCardPrice;
+}
     
-    //Product1 added
-    public javax.swing.JLabel getPicProduct() {
-        return PicProduct;
-    }
+//Product2 added
+public javax.swing.JLabel getPicProduct1() {
+    return PicProduct1;
+}
 
-    public javax.swing.JLabel getDescriptionProductCard() {
-        return DescriptionProductCard;
-    }
+public javax.swing.JLabel getDescriptionProductCard1() {
+    return DescriptionProductCard1;
+}
 
-    public javax.swing.JLabel getProductCardPrice() {
-        return ProductCardPrice;
-    }
-    
-    //Product2 added
-    public javax.swing.JLabel getPicProduct1() {
-        return PicProduct1;
-    }
-
-    public javax.swing.JLabel getDescriptionProductCard1() {
-        return DescriptionProductCard1;
-    }
-
-    public javax.swing.JLabel getProductCardPrice1() {
-        return ProductCardPrice1;
-    }
+public javax.swing.JLabel getProductCardPrice1() {
+    return ProductCardPrice1;
+}
 
     
-    //Product3 added
-    public javax.swing.JLabel getPicProduct2() {
-        return PicProduct2;
-    }
+//Product3 added
+public javax.swing.JLabel getPicProduct2() {
+    return PicProduct2;
+}
 
-    public javax.swing.JLabel getDescriptionProductCard2() {
-        return DescriptionProductCard2;
-    }
+public javax.swing.JLabel getDescriptionProductCard2() {
+    return DescriptionProductCard2;
+}
 
-    public javax.swing.JLabel getProductCardPrice2() {
-        return ProductCardPrice2;
-    }
-    
-    
-    //Product4 added
-    public javax.swing.JLabel getPicProduct3() {
-        return PicProduct3;
-    }
-
-    public javax.swing.JLabel getDescriptionProductCard3() {
-        return DescriptionProductCard3;
-    }
-
-    public javax.swing.JLabel getProductCardPrice3() {
-        return ProductCardPrice3;
-    }
-    
-    //Product4 added
-    public javax.swing.JLabel getPicProduct4() {
-        return PicProduct4;
-    }
-
-    public javax.swing.JLabel getDescriptionProductCard4() {
-        return DescriptionProductCard4;
-    }
-
-    public javax.swing.JLabel getProductCardPrice4() {
-        return ProductCardPrice4;
-    }
+public javax.swing.JLabel getProductCardPrice2() {
+    return ProductCardPrice2;
+}
     
     
+//Product4 added
+public javax.swing.JLabel getPicProduct3() {
+    return PicProduct3;
+}
+
+public javax.swing.JLabel getDescriptionProductCard3() {
+    return DescriptionProductCard3;
+}
+
+public javax.swing.JLabel getProductCardPrice3() {
+    return ProductCardPrice3;
+}
+    
+//Product4 added
+public javax.swing.JLabel getPicProduct4() {
+    return PicProduct4;
+}
+
+public javax.swing.JLabel getDescriptionProductCard4() {
+    return DescriptionProductCard4;
+}
+
+public javax.swing.JLabel getProductCardPrice4() {
+    return ProductCardPrice4;
+}
     
 }
+
