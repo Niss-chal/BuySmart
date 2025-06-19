@@ -6,7 +6,9 @@ package buysmart.model;
 
 /**
  *
- * @author fahmi
+
+ * @author user
+
  */
 public class ProductModel {
     
@@ -31,5 +33,13 @@ public class ProductModel {
     public double getPrice() {
         return price;
     }
-    
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
+

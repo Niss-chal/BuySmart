@@ -816,10 +816,130 @@ public class CartManage extends javax.swing.JFrame {
     private javax.swing.JTextField userLocationGet;
     private javax.swing.JLabel userLocationIndicator;
     // End of variables declaration//GEN-END:variables
-public void logout(ActionListener listener){ 
-    cartLogoutButton.addActionListener(listener);
-}
-public void back(ActionListener listener){
-    cartBackButton.addActionListener(listener);
-}
+
+public void loadCartData() {
+        try {
+            DefaultTableModel model = (DefaultTableModel) CartTable.getModel();
+            model.setRowCount(0); // Clear existing rows
+            List<ProductModel> cartItems = ProductDAO.getCartItems();
+            for (ProductModel item : cartItems) {
+                JPanel buttonPanel = new JPanel();
+                JButton increaseButton = new JButton("+");
+                JButton decreaseButton = new JButton("-");
+                increaseButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        updateQuantity(item.getDescription(), item.getPrice(), item.getQuantity() + 1);
+                    }
+                });
+                decreaseButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (item.getQuantity() > 1) {
+                            updateQuantity(item.getDescription(), item.getPrice(), item.getQuantity() - 1);
+                        } else {
+                            deleteCartItem(item.getDescription(), item.getPrice());
+                        }
+                    }
+                });
+                buttonPanel.add(increaseButton);
+                buttonPanel.add(decreaseButton);
+                model.addRow(new Object[]{item.getDescription(), item.getPrice(), item.getQuantity(), buttonPanel});
+            }
+            // Update total money count
+            updateTotalPrice();
+        } catch (SQLException e) {
+            System.out.println("Error loading cart data: " + e.getMessage());
+        }
+    }
+
+    public void customizeTableHeader() {
+        CartTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
+        DefaultTableModel model = (DefaultTableModel) CartTable.getModel();
+        String[] headers = new String[model.getColumnCount()];
+        for (int i = 0; i < model.getColumnCount(); i++) {
+            headers[i] = model.getColumnName(i).toUpperCase();
+        }
+        model.setColumnIdentifiers(headers);
+    }
+
+    private void updateQuantity(String description, double price, int newQuantity) {
+        try {
+            ProductDAO.updateCartItemQuantity(description, price, newQuantity);
+            loadCartData(); // Refresh table
+        } catch (SQLException e) {
+            System.out.println("Error updating quantity: " + e.getMessage());
+        }
+    }
+
+    private void deleteCartItem(String description, double price) {
+        try {
+            ProductDAO.deleteCartItem(description, price);
+            loadCartData(); // Refresh table
+        } catch (SQLException e) {
+            System.out.println("Error deleting cart item: " + e.getMessage());
+        }
+    }
+
+    // Calculate total price from CartTable
+    public double calculateTotalPrice() {
+        DefaultTableModel model = (DefaultTableModel) CartTable.getModel();
+        double total = 0.0;
+        for (int i = 0; i < model.getRowCount(); i++) {
+            Object priceObj = model.getValueAt(i, 1); // Price is in column 1
+            Object quantityObj = model.getValueAt(i, 2); // Quantity is in column 2
+            if (priceObj instanceof Double && quantityObj instanceof Integer) {
+                total += (Double) priceObj * (Integer) quantityObj;
+            }
+        }
+        return total;
+    }
+   
+    // Update total price label
+    public void updateTotalPrice() {
+        double total = calculateTotalPrice();
+        totalMoneyCount.setText("Rs. " + String.format("%.2f", total));
+    }
+
+    public void logout(ActionListener listener) {
+        cartLogoutButton.addActionListener(listener);
+    }
+
+    public void back(ActionListener listener) {
+        cartBackButton.addActionListener(listener);
+    }
+
+    // Getter methods for buttons
+    public JButton getCartBackButton() {
+        return cartBackButton;
+    }
+
+    public JButton getCartLogoutButton() {
+        return cartLogoutButton;
+    }
+
+    public JButton getPlaceOrderButton() {
+        return placeOrderButton;
+    }
+
+    public JButton getDeleteButton() {
+        return deleteButton;
+    }
+
+    public JTable getCartTable() {
+        return CartTable;
+    }
+
+    public JLabel getTotalMoneyCount() {
+        return totalMoneyCount;
+    }
+
+    public JButton getIncreaseQuantityButton() {
+        return IncreaseQuantityButton;
+    }
+
+    public JButton getDecreaseQuantityButton() {
+        return DecreaseQuantityButton;
+    }
+
 }
