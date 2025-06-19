@@ -6,7 +6,8 @@ package buysmart.model;
 
 /**
  *
- 
+ * @author user
+ */
 public class ProductModel {
     private String imagePath;
     private String description;
@@ -44,5 +45,3 @@ public class ProductModel {
         this.quantity = quantity;
     }
 }
-
-
