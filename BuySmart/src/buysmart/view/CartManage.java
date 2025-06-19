@@ -67,7 +67,7 @@ public class CartManage extends javax.swing.JFrame {
         totalMoneyCount = new javax.swing.JLabel();
         cartcheckoutSign = new javax.swing.JLabel();
 
-       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cartLogoutPanel.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -76,10 +76,15 @@ public class CartManage extends javax.swing.JFrame {
         cartBackButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         cartBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cartBackButton.setBackground(new Color(255, 204, 153));
+                cartBackButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                cartBackButton.setBackground(new Color(153, 204, 255));
+                cartBackButtonMouseExited(evt);
+            }
+        });
+        cartBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cartBackButtonActionPerformed(evt);
             }
         });
 
@@ -88,14 +93,19 @@ public class CartManage extends javax.swing.JFrame {
         cartLogoutButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         cartLogoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cartLogoutButton.setBackground(new Color(255, 204, 153));
+                cartLogoutButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                cartLogoutButton.setBackground(new Color(153, 204, 255));
+                cartLogoutButtonMouseExited(evt);
+            }
+        });
+        cartLogoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cartLogoutButtonActionPerformed(evt);
             }
         });
 
-        cartLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/logo2 (1).png")));
+        cartLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/logo2 (1).png"))); // NOI18N
 
         javax.swing.GroupLayout cartLogoutPanelLayout = new javax.swing.GroupLayout(cartLogoutPanel);
         cartLogoutPanel.setLayout(cartLogoutPanelLayout);
@@ -121,15 +131,26 @@ public class CartManage extends javax.swing.JFrame {
         );
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        CartTable.setFont(new java.awt.Font("Segoe UI", 1, 14));
+        CartTable.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         CartTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {},
-            new String [] {"Description", "Price", "Quantity"}
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "description", "price", "quantity"
+            }
         ) {
-            Class[] types = new Class [] {java.lang.String.class, java.lang.Double.class, java.lang.Integer.class};
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class
+            };
+
             public Class getColumnClass(int columnIndex) {
-                return types[columnIndex];
+                return types [columnIndex];
             }
         });
         jScrollPane1.setViewportView(CartTable);
@@ -139,10 +160,15 @@ public class CartManage extends javax.swing.JFrame {
         deleteButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
         deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                deleteButton.setBackground(new Color(255, 204, 153));
+                deleteButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                deleteButton.setBackground(new Color(153, 204, 255));
+                deleteButtonMouseExited(evt);
+            }
+        });
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
             }
         });
 
@@ -151,10 +177,15 @@ public class CartManage extends javax.swing.JFrame {
         DecreaseQuantityButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
         DecreaseQuantityButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                DecreaseQuantityButton.setBackground(new Color(255, 204, 153));
+                DecreaseQuantityButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                DecreaseQuantityButton.setBackground(new Color(153, 204, 255));
+                DecreaseQuantityButtonMouseExited(evt);
+            }
+        });
+        DecreaseQuantityButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DecreaseQuantityButtonActionPerformed(evt);
             }
         });
 
@@ -163,10 +194,15 @@ public class CartManage extends javax.swing.JFrame {
         IncreaseQuantityButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
         IncreaseQuantityButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                IncreaseQuantityButton.setBackground(new Color(255, 204, 153));
+                IncreaseQuantityButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                IncreaseQuantityButton.setBackground(new Color(153, 204, 255));
+                IncreaseQuantityButtonMouseExited(evt);
+            }
+        });
+        IncreaseQuantityButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IncreaseQuantityButtonActionPerformed(evt);
             }
         });
 
@@ -179,21 +215,25 @@ public class CartManage extends javax.swing.JFrame {
                 .addComponent(IncreaseQuantityButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(130, 130, 130)
                 .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(130, 130, 130)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addComponent(DecreaseQuantityButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap(425, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DecreaseQuantityButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(IncreaseQuantityButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 80, Short.MAX_VALUE)))
         );
 
         cartcheckoutCalculate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
@@ -202,31 +242,35 @@ public class CartManage extends javax.swing.JFrame {
         userLocationGet.setText("City,Area,Building,Apt. no.");
         userLocationGet.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                if (userLocationGet.getText().equals("City,Area,Building,Apt. no.")) {
-                    userLocationGet.setText("");
-                    userLocationGet.setForeground(Color.BLACK);
-                }
+                userLocationGetFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                if (userLocationGet.getText().trim().isEmpty()) {
-                    userLocationGet.setText("City,Area,Building,Apt. no.");
-                    userLocationGet.setForeground(Color.GRAY);
-                }
+                userLocationGetFocusLost(evt);
+            }
+        });
+        userLocationGet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userLocationGetActionPerformed(evt);
             }
         });
 
         paymentOptionDrop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Credit Card", "Wallet", "Esewa", "IME Bank", "Cash On Delivery" }));
+        paymentOptionDrop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paymentOptionDropActionPerformed(evt);
+            }
+        });
 
-        userLocationIndicator.setFont(new java.awt.Font("Helvetica Neue", 0, 14));
+        userLocationIndicator.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         userLocationIndicator.setText("Shipping Address");
 
-        paymentIndicator.setFont(new java.awt.Font("Helvetica Neue", 0, 14));
+        paymentIndicator.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         paymentIndicator.setText("Payment Method");
 
-        moneyWalletIndicator.setFont(new java.awt.Font("Helvetica Neue", 0, 18));
+        moneyWalletIndicator.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         moneyWalletIndicator.setText("Wallet:");
 
-        moneyYouHave.setFont(new java.awt.Font("Helvetica Neue", 0, 18));
+        moneyYouHave.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         moneyYouHave.setForeground(new java.awt.Color(102, 102, 102));
         moneyYouHave.setText("Rs. 5000000.00");
 
@@ -237,16 +281,21 @@ public class CartManage extends javax.swing.JFrame {
         placeOrderButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
         placeOrderButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                placeOrderButton.setBackground(new Color(255, 204, 153));
+                placeOrderButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                placeOrderButton.setBackground(new Color(153, 204, 255));
+                placeOrderButtonMouseExited(evt);
+            }
+        });
+        placeOrderButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                placeOrderButtonActionPerformed(evt);
             }
         });
 
-        totalMoneyCount.setText("Rs. 0.00");
+        totalMoneyCount.setText("Rs. 2400.00");
 
-        cartcheckoutSign.setFont(new java.awt.Font("Helvetica Neue", 0, 48));
+        cartcheckoutSign.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
         cartcheckoutSign.setText("Checkout");
 
         javax.swing.GroupLayout cartcheckoutCalculateLayout = new javax.swing.GroupLayout(cartcheckoutCalculate);
@@ -314,11 +363,11 @@ public class CartManage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(84, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cartcheckoutCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
             .addComponent(cartLogoutPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
