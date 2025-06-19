@@ -22,9 +22,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CartManageController {
     private CartManage cartmanage;
+    private String email;
 
-    public CartManageController(CartManage cartmanage) {
+    public CartManageController(CartManage cartmanage, String email) {
         this.cartmanage = cartmanage;
+        this.email=email;
         Logout logout = new Logout();
         this.cartmanage.logout(logout);
         Back back = new Back();
@@ -74,11 +76,9 @@ public class CartManageController {
     class Back implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            UserModel usermodel = new UserModel();
-            String username = usermodel.getUsername();
             cartmanage.dispose();
             Dashboard dashboard = new Dashboard();
-            DashboardController dashboardController = new DashboardController(dashboard,username);
+            DashboardController dashboardController = new DashboardController(dashboard,email);
             dashboardController.open();
         }
     }

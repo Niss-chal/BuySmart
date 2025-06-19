@@ -28,7 +28,7 @@ public class DashboardController {
     private List<ProductModel> products; // Store products for mapping buttons
     private String email;
 
-    public DashboardController(Dashboard dashboard) {
+    public DashboardController(Dashboard dashboard,String email) {
         this.dashboard = dashboard;
         
         // Load products to map buttons to product data
@@ -47,15 +47,13 @@ public class DashboardController {
         
         AddCart addCart = new AddCart();
         this.dashboard.addCart(addCart);
+        
+        this.dashboard=dashboard;
+        this.email=email;
+        OpenProfile openProfile = new OpenProfile();
+        this.dashboard.openProfile(openProfile); 
     }
 
-    
-    public DashboardController(Dashboard dashboard,String username){
-        this.dashboard=dashboard;
-        this.email=username;
-        OpenProfile openProfile = new OpenProfile();
-        this.dashboard.openProfile(openProfile);      
-    }
 
     public void open(){
         dashboard.setVisible(true);
@@ -81,7 +79,7 @@ public class DashboardController {
         public void mouseClicked(MouseEvent e) {
             dashboard.dispose();
             CartManage cartmanage = new CartManage();
-            CartManageController cartmanageController = new CartManageController(cartmanage);
+            CartManageController cartmanageController = new CartManageController(cartmanage, email);
             cartmanageController.open();
         }
 
