@@ -267,7 +267,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonLogout.setBackground(new java.awt.Color(153, 204, 255));
         buttonLogout.setText("Logout");
-        buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));      
 
         userProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/user (1).png"))); // NOI18N
 
