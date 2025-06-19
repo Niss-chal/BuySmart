@@ -13,34 +13,51 @@ import buysmart.database.MysqlConnection1;
 import buysmart.model.UserModel;
 import java.sql.*;
 public class UserprofileDAO {
-     
-    public UserModel getUserByUsername(String username) {
-        UserModel user = null;
-        String query = "SELECT * FROM users WHERE username = ?";
 
-        try (Connection conn = MysqlConnection1.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+     public UserModel getUserByEmail(String email) {
+    UserModel user = null;
+    String query = "SELECT * FROM users WHERE email = ?";
 
-            stmt.setString(1, username);
+    try (Connection conn = MysqlConnection1.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(query)) {
 
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    user = new UserModel(
-                        rs.getString("username"),
-                        rs.getString("email"),
-                        rs.getString("address"),
-                        rs.getString("contact")
-                    );
-                }
+        stmt.setString(1, email);
+
+        try (ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                user = new UserModel(
+                    rs.getString("username"),
+                    rs.getString("email"),
+                    rs.getString("address"),
+                    rs.getString("contact")
+                );
             }
-
-        } catch (SQLException e) {
-            System.err.println("Error fetching user from database.");
-            e.printStackTrace();
         }
 
-        return user;
+    } catch (SQLException e) {
+        System.err.println("Error fetching user by email from database.");
+        e.printStackTrace();
     }
+
+    return user;
+}
+     
+    public boolean updateUser(UserModel user) {
+    String query = "UPDATE users SET username = ?, address = ?, contact = ? WHERE email = ?";
+    try (Connection conn = MysqlConnection1.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(query)) {
+        stmt.setString(1, user.getUsername());
+        stmt.setString(2, user.getAddress());
+        stmt.setString(3, user.getContact());
+        stmt.setString(4, user.getEmail());
+        return stmt.executeUpdate() > 0;
+    } catch (SQLException e) {
+        System.err.println("Error updating user in database.");
+        e.printStackTrace();
+        return false;
+    }
+}
+    
     }
     
 

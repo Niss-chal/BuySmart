@@ -314,5 +314,17 @@ public void backDashboard(ActionListener listener){
     backDashboard.addActionListener(listener);    
 }
 
+public void changeProfile(ActionListener listener){
+    changeprofilebutton.addActionListener(listener);
+}
 
+public void setFieldsEnabled(boolean enabled) {
+        nameupdatebox.setEnabled(enabled);
+        addressupdatebox.setEnabled(enabled);
+        contactupdatebox.setEnabled(enabled);
+    }
+
+    public void setChangeProfileButtonText(String text) {
+        changeprofilebutton.setText(text);
+    }
 }

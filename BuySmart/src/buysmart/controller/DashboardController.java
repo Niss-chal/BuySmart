@@ -26,7 +26,7 @@ import javax.swing.JOptionPane;
 public class DashboardController {
     private Dashboard dashboard;
     private List<ProductModel> products; // Store products for mapping buttons
-    private String username;
+    private String email;
 
     public DashboardController(Dashboard dashboard) {
         this.dashboard = dashboard;
@@ -52,7 +52,7 @@ public class DashboardController {
     
     public DashboardController(Dashboard dashboard,String username){
         this.dashboard=dashboard;
-        this.username=username;
+        this.email=username;
         OpenProfile openProfile = new OpenProfile();
         this.dashboard.openProfile(openProfile);      
     }
@@ -160,7 +160,7 @@ public class DashboardController {
         public void mouseClicked(MouseEvent e) {
             dashboard.setVisible(false);
             Profileview userprofileview = new Profileview();
-            UserprofileController userprofilecontroller = new UserprofileController(userprofileview,username);
+            UserprofileController userprofilecontroller = new UserprofileController(userprofileview,email);
             userprofilecontroller.open();
             
         }
