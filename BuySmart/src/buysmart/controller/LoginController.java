@@ -62,10 +62,9 @@ if(email.isEmpty() || password.isEmpty()){
         UserModel usermodel = dao.loginUser(email, password);
  
         if (usermodel!=null) {
-            String username = usermodel.getUsername();
             JOptionPane.showMessageDialog(view, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE);
             Dashboard dashboard = new Dashboard();
-            DashboardController dashboardController = new DashboardController(dashboard,username);
+            DashboardController dashboardController = new DashboardController(dashboard,email);
             dashboardController.open();
             close();
         } else {

@@ -6,14 +6,11 @@ package buysmart.view;
 
 import buysmart.controller.ProductController;
 import java.awt.Color;
-<<<<<<< HEAD
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
-=======
 import java.awt.event.MouseListener;
 
->>>>>>> 2948974 (minor changes and integrated with other controllers)
 import javax.swing.JFrame;
 
 
@@ -271,14 +268,11 @@ public class Dashboard extends javax.swing.JFrame {
         buttonLogout.setBackground(new java.awt.Color(153, 204, 255));
         buttonLogout.setText("Logout");
         buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-<<<<<<< HEAD
-=======
         buttonLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonLogoutActionPerformed(evt);
             }
         });
->>>>>>> 2948974 (minor changes and integrated with other controllers)
 
         userProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/user (1).png"))); // NOI18N
 
@@ -293,15 +287,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(dashboardLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addGap(15, 15, 15))
-=======
                 .addGap(30, 30, 30)
                 .addComponent(userProfile)
                 .addGap(50, 50, 50))
->>>>>>> 2948974 (minor changes and integrated with other controllers)
         );
         logoutPanel1Layout.setVerticalGroup(
             logoutPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
