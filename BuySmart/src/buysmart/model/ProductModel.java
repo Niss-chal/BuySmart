@@ -6,23 +6,20 @@ package buysmart.model;
 
 /**
  *
+
  * @author user
+
  */
 public class ProductModel {
+    
     private String imagePath;
     private String description;
     private double price;
-    private int quantity;
 
-    public ProductModel(String imagePath, String description, double price, int quantity) {
+    public ProductModel(String imagePath, String description, double price) {
         this.imagePath = imagePath;
         this.description = description;
         this.price = price;
-        this.quantity = quantity;
-    }
-
-    public ProductModel(String imagePath, String description, double price) {
-        this(imagePath, description, price, 1); // Default quantity is 1
     }
 
     public String getImagePath() {
@@ -45,3 +42,4 @@ public class ProductModel {
         this.quantity = quantity;
     }
 }
+
