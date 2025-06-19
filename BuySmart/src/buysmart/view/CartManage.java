@@ -558,7 +558,6 @@ public void loadCartData() {
                         if (item.getQuantity() > 1) {
                             updateQuantity(item.getDescription(), item.getPrice(), item.getQuantity() - 1);
                         } else {
-                            // Optionally delete item if quantity becomes 0
                             deleteCartItem(item.getDescription(), item.getPrice());
                         }
                     }
@@ -567,13 +566,13 @@ public void loadCartData() {
                 buttonPanel.add(decreaseButton);
                 model.addRow(new Object[]{item.getDescription(), item.getPrice(), item.getQuantity(), buttonPanel});
             }
-           
             // Update total money count
             updateTotalPrice();
         } catch (SQLException e) {
             System.out.println("Error loading cart data: " + e.getMessage());
         }
     }
+
     public void customizeTableHeader() {
         CartTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 14));
         DefaultTableModel model = (DefaultTableModel) CartTable.getModel();

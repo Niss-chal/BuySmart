@@ -36,13 +36,15 @@ public class DashboardController {
             System.out.println("Error loading products: " + e.getMessage());
             products = null;
         }
-      
+        
+        Logout logout = new Logout();
+        this.dashboard.logout(logout);
+        
         Cart cart = new Cart();
         this.dashboard.cart(cart);
         
         AddCart addCart = new AddCart();
         this.dashboard.addCart(addCart);
-
     }
 
     public void open() {
