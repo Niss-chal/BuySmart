@@ -550,8 +550,4 @@ public class RegistrationView extends javax.swing.JFrame {
     public void logBack(ActionListener listener){
         logBack.addActionListener(listener);
     }
-
-    
-   
-    
 }

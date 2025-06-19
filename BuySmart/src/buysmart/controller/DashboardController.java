@@ -9,6 +9,7 @@ import buysmart.model.ProductModel;
 import buysmart.view.CartManage;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
+import buysmart.view.Profileview;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -25,8 +26,9 @@ import javax.swing.JOptionPane;
 public class DashboardController {
     private Dashboard dashboard;
     private List<ProductModel> products; // Store products for mapping buttons
+    private String email;
 
-    public DashboardController(Dashboard dashboard) {
+    public DashboardController(Dashboard dashboard,String email) {
         this.dashboard = dashboard;
         
         // Load products to map buttons to product data
@@ -45,9 +47,15 @@ public class DashboardController {
         
         AddCart addCart = new AddCart();
         this.dashboard.addCart(addCart);
+        
+        this.dashboard=dashboard;
+        this.email=email;
+        OpenProfile openProfile = new OpenProfile();
+        this.dashboard.openProfile(openProfile); 
     }
 
-    public void open() {
+
+    public void open(){
         dashboard.setVisible(true);
     }
 
@@ -70,8 +78,8 @@ public class DashboardController {
         @Override
         public void mouseClicked(MouseEvent e) {
             dashboard.dispose();
-            CartManage cartmanage = new CartManage();
-            CartManageController cartmanageController = new CartManageController(cartmanage);
+            CartManage cartmanage = new CartManage(email);
+            CartManageController cartmanageController = new CartManageController(cartmanage, email);
             cartmanageController.open();
         }
 
@@ -117,7 +125,7 @@ public class DashboardController {
             if (productIndex >= 0 && productIndex < products.size()) {
                 ProductModel product = products.get(productIndex);
                 try {
-                    ProductDAO.addToCart(product.getDescription(), product.getPrice(), 1); // Default quantity is 1
+                    ProductDAO.addToCart(email,product.getDescription(), product.getPrice(), 1); // Default quantity is 1
                     JOptionPane.showMessageDialog(dashboard, "Added to cart successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(dashboard, "Error adding to cart: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -143,6 +151,35 @@ public class DashboardController {
         public void mouseExited(MouseEvent e) {
         }
     }
+    
+     class OpenProfile implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            dashboard.setVisible(false);
+            Profileview userprofileview = new Profileview();
+            UserprofileController userprofilecontroller = new UserprofileController(userprofileview,email);
+            userprofilecontroller.open();
+            
+        }
+        
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+    
+    }
 }
 
-    
+

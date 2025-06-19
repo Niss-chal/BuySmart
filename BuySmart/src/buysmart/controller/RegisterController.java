@@ -100,7 +100,8 @@ public class RegisterController {
 
             
             try {
-                boolean success = UserDAO.registerUser(usermodel);
+                UserDAO dao = new UserDAO();
+                boolean success = dao.registerUser(usermodel);
                 
                 if (success) {
                     JOptionPane.showMessageDialog(view, "Registration Successful", "Success", JOptionPane.INFORMATION_MESSAGE);

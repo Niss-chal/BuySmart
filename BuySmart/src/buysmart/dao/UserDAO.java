@@ -4,19 +4,26 @@
  */
 
 
+/**
+ *
+ * @author fahmi
+ */
+
 package buysmart.dao;
 
-//import javax.swing.JOptionPane;
+
+
+
 import buysmart.database.MysqlConnection1;
 import buysmart.model.UserModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.*;
 
 public class UserDAO {
     
-    public static boolean registerUser(UserModel usermodel) throws SQLException {
+    public boolean registerUser(UserModel usermodel) throws SQLException {
         
         String sql = "INSERT INTO users (username, email, password, contact, address, gender, security_question, security_answer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
@@ -43,14 +50,31 @@ public class UserDAO {
         }
     }
     }
-
-//    public static void main(String[] args) {
-//    try (Connection conn = MysqlConnection1.getConnection()) {
-//        JOptionPane.showMessageDialog(null, "database connect bhayo mazzale");
-//    } catch (SQLException e) {
-//        JOptionPane.showMessageDialog(null, "Connection bhayena: " + e.getMessage());
-//    }
-//}
+    
+    public UserModel loginUser(String email, String password) throws SQLException {
+    String query = "SELECT * FROM users WHERE email = ? AND password = ?";
+    try (Connection conn = MysqlConnection1.getConnection();
+         PreparedStatement ps = conn.prepareStatement(query)) {
+        ps.setString(1, email);
+        ps.setString(2, password);
+        try (ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+                return new UserModel(
+                    rs.getString("username"),
+                    rs.getString("email"),
+                    rs.getString("password"),
+                    rs.getString("contact"),
+                    rs.getString("address"),
+                    rs.getString("gender"),
+                    rs.getString("security_question"),
+                    rs.getString("security_answer")
+                );
+            }
+        }
+    }
+    return null; 
+}
+    
 public boolean validateSecurityAnswer(String email,String security_question,String security_answer){
     try(Connection conn=MysqlConnection1.getConnection()){
         String query="SELECT * FROM users WHERE " +

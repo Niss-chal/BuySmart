@@ -10,6 +10,7 @@ import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -19,26 +20,32 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author user
  */
-public class CartManageController {
+    public class CartManageController {
     private CartManage cartmanage;
+    private String email;
 
-    public CartManageController(CartManage cartmanage) {
+    public CartManageController(CartManage cartmanage, String email) {
         this.cartmanage = cartmanage;
+        this.email = email;
         Logout logout = new Logout();
         this.cartmanage.logout(logout);
         Back back = new Back();
         this.cartmanage.back(back);
         this.cartmanage.getDeleteButton().addActionListener(new DeleteRowAction());
-        // Add action listeners for quantity buttons
         this.cartmanage.getIncreaseQuantityButton().addActionListener(new IncreaseQuantityAction());
         this.cartmanage.getDecreaseQuantityButton().addActionListener(new DecreaseQuantityAction());
-        cartmanage.loadCartData(); // Load initial data
-        cartmanage.customizeTableHeader();
+        this.cartmanage.getPlaceOrderButton().addActionListener(new PlaceOrderAction());
+        refreshCart();
     }
 
     public void refreshCart() {
-        cartmanage.loadCartData();
-        cartmanage.customizeTableHeader();
+        try {
+            cartmanage.loadCartData(email);
+            cartmanage.customizeTableHeader();
+            updateTotalPrice();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(cartmanage, "Error refreshing cart: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void open() {
@@ -51,21 +58,100 @@ public class CartManageController {
     }
 
     private void clearCart() {
-        cartmanage.getTotalMoneyCount().setText("Rs. 0.00"); // Update total to reflect empty cart
+        try {
+            ProductDAO.clearCart(email);
+            cartmanage.getTotalMoneyCount().setText("Rs. 0.00");
+            cartmanage.loadCartData(email);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(cartmanage, "Error clearing cart UI: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void updateQuantity(String userEmail, String description, double price, int newQuantity) {
+        try {
+            ProductDAO.updateCartItemQuantity(userEmail, description, price, newQuantity);
+            refreshCart();
+        } catch (SQLException e) {
+            System.out.println("Error updating quantity: " + e.getMessage());
+            JOptionPane.showMessageDialog(cartmanage, "Error updating quantity: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void deleteCartItem(String userEmail, String description, double price) {
+        try {
+            ProductDAO.deleteCartItem(userEmail, description, price);
+            refreshCart();
+        } catch (SQLException e) {
+            System.out.println("Error deleting cart item: " + e.getMessage());
+            JOptionPane.showMessageDialog(cartmanage, "Error deleting cart item: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public double calculateTotalPrice() {
+        DefaultTableModel model = (DefaultTableModel) cartmanage.getCartTable().getModel();
+        double total = 0.0;
+        for (int i = 0; i < model.getRowCount(); i++) {
+            Object priceObj = model.getValueAt(i, 1);
+            Object quantityObj = model.getValueAt(i, 2);
+            if (priceObj instanceof Double && quantityObj instanceof Integer) {
+                total += (Double) priceObj * (Integer) quantityObj;
+            }
+        }
+        return total;
+    }
+
+    public void updateTotalPrice() {
+        double total = calculateTotalPrice();
+        cartmanage.getTotalMoneyCount().setText("Rs. " + String.format("%.2f", total));
+    }
+
+    private void placeOrder() {
+        try {
+            double totalPrice = calculateTotalPrice();
+            String walletBalanceStr = cartmanage.getMoneyYouHave().getText().replace("Rs. ", "").replace(",", "");
+            double walletBalance = Double.parseDouble(walletBalanceStr);
+            String paymentMethod = (String) cartmanage.getPaymentOptionDrop().getSelectedItem();
+            String shippingAddress = cartmanage.getUserLocationGet().getText();
+
+            if (shippingAddress.equals("City,Area,Building,Apt. no.") || shippingAddress.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(cartmanage, "Please enter a valid shipping address.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (paymentMethod.equals("Wallet") && totalPrice > walletBalance) {
+                JOptionPane.showMessageDialog(cartmanage, "Insufficient wallet balance!", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Simulate order placement
+            ProductDAO.clearCart(email);
+            refreshCart();
+            JOptionPane.showMessageDialog(cartmanage, "Order placed successfully!\nTotal: Rs. " + String.format("%.2f", totalPrice) + "\nPayment Method: " + paymentMethod + "\nShipping Address: " + shippingAddress, "Success", JOptionPane.INFORMATION_MESSAGE);
+
+            // Update wallet balance if using wallet
+            if (paymentMethod.equals("Wallet")) {
+                walletBalance -= totalPrice;
+                cartmanage.getMoneyYouHave().setText("Rs. " + String.format("%.2f", walletBalance));
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(cartmanage, "Error placing order: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(cartmanage, "Invalid wallet balance format.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     class Logout implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                ProductDAO.clearCart(); // Clear database cart
-                clearCart(); // Reset UI total
+                ProductDAO.clearCart(email);
+                clearCart();
                 cartmanage.dispose();
                 LoginView loginview = new LoginView();
                 LoginController loginController = new LoginController(loginview);
                 loginController.open();
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Error clearing cart: " + ex.getMessage());
+                JOptionPane.showMessageDialog(null, "Error clearing cart: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
@@ -75,7 +161,7 @@ public class CartManageController {
         public void actionPerformed(ActionEvent e) {
             cartmanage.dispose();
             Dashboard dashboard = new Dashboard();
-            DashboardController dashboardController = new DashboardController(dashboard);
+            DashboardController dashboardController = new DashboardController(dashboard, email);
             dashboardController.open();
         }
     }
@@ -90,16 +176,9 @@ public class CartManageController {
             if (selectedRow != -1) {
                 String description = (String) model.getValueAt(selectedRow, 0);
                 double price = (Double) model.getValueAt(selectedRow, 1);
-                try {
-                    ProductDAO.deleteCartItem(description, price);
-                    model.removeRow(selectedRow);
-                    cartmanage.updateTotalPrice();
-                    cartmanage.customizeTableHeader();
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Error deleting item: " + ex.getMessage());
-                }
+                deleteCartItem(email, description, price);
             } else {
-                JOptionPane.showMessageDialog(null, "Please select a row to delete.");
+                JOptionPane.showMessageDialog(null, "Please select a row to delete.", "Info", JOptionPane.INFORMATION_MESSAGE);
             }
         }
     }
@@ -115,15 +194,9 @@ public class CartManageController {
                 String description = (String) model.getValueAt(selectedRow, 0);
                 double price = (Double) model.getValueAt(selectedRow, 1);
                 int currentQuantity = (Integer) model.getValueAt(selectedRow, 2);
-                try {
-                    ProductDAO.updateCartItemQuantity(description, price, currentQuantity + 1);
-                    cartmanage.loadCartData(); // Refresh table and total price
-                    cartmanage.customizeTableHeader();
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Error increasing quantity: " + ex.getMessage());
-                }
+                updateQuantity(email, description, price, currentQuantity + 1);
             } else {
-                JOptionPane.showMessageDialog(null, "Please select a row to increase quantity.");
+                JOptionPane.showMessageDialog(null, "Please select a row to increase quantity.", "Info", JOptionPane.INFORMATION_MESSAGE);
             }
         }
     }
@@ -139,20 +212,21 @@ public class CartManageController {
                 String description = (String) model.getValueAt(selectedRow, 0);
                 double price = (Double) model.getValueAt(selectedRow, 1);
                 int currentQuantity = (Integer) model.getValueAt(selectedRow, 2);
-                try {
-                    if (currentQuantity > 1) {
-                        ProductDAO.updateCartItemQuantity(description, price, currentQuantity - 1);
-                    } else {
-                        ProductDAO.deleteCartItem(description, price);
-                    }
-                    cartmanage.loadCartData(); // Refresh table and total price
-                    cartmanage.customizeTableHeader();
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Error decreasing quantity: " + ex.getMessage());
+                if (currentQuantity > 1) {
+                    updateQuantity(email, description, price, currentQuantity - 1);
+                } else {
+                    deleteCartItem(email, description, price);
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Please select a row to decrease quantity.");
+                JOptionPane.showMessageDialog(null, "Please select a row to decrease quantity.", "Info", JOptionPane.INFORMATION_MESSAGE);
             }
+        }
+    }
+
+    class PlaceOrderAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            placeOrder();
         }
     }
 }
