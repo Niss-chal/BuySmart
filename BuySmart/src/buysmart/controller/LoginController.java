@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package buysmart.controller;
-import buysmart.dao.ProductDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -68,7 +67,6 @@ if(email.isEmpty() || password.isEmpty()){
         ResultSet rs = ps.executeQuery();
 
         if (rs.next()) {
-            ProductDAO.clearCart();
             JOptionPane.showMessageDialog(view, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE);
             Dashboard dashboard = new Dashboard();
             DashboardController dashboardController = new DashboardController(dashboard);
