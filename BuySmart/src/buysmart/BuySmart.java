@@ -22,6 +22,7 @@ public class BuySmart {
         controller.open();
         // TODO code application logic here
         
+        
     }
     
 }

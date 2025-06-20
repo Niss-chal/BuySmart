@@ -5,19 +5,18 @@
 package buysmart.view;
 
 import buysmart.dao.ProductDAO;
-import buysmart.model.ProductModel;
+import buysmart.model.CartItem;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.table.DefaultTableModel;
-import java.sql.SQLException;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -30,9 +29,10 @@ public class CartManage extends javax.swing.JFrame {
     /**
      * Creates new form CartManage
      */
-    public CartManage() {
+    public CartManage(String userEmail) {
+        this.userEmail = userEmail;
         deleteButton = new JButton("Delete Selected");
-        add(deleteButton); // Add to layout appropriately
+        add(deleteButton);
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
@@ -364,11 +364,11 @@ public class CartManage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(84, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cartcheckoutCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
             .addComponent(cartLogoutPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -496,24 +496,30 @@ public class CartManage extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CartManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CartManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CartManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
             java.util.logging.Logger.getLogger(CartManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        java.awt.EventQueue.invokeLater(() -> new CartManage("test@example.com").setVisible(true));
+    
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CartManage().setVisible(true);
+                new CartManage(userEmail).setVisible(true);
             }
         });
     }
+    
+    public void showPaymentSuccess() {
+        JOptionPane.showMessageDialog(this, "Payment Successful!", "Payment Status", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void showPaymentFailure(String message) {
+        JOptionPane.showMessageDialog(this, "Payment Failed: " + message, "Payment Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable CartTable;
@@ -538,37 +544,16 @@ public class CartManage extends javax.swing.JFrame {
     private javax.swing.JTextField userLocationGet;
     private javax.swing.JLabel userLocationIndicator;
     // End of variables declaration//GEN-END:variables
-public void loadCartData() {
+    private static String userEmail;
+
+    public void loadCartData(String userEmail) {
         try {
             DefaultTableModel model = (DefaultTableModel) CartTable.getModel();
             model.setRowCount(0); // Clear existing rows
-            List<ProductModel> cartItems = ProductDAO.getCartItems();
-            for (ProductModel item : cartItems) {
-                JPanel buttonPanel = new JPanel();
-                JButton increaseButton = new JButton("+");
-                JButton decreaseButton = new JButton("-");
-                increaseButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        updateQuantity(item.getDescription(), item.getPrice(), item.getQuantity() + 1);
-                    }
-                });
-                decreaseButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (item.getQuantity() > 1) {
-                            updateQuantity(item.getDescription(), item.getPrice(), item.getQuantity() - 1);
-                        } else {
-                            deleteCartItem(item.getDescription(), item.getPrice());
-                        }
-                    }
-                });
-                buttonPanel.add(increaseButton);
-                buttonPanel.add(decreaseButton);
-                model.addRow(new Object[]{item.getDescription(), item.getPrice(), item.getQuantity(), buttonPanel});
+            List<CartItem> cartItems = ProductDAO.getCartItems(userEmail);
+            for (CartItem item : cartItems) {
+                model.addRow(new Object[]{item.getDescription(), item.getPrice(), item.getQuantity()});
             }
-            // Update total money count
-            updateTotalPrice();
         } catch (SQLException e) {
             System.out.println("Error loading cart data: " + e.getMessage());
         }
@@ -584,44 +569,6 @@ public void loadCartData() {
         model.setColumnIdentifiers(headers);
     }
 
-    private void updateQuantity(String description, double price, int newQuantity) {
-        try {
-            ProductDAO.updateCartItemQuantity(description, price, newQuantity);
-            loadCartData(); // Refresh table
-        } catch (SQLException e) {
-            System.out.println("Error updating quantity: " + e.getMessage());
-        }
-    }
-
-    private void deleteCartItem(String description, double price) {
-        try {
-            ProductDAO.deleteCartItem(description, price);
-            loadCartData(); // Refresh table
-        } catch (SQLException e) {
-            System.out.println("Error deleting cart item: " + e.getMessage());
-        }
-    }
-
-    // Calculate total price from CartTable
-    public double calculateTotalPrice() {
-        DefaultTableModel model = (DefaultTableModel) CartTable.getModel();
-        double total = 0.0;
-        for (int i = 0; i < model.getRowCount(); i++) {
-            Object priceObj = model.getValueAt(i, 1); // Price is in column 1
-            Object quantityObj = model.getValueAt(i, 2); // Quantity is in column 2
-            if (priceObj instanceof Double && quantityObj instanceof Integer) {
-                total += (Double) priceObj * (Integer) quantityObj;
-            }
-        }
-        return total;
-    }
-   
-    // Update total price label
-    public void updateTotalPrice() {
-        double total = calculateTotalPrice();
-        totalMoneyCount.setText("Rs. " + String.format("%.2f", total));
-    }
-
     public void logout(ActionListener listener) {
         cartLogoutButton.addActionListener(listener);
     }
@@ -630,7 +577,6 @@ public void loadCartData() {
         cartBackButton.addActionListener(listener);
     }
 
-    // Getter methods for buttons
     public JButton getCartBackButton() {
         return cartBackButton;
     }
@@ -661,5 +607,17 @@ public void loadCartData() {
 
     public JButton getDecreaseQuantityButton() {
         return DecreaseQuantityButton;
+    }
+
+    public JLabel getMoneyYouHave() {
+        return moneyYouHave;
+    }
+
+    public javax.swing.JComboBox<String> getPaymentOptionDrop() {
+        return paymentOptionDrop;
+    }
+
+    public javax.swing.JTextField getUserLocationGet() {
+        return userLocationGet;
     }
 }

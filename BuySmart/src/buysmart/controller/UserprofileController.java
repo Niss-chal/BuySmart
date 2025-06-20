@@ -1,0 +1,132 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buysmart.controller;
+
+import buysmart.dao.UserprofileDAO;
+import buysmart.model.UserModel;
+import buysmart.view.Dashboard;
+import buysmart.view.Profileview;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author loq
+ */
+public class UserprofileController { 
+    private Profileview view;
+    private String email; // Change from username to email
+
+    public UserprofileController(Profileview view, String email) {
+        this.view = view;
+        this.email = email;
+        init();
+        
+        openDashboard backDashboard = new openDashboard();
+        this.view.backDashboard(backDashboard);
+        
+        ChangeProfile changeProfile = new ChangeProfile();
+        this.view.changeProfile(changeProfile);
+    }
+
+    public void open() {
+        view.setVisible(true);
+    }
+
+    public void close() {
+        view.dispose();
+    }
+    
+    public void init() {
+        UserprofileDAO dao = new UserprofileDAO();
+        UserModel user = dao.getUserByEmail(email); // Use getUserByEmail
+        
+        if (user != null) {
+            view.getUpdatename().setText(user.getUsername());
+            view.getUpdateemail().setText(user.getEmail());
+            view.getUpdateaddress().setText(user.getAddress());
+            view.getUpdatecontact().setText(user.getContact());    
+        } else {
+            JOptionPane.showMessageDialog(view, "User Profile not found!", "Error", JOptionPane.ERROR_MESSAGE);
+            view.dispose();
+        }
+    }
+        
+    public class openDashboard implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            view.dispose();
+            Dashboard dashboard = new Dashboard();
+            DashboardController dashboardcontroller = new DashboardController(dashboard, email); // Pass email
+            dashboardcontroller.open();
+        }
+    }
+        
+    public class ChangeProfile implements ActionListener {
+        private boolean isEditing = false;
+        private UserModel originalUser;
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (!isEditing) {
+                originalUser = new UserModel(
+                    view.getUpdatename().getText(),
+                    view.getUpdateemail().getText(),
+                    view.getUpdateaddress().getText(),
+                    view.getUpdatecontact().getText()
+                );
+                view.setFieldsEnabled(true);
+                isEditing = true;
+                view.setChangeProfileButtonText("Save Changes");
+            } else {
+                int response = JOptionPane.showConfirmDialog(view, "Save changes?", "Confirm", JOptionPane.OK_CANCEL_OPTION);
+                if (response == JOptionPane.OK_OPTION) {
+                    boolean hasChanges = !view.getUpdatename().getText().equals(originalUser.getUsername()) ||
+                                        !view.getUpdateemail().getText().equals(originalUser.getEmail()) ||
+                                        !view.getUpdateaddress().getText().equals(originalUser.getAddress()) ||
+                                        !view.getUpdatecontact().getText().equals(originalUser.getContact());
+
+                    if (hasChanges) {
+                        UserModel updatedUser = new UserModel(
+                            view.getUpdatename().getText(),
+                            view.getUpdateemail().getText(),
+                            view.getUpdateaddress().getText(),
+                            view.getUpdatecontact().getText()
+                        );
+                        UserprofileDAO dao = new UserprofileDAO();
+                        if (dao.updateUser(updatedUser)) {
+                            JOptionPane.showMessageDialog(view, "Profile updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                            originalUser = updatedUser;
+                            // Update the controller's email if it was changed
+                            email = updatedUser.getEmail();
+                        } else {
+                            JOptionPane.showMessageDialog(view, "Failed to update profile!", "Error", JOptionPane.ERROR_MESSAGE);
+                            if (originalUser != null) {
+                                view.getUpdatename().setText(originalUser.getUsername());
+                                view.getUpdateemail().setText(originalUser.getEmail());
+                                view.getUpdateaddress().setText(originalUser.getAddress());
+                                view.getUpdatecontact().setText(originalUser.getContact());
+                            }
+                        }
+                    }
+                    view.setFieldsEnabled(false);
+                    isEditing = false;
+                    view.setChangeProfileButtonText("Change Profile");
+                } else {
+                    if (originalUser != null) {
+                        view.getUpdatename().setText(originalUser.getUsername());
+                        view.getUpdateemail().setText(originalUser.getEmail());
+                        view.getUpdateaddress().setText(originalUser.getAddress());
+                        view.getUpdatecontact().setText(originalUser.getContact());
+                    }
+                    view.setFieldsEnabled(false);
+                    isEditing = false;
+                    view.setChangeProfileButtonText("Change Profile");
+                }
+            }
+        }
+    }
+}
