@@ -5,6 +5,7 @@
 package buysmart.controller;
 
 import buysmart.dao.ProductDAO;
+import buysmart.model.BuysmartPaymentModel;
 import buysmart.view.CartManage;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
@@ -23,10 +24,12 @@ import javax.swing.table.DefaultTableModel;
     public class CartManageController {
     private CartManage cartmanage;
     private String email;
+    private BuysmartPaymentController paymentController;
 
     public CartManageController(CartManage cartmanage, String email) {
         this.cartmanage = cartmanage;
         this.email = email;
+        this.paymentController = new BuysmartPaymentController(cartmanage, new BuysmartPaymentModel(), email);
         Logout logout = new Logout();
         this.cartmanage.logout(logout);
         Back back = new Back();
@@ -106,38 +109,13 @@ import javax.swing.table.DefaultTableModel;
     }
 
     private void placeOrder() {
-        try {
-            double totalPrice = calculateTotalPrice();
-            String walletBalanceStr = cartmanage.getMoneyYouHave().getText().replace("Rs. ", "").replace(",", "");
-            double walletBalance = Double.parseDouble(walletBalanceStr);
-            String paymentMethod = (String) cartmanage.getPaymentOptionDrop().getSelectedItem();
-            String shippingAddress = cartmanage.getUserLocationGet().getText();
-
-            if (shippingAddress.equals("City,Area,Building,Apt. no.") || shippingAddress.trim().isEmpty()) {
-                JOptionPane.showMessageDialog(cartmanage, "Please enter a valid shipping address.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            if (paymentMethod.equals("Wallet") && totalPrice > walletBalance) {
-                JOptionPane.showMessageDialog(cartmanage, "Insufficient wallet balance!", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Simulate order placement
-            ProductDAO.clearCart(email);
-            refreshCart();
-            JOptionPane.showMessageDialog(cartmanage, "Order placed successfully!\nTotal: Rs. " + String.format("%.2f", totalPrice) + "\nPayment Method: " + paymentMethod + "\nShipping Address: " + shippingAddress, "Success", JOptionPane.INFORMATION_MESSAGE);
-
-            // Update wallet balance if using wallet
-            if (paymentMethod.equals("Wallet")) {
-                walletBalance -= totalPrice;
-                cartmanage.getMoneyYouHave().setText("Rs. " + String.format("%.2f", walletBalance));
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(cartmanage, "Error placing order: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(cartmanage, "Invalid wallet balance format.", "Error", JOptionPane.ERROR_MESSAGE);
+        if (!"Credit Card".equals(cartmanage.getPaymentOptionDrop().getSelectedItem())) {
+            cartmanage.showPaymentFailure("Please select 'Credit Card' for Stripe payment.");
+            return;
         }
+
+        // Delegate to BuysmartPaymentController's PlaceOrderListener
+        paymentController.processPayment();
     }
 
     class Logout implements ActionListener {
