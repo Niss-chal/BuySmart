@@ -6,6 +6,7 @@ package buysmart.model;
 
 /**
  *
+ * @author fahmi
  */
 public class UserModel {
     
@@ -28,6 +29,10 @@ public class UserModel {
         this.gender = gender;
         this.securityQuestion = securityQuestion;
         this.securityAnswer = securityAnswer;
+    }
+
+    public UserModel() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     public String getUsername() {
@@ -93,5 +98,19 @@ public class UserModel {
     public void setSecurityAnswer(String securityAnswer) {
         this.securityAnswer = securityAnswer;
     }
+    
+    public UserModel(String username, String email, String address, String contact){
+        this.username = username;
+        this.email=email;
+        this.address=address;
+        this.contact=contact;
+    }
+    
+    public UserModel(String email, String password){
+        this.email=email;
+        this.password=password;
+    }
+    
 }
+    
 

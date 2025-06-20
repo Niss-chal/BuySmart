@@ -202,6 +202,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Show "/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ShowPasswordActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="signUp">
               <Properties>

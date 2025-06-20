@@ -347,8 +347,6 @@ public class ForgetPasswordView extends javax.swing.JFrame {
     private javax.swing.JButton otpButton;
     // End of variables declaration//GEN-END:variables
 
-   
-
     // Getters
     public javax.swing.JTextField getemail() {
         return EmailBox;
@@ -419,4 +417,9 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         CPasswordBox.setEnabled(true);
         Confirm.setEnabled(true);
     }
+
+
 }
+
+
+   
