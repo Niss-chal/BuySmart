@@ -14,6 +14,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -509,6 +510,15 @@ public class CartManage extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void showPaymentSuccess() {
+        JOptionPane.showMessageDialog(this, "Payment Successful!", "Payment Status", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void showPaymentFailure(String message) {
+        JOptionPane.showMessageDialog(this, "Payment Failed: " + message, "Payment Error", JOptionPane.ERROR_MESSAGE);
+    }
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
