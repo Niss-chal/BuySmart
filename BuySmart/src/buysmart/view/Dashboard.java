@@ -7,7 +7,6 @@ package buysmart.view;
 import buysmart.controller.ProductController;
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import java.awt.event.MouseListener;
 
@@ -1024,90 +1023,90 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel userProfile;
     private javax.swing.JLabel wishlistIcon;
     // End of variables declaration//GEN-END:variables
-public void logout(ActionListener listener){ // Logoutbutton function
-    buttonLogout.addActionListener(listener);
-}
-public void cart(MouseListener listener){ 
-    cartIcon.addMouseListener(listener);
-}
-private javax.swing.JButton[] cartButtons;
-
-public void addCart(MouseListener listener){ 
-    for (JButton button : cartButtons){
-        button.addMouseListener(listener);
+    public void logout(ActionListener listener){ // Logoutbutton function
+        buttonLogout.addActionListener(listener);
     }
-}
+    public void cart(MouseListener listener){ 
+        cartIcon.addMouseListener(listener);
+    }
+    private javax.swing.JButton[] cartButtons;
 
-//Product1 added
-public javax.swing.JLabel getPicProduct() {
-    return PicProduct;
-}
+    public void addCart(MouseListener listener){ 
+        for (JButton button : cartButtons){
+            button.addMouseListener(listener);
+        }
+    }
 
-public javax.swing.JLabel getDescriptionProductCard() {
-    return DescriptionProductCard;
-}
+    //Product1 added
+    public javax.swing.JLabel getPicProduct() {
+        return PicProduct;
+    }
 
-public javax.swing.JLabel getProductCardPrice() {
-    return ProductCardPrice;
-}
-    
-//Product2 added
-public javax.swing.JLabel getPicProduct1() {
-    return PicProduct1;
-}
+    public javax.swing.JLabel getDescriptionProductCard() {
+        return DescriptionProductCard;
+    }
 
-public javax.swing.JLabel getDescriptionProductCard1() {
-    return DescriptionProductCard1;
-}
+    public javax.swing.JLabel getProductCardPrice() {
+        return ProductCardPrice;
+    }
 
-public javax.swing.JLabel getProductCardPrice1() {
-    return ProductCardPrice1;
-}
+    //Product2 added
+    public javax.swing.JLabel getPicProduct1() {
+        return PicProduct1;
+    }
 
-    
-//Product3 added
-public javax.swing.JLabel getPicProduct2() {
-    return PicProduct2;
-}
+    public javax.swing.JLabel getDescriptionProductCard1() {
+        return DescriptionProductCard1;
+    }
 
-public javax.swing.JLabel getDescriptionProductCard2() {
-    return DescriptionProductCard2;
-}
+    public javax.swing.JLabel getProductCardPrice1() {
+        return ProductCardPrice1;
+    }
 
-public javax.swing.JLabel getProductCardPrice2() {
-    return ProductCardPrice2;
-}
-    
-    
-//Product4 added
-public javax.swing.JLabel getPicProduct3() {
-    return PicProduct3;
-}
 
-public javax.swing.JLabel getDescriptionProductCard3() {
-    return DescriptionProductCard3;
-}
+    //Product3 added
+    public javax.swing.JLabel getPicProduct2() {
+        return PicProduct2;
+    }
 
-public javax.swing.JLabel getProductCardPrice3() {
-    return ProductCardPrice3;
-}
-    
-//Product4 added
-public javax.swing.JLabel getPicProduct4() {
-    return PicProduct4;
-}
+    public javax.swing.JLabel getDescriptionProductCard2() {
+        return DescriptionProductCard2;
+    }
 
-public javax.swing.JLabel getDescriptionProductCard4() {
-    return DescriptionProductCard4;
-}
+    public javax.swing.JLabel getProductCardPrice2() {
+        return ProductCardPrice2;
+    }
 
-public javax.swing.JLabel getProductCardPrice4() {
-    return ProductCardPrice4;
-}
-    
+
+    //Product4 added
+    public javax.swing.JLabel getPicProduct3() {
+        return PicProduct3;
+    }
+
+    public javax.swing.JLabel getDescriptionProductCard3() {
+        return DescriptionProductCard3;
+    }
+
+    public javax.swing.JLabel getProductCardPrice3() {
+        return ProductCardPrice3;
+    }
+
+    //Product4 added
+    public javax.swing.JLabel getPicProduct4() {
+        return PicProduct4;
+    }
+
+    public javax.swing.JLabel getDescriptionProductCard4() {
+        return DescriptionProductCard4;
+    }
+
+    public javax.swing.JLabel getProductCardPrice4() {
+        return ProductCardPrice4;
+    }
+
     public void openProfile(MouseListener listener){
-    userProfile.addMouseListener(listener); 
-}
-    
+        userProfile.addMouseListener(listener); 
+    }
+
     
 }
