@@ -37,7 +37,6 @@ import javax.swing.table.DefaultTableModel;
         this.cartmanage.getDeleteButton().addActionListener(new DeleteRowAction());
         this.cartmanage.getIncreaseQuantityButton().addActionListener(new IncreaseQuantityAction());
         this.cartmanage.getDecreaseQuantityButton().addActionListener(new DecreaseQuantityAction());
-        this.cartmanage.getPlaceOrderButton().addActionListener(new PlaceOrderAction());
         refreshCart();
     }
 
@@ -106,16 +105,6 @@ import javax.swing.table.DefaultTableModel;
     public void updateTotalPrice() {
         double total = calculateTotalPrice();
         cartmanage.getTotalMoneyCount().setText("Rs. " + String.format("%.2f", total));
-    }
-
-    private void placeOrder() {
-        if (!"Credit Card".equals(cartmanage.getPaymentOptionDrop().getSelectedItem())) {
-            cartmanage.showPaymentFailure("Please select 'Credit Card' for Stripe payment.");
-            return;
-        }
-
-        // Delegate to BuysmartPaymentController's PlaceOrderListener
-        paymentController.processPayment();
     }
 
     class Logout implements ActionListener {
@@ -198,13 +187,6 @@ import javax.swing.table.DefaultTableModel;
             } else {
                 JOptionPane.showMessageDialog(null, "Please select a row to decrease quantity.", "Info", JOptionPane.INFORMATION_MESSAGE);
             }
-        }
-    }
-
-    class PlaceOrderAction implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            placeOrder();
         }
     }
 }
