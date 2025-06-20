@@ -1,5 +1,7 @@
 package buysmart.view;
 
+import java.awt.Color;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -27,31 +29,210 @@ public class OrdersView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        cartLogoutPanel = new javax.swing.JPanel();
+        cartBackButton = new javax.swing.JButton();
+        cartLogoutButton = new javax.swing.JButton();
+        cartLogo = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        CartTable = new javax.swing.JTable();
+        deleteButton = new javax.swing.JButton();
+        cartcheckoutSign = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Orders layout");
+        cartLogoutPanel.setBackground(new java.awt.Color(204, 204, 204));
+
+        cartBackButton.setBackground(new java.awt.Color(153, 204, 255));
+        cartBackButton.setText("Back");
+        cartBackButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        cartBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cartBackButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cartBackButtonMouseExited(evt);
+            }
+        });
+        cartBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cartBackButtonActionPerformed(evt);
+            }
+        });
+
+        cartLogoutButton.setBackground(new java.awt.Color(153, 204, 255));
+        cartLogoutButton.setText("Logout");
+        cartLogoutButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        cartLogoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cartLogoutButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cartLogoutButtonMouseExited(evt);
+            }
+        });
+        cartLogoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cartLogoutButtonActionPerformed(evt);
+            }
+        });
+
+        cartLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/logo2 (1).png"))); // NOI18N
+
+        javax.swing.GroupLayout cartLogoutPanelLayout = new javax.swing.GroupLayout(cartLogoutPanel);
+        cartLogoutPanel.setLayout(cartLogoutPanelLayout);
+        cartLogoutPanelLayout.setHorizontalGroup(
+            cartLogoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cartLogoutPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cartBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cartLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cartLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cartLogoutPanelLayout.setVerticalGroup(
+            cartLogoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cartLogoutPanelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(cartLogoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cartLogo)
+                    .addComponent(cartLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        CartTable.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CartTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "description", "price", "quantity"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(CartTable);
+
+        deleteButton.setBackground(new java.awt.Color(153, 204, 255));
+        deleteButton.setText("Delete");
+        deleteButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
+        deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteButtonMouseExited(evt);
+            }
+        });
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(293, 293, 293)
+                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(296, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(425, Short.MAX_VALUE)
+                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 80, Short.MAX_VALUE)))
+        );
+
+        cartcheckoutSign.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
+        cartcheckoutSign.setText("Order History");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cartLogoutPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addComponent(jLabel1)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cartcheckoutSign)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addComponent(cartLogoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cartcheckoutSign)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cartBackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartBackButtonMouseEntered
+        cartBackButton.setBackground(new Color(255,204,153));// TODO add your handling code here:
+    }//GEN-LAST:event_cartBackButtonMouseEntered
+
+    private void cartBackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartBackButtonMouseExited
+        cartBackButton.setBackground(new Color(153,204,255));// TODO add your handling code here:
+    }//GEN-LAST:event_cartBackButtonMouseExited
+
+    private void cartBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartBackButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cartBackButtonActionPerformed
+
+    private void cartLogoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLogoutButtonMouseEntered
+        cartLogoutButton.setBackground(new Color(255,204,153));        // TODO add your handling code here:
+    }//GEN-LAST:event_cartLogoutButtonMouseEntered
+
+    private void cartLogoutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLogoutButtonMouseExited
+        cartLogoutButton.setBackground(new Color(153,204,255));// TODO add your handling code here:
+    }//GEN-LAST:event_cartLogoutButtonMouseExited
+
+    private void cartLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartLogoutButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cartLogoutButtonActionPerformed
+
+    private void deleteButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonMouseEntered
+
+    private void deleteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonMouseExited
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +270,14 @@ public class OrdersView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTable CartTable;
+    private javax.swing.JButton cartBackButton;
+    private javax.swing.JLabel cartLogo;
+    private javax.swing.JButton cartLogoutButton;
+    private javax.swing.JPanel cartLogoutPanel;
+    private javax.swing.JLabel cartcheckoutSign;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
