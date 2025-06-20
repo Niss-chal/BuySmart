@@ -16,7 +16,6 @@ import com.stripe.exception.StripeException;
 public class BuysmartPaymentModel {
     
     
-
     public String createCheckoutSession(double totalAmount, String currency) {
         try {
             SessionCreateParams params = SessionCreateParams.builder()
