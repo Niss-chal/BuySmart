@@ -117,7 +117,7 @@ public class OrdersView extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "description", "price", "quantity"
+                "Desctiption", "Price", "Quantity"
             }
         ) {
             Class[] types = new Class [] {
