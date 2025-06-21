@@ -14,7 +14,7 @@ import com.stripe.exception.StripeException;
  * @author fahmi
  */
 public class BuysmartPaymentModel {
-    
+
     
     public String createCheckoutSession(double totalAmount, String currency) {
         try {
