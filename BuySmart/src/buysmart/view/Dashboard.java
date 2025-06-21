@@ -1108,5 +1108,7 @@ public class Dashboard extends javax.swing.JFrame {
         userProfile.addMouseListener(listener); 
     }
 
-    
+    public void openOrdersHistory(MouseListener listener){
+        orderlistIcon.addMouseListener(listener);
+    }
 }

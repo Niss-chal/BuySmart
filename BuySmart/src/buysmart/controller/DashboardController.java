@@ -9,6 +9,7 @@ import buysmart.model.ProductModel;
 import buysmart.view.CartManage;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
+import buysmart.view.OrdersView;
 import buysmart.view.Profileview;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +27,7 @@ import javax.swing.JOptionPane;
 public class DashboardController {
     private Dashboard dashboard;
     private List<ProductModel> products; // Store products for mapping buttons
-    private String email;
+    private String email; 
 
     public DashboardController(Dashboard dashboard,String email) {
         this.dashboard = dashboard;
@@ -52,6 +53,9 @@ public class DashboardController {
         this.email=email;
         OpenProfile openProfile = new OpenProfile();
         this.dashboard.openProfile(openProfile); 
+        
+        OpenOrders openOrdersHistory = new OpenOrders();
+        this.dashboard.openOrdersHistory(openOrdersHistory);
     }
 
 
@@ -180,6 +184,35 @@ public class DashboardController {
         }
     
     }
+     
+     class OpenOrders implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+        dashboard.setVisible(false);
+        OrdersView ordersview = new OrdersView();
+        OrdersController ordersController = new OrdersController(ordersview, email);
+        ordersController.open();
+           
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+         
+     }
 }
 
 
