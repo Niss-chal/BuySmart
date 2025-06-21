@@ -147,4 +147,57 @@ public class ProductDAO {
             throw e;
         }
     }
+
+    public static void saveOrder(String userEmail, String description, double price, int quantity) throws SQLException {
+        String sql = "INSERT INTO orders (user_email, description, price, quantity) VALUES (?, ?, ?, ?)";
+        try (Connection conn = MysqlConnection1.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, userEmail);
+            pstmt.setString(2, description);
+            pstmt.setDouble(3, price); // Maps to DECIMAL(10,2)
+            pstmt.setInt(4, quantity);
+            int rowsAffected = pstmt.executeUpdate();
+            System.out.println("Saved order for user " + userEmail + ", rows affected: " + rowsAffected);
+        } catch (SQLException e) {
+            System.err.println("Database Error in saveOrder: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public static List<CartItem> getOrderHistory(String userEmail) throws SQLException {
+        String sql = "SELECT order_id, description, price, quantity FROM orders WHERE user_email = ?";
+        List<CartItem> orderItems = new ArrayList<>();
+        try (Connection conn = MysqlConnection1.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, userEmail);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    orderItems.add(new CartItem(
+                            rs.getInt("order_id"),
+                            rs.getString("description"),
+                            rs.getDouble("price"),
+                            rs.getInt("quantity")
+                    ));
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Database Error in getOrderHistory: " + e.getMessage());
+            throw e;
+        }
+        return orderItems;
+    }
+
+    public static void deleteOrderItem(int orderId) throws SQLException {
+        String sql = "DELETE FROM orders WHERE order_id = ?";
+        try (Connection conn = MysqlConnection1.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, orderId);
+            int rowsAffected = pstmt.executeUpdate();
+            System.out.println("Deleted order item with ID " + orderId + ", rows affected: " + rowsAffected);
+        } catch (SQLException e) {
+            System.err.println("Database Error in deleteOrderItem: " + e.getMessage());
+            throw e;
+        }
+    }
+
 }
