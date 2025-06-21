@@ -79,7 +79,7 @@ public class ComputersView extends javax.swing.JFrame {
 
         ComputersPanel.setBackground(new java.awt.Color(204, 204, 204));
 
-        ComputersPicture1.setText("pic");
+        ComputersPicture1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/Lenovo ThinkCentre1.png"))); // NOI18N
         ComputersPicture1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         ProductAddToCartButton.setBackground(new java.awt.Color(153, 204, 255));
@@ -94,31 +94,36 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersViewPanel1.setLayout(ComputersViewPanel1Layout);
         ComputersViewPanel1Layout.setHorizontalGroup(
             ComputersViewPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ComputersPicture1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComputersViewPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(ComputersViewPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ComputersDescription1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(ComputersViewPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ComputersViewPanel1Layout.createSequentialGroup()
-                        .addComponent(ComputersPrice1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton)))
-                .addGap(16, 16, 16))
+                        .addGroup(ComputersViewPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ComputersDescription1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(ComputersViewPanel1Layout.createSequentialGroup()
+                                .addComponent(ComputersPrice1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ProductAddToCartButton)))
+                        .addGap(16, 16, 16))
+                    .addGroup(ComputersViewPanel1Layout.createSequentialGroup()
+                        .addComponent(ComputersPicture1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         ComputersViewPanel1Layout.setVerticalGroup(
             ComputersViewPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ComputersViewPanel1Layout.createSequentialGroup()
-                .addComponent(ComputersPicture1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(ComputersPicture1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ComputersDescription1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(ComputersViewPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ProductAddToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComputersPrice1))
-                .addGap(0, 24, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
 
-        ComputersPicture2.setText("pic");
+        ComputersPicture2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/HP Pro 400 G91.png"))); // NOI18N
         ComputersPicture2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         ProductAddToCartButton1.setBackground(new java.awt.Color(153, 204, 255));
@@ -133,31 +138,34 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersViewPanel2.setLayout(ComputersViewPanel2Layout);
         ComputersViewPanel2Layout.setHorizontalGroup(
             ComputersViewPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ComputersPicture2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComputersViewPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(ComputersViewPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(ComputersViewPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ComputersViewPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ComputersDescription2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(ComputersViewPanel2Layout.createSequentialGroup()
-                        .addComponent(ComputersPrice2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton1))
-                    .addComponent(ComputersDescription2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(16, 16, 16))
+                        .addGroup(ComputersViewPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ComputersPicture2, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addGroup(ComputersViewPanel2Layout.createSequentialGroup()
+                                .addComponent(ComputersPrice2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ProductAddToCartButton1)))
+                        .addContainerGap())))
         );
         ComputersViewPanel2Layout.setVerticalGroup(
             ComputersViewPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ComputersViewPanel2Layout.createSequentialGroup()
-                .addComponent(ComputersPicture2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(ComputersPicture2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ComputersDescription2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addGroup(ComputersViewPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ProductAddToCartButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComputersPrice2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        ComputersPicture3.setText("pic");
+        ComputersPicture3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/Dell Wyse 5070 (1).png"))); // NOI18N
         ComputersPicture3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         ProductAddToCartButton2.setBackground(new java.awt.Color(153, 204, 255));
@@ -172,31 +180,36 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersViewPanel3.setLayout(ComputersViewPanel3Layout);
         ComputersViewPanel3Layout.setHorizontalGroup(
             ComputersViewPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ComputersPicture3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComputersViewPanel3Layout.createSequentialGroup()
+            .addGroup(ComputersViewPanel3Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(ComputersViewPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ComputersDescription3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(ComputersViewPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ComputersViewPanel3Layout.createSequentialGroup()
-                        .addComponent(ComputersPrice3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton2)))
-                .addGap(16, 16, 16))
+                        .addComponent(ComputersPicture3, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(ComputersViewPanel3Layout.createSequentialGroup()
+                        .addGroup(ComputersViewPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ComputersDescription3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ComputersViewPanel3Layout.createSequentialGroup()
+                                .addComponent(ComputersPrice3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ProductAddToCartButton2)))
+                        .addGap(16, 16, 16))))
         );
         ComputersViewPanel3Layout.setVerticalGroup(
             ComputersViewPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ComputersViewPanel3Layout.createSequentialGroup()
-                .addComponent(ComputersPicture3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(ComputersPicture3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ComputersDescription3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(15, 15, 15)
                 .addGroup(ComputersViewPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductAddToCartButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ComputersPrice3))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(ComputersPrice3)
+                    .addComponent(ProductAddToCartButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44))
         );
 
-        ComputersPicture4.setText("pic");
+        ComputersPicture4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/HP Chromebook1 .png"))); // NOI18N
         ComputersPicture4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         ProductAddToCartButton3.setBackground(new java.awt.Color(153, 204, 255));
@@ -211,33 +224,36 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersViewPanel4.setLayout(ComputersViewPanel4Layout);
         ComputersViewPanel4Layout.setHorizontalGroup(
             ComputersViewPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComputersViewPanel4Layout.createSequentialGroup()
-                .addGroup(ComputersViewPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(ComputersViewPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ComputersViewPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ComputersViewPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ComputersDescription4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(ComputersPicture4, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(ComputersViewPanel4Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(ComputersPrice4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton3)))
-                .addGap(16, 16, 16))
-            .addComponent(ComputersPicture4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(ComputersViewPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(ComputersViewPanel4Layout.createSequentialGroup()
+                                .addComponent(ComputersPrice4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ProductAddToCartButton3))
+                            .addComponent(ComputersDescription4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(16, 16, 16))))
         );
         ComputersViewPanel4Layout.setVerticalGroup(
             ComputersViewPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ComputersViewPanel4Layout.createSequentialGroup()
-                .addComponent(ComputersPicture4, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(ComputersPicture4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ComputersDescription4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addGap(27, 27, 27)
                 .addGroup(ComputersViewPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComputersPrice4)
                     .addComponent(ProductAddToCartButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
 
-        ComputersPicture5.setText("pic");
+        ComputersPicture5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/MacBook Air M41.png"))); // NOI18N
         ComputersPicture5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         ProductAddToCartButton4.setBackground(new java.awt.Color(153, 204, 255));
@@ -252,28 +268,33 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersViewPanel5.setLayout(ComputersViewPanel5Layout);
         ComputersViewPanel5Layout.setHorizontalGroup(
             ComputersViewPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ComputersPicture5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(ComputersViewPanel5Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(ComputersViewPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ComputersDescription5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(ComputersViewPanel5Layout.createSequentialGroup()
-                        .addComponent(ComputersPrice5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addComponent(ProductAddToCartButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(16, 16, 16))
+                        .addComponent(ComputersPicture5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(ComputersViewPanel5Layout.createSequentialGroup()
+                        .addGroup(ComputersViewPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ComputersDescription5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(ComputersViewPanel5Layout.createSequentialGroup()
+                                .addComponent(ComputersPrice5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ProductAddToCartButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(16, 16, 16))))
         );
         ComputersViewPanel5Layout.setVerticalGroup(
             ComputersViewPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ComputersViewPanel5Layout.createSequentialGroup()
-                .addComponent(ComputersPicture5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(ComputersPicture5, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ComputersDescription5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ComputersViewPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ProductAddToCartButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComputersPrice5))
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ComputersPanelLayout = new javax.swing.GroupLayout(ComputersPanel);
@@ -281,18 +302,17 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersPanelLayout.setHorizontalGroup(
             ComputersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ComputersPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(ComputersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ComputersViewPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(ComputersPanelLayout.createSequentialGroup()
-                        .addComponent(ComputersViewPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(ComputersViewPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(ComputersViewPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addComponent(ComputersViewPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(51, 51, 51))
+                .addGap(36, 36, 36)
+                .addGroup(ComputersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ComputersViewPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ComputersViewPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(ComputersViewPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(ComputersViewPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(ComputersViewPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
         ComputersPanelLayout.setVerticalGroup(
             ComputersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,19 +320,19 @@ public class ComputersView extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(ComputersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ComputersViewPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ComputersViewPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ComputersViewPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(ComputersViewPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ComputersViewPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ComputersViewPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(ComputersViewPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addComponent(ComputersViewPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1059, Short.MAX_VALUE)
+            .addGap(0, 1087, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -321,7 +341,7 @@ public class ComputersView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 637, Short.MAX_VALUE)
+            .addGap(0, 761, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -403,9 +423,8 @@ public class ComputersView extends javax.swing.JFrame {
     // Getter methods for UI components
     
     //1st computers
-    public JLabel getComputersPicture1() {
-        return ComputersPicture1;
-    }
+    
+    
 
     public JLabel getComputersDescription1() {
         return ComputersDescription1;
@@ -420,10 +439,7 @@ public class ComputersView extends javax.swing.JFrame {
     }
 
     //2nd computers
-    public JLabel getComputersPicture2() {
-        return ComputersPicture2;
-    }
-
+    
     public JLabel getComputersDescription2() {
         return ComputersDescription2;
     }
@@ -437,9 +453,7 @@ public class ComputersView extends javax.swing.JFrame {
     }
 
     //3rd computers
-    public JLabel getComputersPicture3() {
-        return ComputersPicture3;
-    }
+    
 
     public JLabel getComputersDescription3() {
         return ComputersDescription3;
@@ -454,10 +468,7 @@ public class ComputersView extends javax.swing.JFrame {
     }
 
     //4th computers
-    public JLabel getComputersPicture4() {
-        return ComputersPicture4;
-    }
-
+    
     public JLabel getComputersDescription4() {
         return ComputersDescription4;
     }
@@ -471,10 +482,7 @@ public class ComputersView extends javax.swing.JFrame {
     }
 
     //5th computers
-    public JLabel getComputersPicture5() {
-        return ComputersPicture5;
-    }
-
+    
     public JLabel getComputersDescription5() {
         return ComputersDescription5;
     }
