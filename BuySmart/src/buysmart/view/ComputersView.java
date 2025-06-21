@@ -423,7 +423,9 @@ public class ComputersView extends javax.swing.JFrame {
     // Getter methods for UI components
     
     //1st computers
-    
+    public JLabel getComputersPicture1() {
+        return ComputersPicture1;
+    }
     
 
     public JLabel getComputersDescription1() {
@@ -440,6 +442,10 @@ public class ComputersView extends javax.swing.JFrame {
 
     //2nd computers
     
+    public JLabel getComputersPicture2() {
+        return ComputersPicture2;
+    }
+    
     public JLabel getComputersDescription2() {
         return ComputersDescription2;
     }
@@ -455,6 +461,9 @@ public class ComputersView extends javax.swing.JFrame {
     //3rd computers
     
 
+    public JLabel getComputersPicture3() {
+        return ComputersPicture3;
+    }
     public JLabel getComputersDescription3() {
         return ComputersDescription3;
     }
@@ -469,6 +478,10 @@ public class ComputersView extends javax.swing.JFrame {
 
     //4th computers
     
+    public JLabel getComputersPicture4() {
+        return ComputersPicture4;
+    }
+    
     public JLabel getComputersDescription4() {
         return ComputersDescription4;
     }
@@ -482,6 +495,10 @@ public class ComputersView extends javax.swing.JFrame {
     }
 
     //5th computers
+    
+    public JLabel getComputersPicture5() {
+        return ComputersPicture5;
+    }
     
     public JLabel getComputersDescription5() {
         return ComputersDescription5;
