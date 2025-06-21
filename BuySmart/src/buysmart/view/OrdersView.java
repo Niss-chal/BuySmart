@@ -1,6 +1,8 @@
 package buysmart.view;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -18,6 +20,7 @@ public class OrdersView extends javax.swing.JFrame {
      */
     public OrdersView() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -30,50 +33,50 @@ public class OrdersView extends javax.swing.JFrame {
     private void initComponents() {
 
         cartLogoutPanel = new javax.swing.JPanel();
-        cartBackButton = new javax.swing.JButton();
-        cartLogoutButton = new javax.swing.JButton();
+        ordersBackButton = new javax.swing.JButton();
+        ordersLogoutButton = new javax.swing.JButton();
         cartLogo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        CartTable = new javax.swing.JTable();
-        deleteButton = new javax.swing.JButton();
+        OrdersTable = new javax.swing.JTable();
+        ordersDeleteButton = new javax.swing.JButton();
         cartcheckoutSign = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cartLogoutPanel.setBackground(new java.awt.Color(204, 204, 204));
 
-        cartBackButton.setBackground(new java.awt.Color(153, 204, 255));
-        cartBackButton.setText("Back");
-        cartBackButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        cartBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        ordersBackButton.setBackground(new java.awt.Color(153, 204, 255));
+        ordersBackButton.setText("Back");
+        ordersBackButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        ordersBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cartBackButtonMouseEntered(evt);
+                ordersBackButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                cartBackButtonMouseExited(evt);
+                ordersBackButtonMouseExited(evt);
             }
         });
-        cartBackButton.addActionListener(new java.awt.event.ActionListener() {
+        ordersBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cartBackButtonActionPerformed(evt);
+                ordersBackButtonActionPerformed(evt);
             }
         });
 
-        cartLogoutButton.setBackground(new java.awt.Color(153, 204, 255));
-        cartLogoutButton.setText("Logout");
-        cartLogoutButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        cartLogoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        ordersLogoutButton.setBackground(new java.awt.Color(153, 204, 255));
+        ordersLogoutButton.setText("Logout");
+        ordersLogoutButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        ordersLogoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cartLogoutButtonMouseEntered(evt);
+                ordersLogoutButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                cartLogoutButtonMouseExited(evt);
+                ordersLogoutButtonMouseExited(evt);
             }
         });
-        cartLogoutButton.addActionListener(new java.awt.event.ActionListener() {
+        ordersLogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cartLogoutButtonActionPerformed(evt);
+                ordersLogoutButtonActionPerformed(evt);
             }
         });
 
@@ -85,11 +88,11 @@ public class OrdersView extends javax.swing.JFrame {
             cartLogoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartLogoutPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cartBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ordersBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cartLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cartLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ordersLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cartLogoutPanelLayout.setVerticalGroup(
@@ -97,16 +100,16 @@ public class OrdersView extends javax.swing.JFrame {
             .addGroup(cartLogoutPanelLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(cartLogoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cartBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ordersBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cartLogo)
-                    .addComponent(cartLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(ordersLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 4, true));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        CartTable.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CartTable.setModel(new javax.swing.table.DefaultTableModel(
+        OrdersTable.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        OrdersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -114,7 +117,7 @@ public class OrdersView extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "description", "price", "quantity"
+                "Desctiption", "Price", "Quantity"
             }
         ) {
             Class[] types = new Class [] {
@@ -125,22 +128,22 @@ public class OrdersView extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(CartTable);
+        jScrollPane1.setViewportView(OrdersTable);
 
-        deleteButton.setBackground(new java.awt.Color(153, 204, 255));
-        deleteButton.setText("Delete");
-        deleteButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
-        deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        ordersDeleteButton.setBackground(new java.awt.Color(153, 204, 255));
+        ordersDeleteButton.setText("Delete");
+        ordersDeleteButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
+        ordersDeleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                deleteButtonMouseEntered(evt);
+                ordersDeleteButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                deleteButtonMouseExited(evt);
+                ordersDeleteButtonMouseExited(evt);
             }
         });
-        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+        ordersDeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteButtonActionPerformed(evt);
+                ordersDeleteButtonActionPerformed(evt);
             }
         });
 
@@ -150,7 +153,7 @@ public class OrdersView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(293, 293, 293)
-                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ordersDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(296, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE))
@@ -159,7 +162,7 @@ public class OrdersView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(425, Short.MAX_VALUE)
-                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ordersDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -176,12 +179,10 @@ public class OrdersView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cartLogoutPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cartcheckoutSign)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cartcheckoutSign))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -198,41 +199,41 @@ public class OrdersView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cartBackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartBackButtonMouseEntered
-        cartBackButton.setBackground(new Color(255,204,153));// TODO add your handling code here:
-    }//GEN-LAST:event_cartBackButtonMouseEntered
+    private void ordersBackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersBackButtonMouseEntered
+        ordersBackButton.setBackground(new Color(255,204,153));// TODO add your handling code here:
+    }//GEN-LAST:event_ordersBackButtonMouseEntered
 
-    private void cartBackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartBackButtonMouseExited
-        cartBackButton.setBackground(new Color(153,204,255));// TODO add your handling code here:
-    }//GEN-LAST:event_cartBackButtonMouseExited
+    private void ordersBackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersBackButtonMouseExited
+        ordersBackButton.setBackground(new Color(153,204,255));// TODO add your handling code here:
+    }//GEN-LAST:event_ordersBackButtonMouseExited
 
-    private void cartBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartBackButtonActionPerformed
+    private void ordersBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordersBackButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cartBackButtonActionPerformed
+    }//GEN-LAST:event_ordersBackButtonActionPerformed
 
-    private void cartLogoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLogoutButtonMouseEntered
-        cartLogoutButton.setBackground(new Color(255,204,153));        // TODO add your handling code here:
-    }//GEN-LAST:event_cartLogoutButtonMouseEntered
+    private void ordersLogoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersLogoutButtonMouseEntered
+        ordersLogoutButton.setBackground(new Color(255,204,153));        // TODO add your handling code here:
+    }//GEN-LAST:event_ordersLogoutButtonMouseEntered
 
-    private void cartLogoutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLogoutButtonMouseExited
-        cartLogoutButton.setBackground(new Color(153,204,255));// TODO add your handling code here:
-    }//GEN-LAST:event_cartLogoutButtonMouseExited
+    private void ordersLogoutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersLogoutButtonMouseExited
+        ordersLogoutButton.setBackground(new Color(153,204,255));// TODO add your handling code here:
+    }//GEN-LAST:event_ordersLogoutButtonMouseExited
 
-    private void cartLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartLogoutButtonActionPerformed
+    private void ordersLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordersLogoutButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cartLogoutButtonActionPerformed
+    }//GEN-LAST:event_ordersLogoutButtonActionPerformed
 
-    private void deleteButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseEntered
+    private void ordersDeleteButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersDeleteButtonMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_deleteButtonMouseEntered
+    }//GEN-LAST:event_ordersDeleteButtonMouseEntered
 
-    private void deleteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseExited
+    private void ordersDeleteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersDeleteButtonMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_deleteButtonMouseExited
+    }//GEN-LAST:event_ordersDeleteButtonMouseExited
 
-    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+    private void ordersDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordersDeleteButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_deleteButtonActionPerformed
+    }//GEN-LAST:event_ordersDeleteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,14 +271,32 @@ public class OrdersView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable CartTable;
-    private javax.swing.JButton cartBackButton;
+    private javax.swing.JTable OrdersTable;
     private javax.swing.JLabel cartLogo;
-    private javax.swing.JButton cartLogoutButton;
     private javax.swing.JPanel cartLogoutPanel;
     private javax.swing.JLabel cartcheckoutSign;
-    private javax.swing.JButton deleteButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton ordersBackButton;
+    private javax.swing.JButton ordersDeleteButton;
+    private javax.swing.JButton ordersLogoutButton;
     // End of variables declaration//GEN-END:variables
+
+    
+
+    public void backDashboard(ActionListener listener){
+        ordersBackButton.addActionListener(listener);
+    }
+    
+    public void ordersLogout(ActionListener listener){
+        ordersLogoutButton.addActionListener(listener);
+    }
+    
+    public void ordersDelete(ActionListener listener){
+        ordersDeleteButton.addActionListener(listener);
+    }
+    
+    public javax.swing.JTable ordersTable(){
+        return OrdersTable;
+    }
 }
