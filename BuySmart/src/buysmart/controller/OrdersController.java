@@ -37,6 +37,7 @@ public class OrdersController {
     private void initController() {
         ordersView.backDashboard(new BackDashboard());
         ordersView.ordersLogout(new OrdersLogout());
+        ordersView.ordersDelete(new DeleteOrders());
         
     }
 
@@ -85,6 +86,52 @@ public class OrdersController {
             dashboardController.open();
         }
     }
+
+    class DeleteOrders implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JTable table = ordersView.ordersTable();
+            int selectedRow = table.getSelectedRow();
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(ordersView, "Please select an order to delete.", "No Selection", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            String description = (String) table.getValueAt(selectedRow, 0);
+            double price = (Double) table.getValueAt(selectedRow, 1);
+            int quantity = (Integer) table.getValueAt(selectedRow, 2);
+            int confirm = JOptionPane.showConfirmDialog(ordersView,
+                "Are you sure you want to delete this order?\n" +
+                "Item: " + description + ", Price: Rs. " + String.format("%.2f", price) + ", Quantity: " + quantity,
+                "Confirm Deletion",
+                JOptionPane.YES_NO_OPTION);
+            if (confirm == JOptionPane.YES_OPTION) {
+                try {
+                    // Find order_id by matching description, price, and quantity
+                    List<CartItem> orders = ProductDAO.getOrderHistory(email);
+                    int orderId = -1;
+                    for (CartItem item : orders) {
+                        if (item.getDescription().equals(description) &&
+                            Math.abs(item.getPrice() - price) < 0.01 &&
+                            item.getQuantity() == quantity) {
+                            orderId = item.getId();
+                            break;
+                        }
+                    }
+                    if (orderId != -1) {
+                        ProductDAO.deleteOrderItem(orderId);
+                        loadOrderHistory(); // Refresh table
+                        JOptionPane.showMessageDialog(ordersView, "Order deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(ordersView, "Order not found.", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(ordersView, "Error deleting order: " + ex.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
+                    Logger.getLogger(OrdersController.class.getName()).log(Level.SEVERE, "SQLException in deleteOrder", ex);
+                }
+            }
+        }
+    }
+        	
 
   
 }
