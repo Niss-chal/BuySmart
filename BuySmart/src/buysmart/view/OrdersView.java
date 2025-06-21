@@ -282,6 +282,8 @@ public class OrdersView extends javax.swing.JFrame {
     private javax.swing.JButton ordersLogoutButton;
     // End of variables declaration//GEN-END:variables
 
+    
+
     public void backDashboard(ActionListener listener){
         ordersBackButton.addActionListener(listener);
     }
@@ -294,4 +296,7 @@ public class OrdersView extends javax.swing.JFrame {
         ordersDeleteButton.addActionListener(listener);
     }
     
+    public javax.swing.JTable ordersTable(){
+        return OrdersTable;
+    }
 }
