@@ -59,19 +59,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ComputersViewPanel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="ComputersViewPanel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="ComputersViewPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="ComputersViewPanel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="67" max="32767" attributes="0"/>
-                          <Component id="ComputersViewPanel4" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="ComputersViewPanel5" max="32767" attributes="0"/>
+                      <Component id="ComputersViewPanel1" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="ComputersViewPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="ComputersViewPanel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                  <Component id="ComputersViewPanel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -80,16 +78,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="ComputersViewPanel4" max="32767" attributes="0"/>
                       <Component id="ComputersViewPanel3" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="ComputersViewPanel2" max="32767" attributes="0"/>
-                          <Component id="ComputersViewPanel4" alignment="0" max="32767" attributes="0"/>
-                          <Component id="ComputersViewPanel1" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="ComputersViewPanel2" max="32767" attributes="0"/>
+                      <Component id="ComputersViewPanel1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="ComputersViewPanel5" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -106,7 +102,7 @@
                           <Component id="ComputersDescription1" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="ComputersPrice1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="36" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="ProductAddToCartButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -130,7 +126,7 @@
                           <Component id="ProductAddToCartButton" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="ComputersPrice1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -180,7 +176,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="ComputersPrice2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="49" max="32767" attributes="0"/>
+                              <EmptySpace pref="66" max="32767" attributes="0"/>
                               <Component id="ProductAddToCartButton1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="ComputersDescription2" alignment="1" max="32767" attributes="0"/>
@@ -200,7 +196,7 @@
                           <Component id="ProductAddToCartButton1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="ComputersPrice2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="25" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -251,7 +247,7 @@
                           <Component id="ComputersDescription3" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="ComputersPrice3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="52" max="32767" attributes="0"/>
+                              <EmptySpace pref="87" max="32767" attributes="0"/>
                               <Component id="ProductAddToCartButton2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -270,7 +266,7 @@
                           <Component id="ProductAddToCartButton2" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="ComputersPrice3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -323,7 +319,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Component id="ComputersPrice4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="37" max="32767" attributes="0"/>
+                              <EmptySpace pref="73" max="32767" attributes="0"/>
                               <Component id="ProductAddToCartButton3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -343,7 +339,7 @@
                           <Component id="ComputersPrice4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ProductAddToCartButton3" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -394,7 +390,7 @@
                           <Component id="ComputersDescription5" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="ComputersPrice5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="39" max="32767" attributes="0"/>
+                              <EmptySpace pref="57" max="32767" attributes="0"/>
                               <Component id="ProductAddToCartButton4" min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -413,7 +409,7 @@
                           <Component id="ProductAddToCartButton4" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="ComputersPrice5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
