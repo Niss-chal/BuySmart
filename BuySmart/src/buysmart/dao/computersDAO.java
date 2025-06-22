@@ -20,15 +20,14 @@ import java.util.List;
 public class computersDAO {
     
     public static List<computersModel> getComputers() throws SQLException {
-//        String sql = "SELECT image_path, description, price FROM computers WHERE category = 'Computers'";
-        String sql = "SELECT `description`, price FROM computers WHERE category = 'Computers'";
+        String sql = "SELECT image_path, description, price FROM computers WHERE category = 'Computers'";
         List<computersModel> computers = new ArrayList<>();
         try (Connection conn = MysqlConnection1.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
                 computers.add(new computersModel(
-//                    rs.getString("image_path"),
+                    rs.getString("image_path"),
                     rs.getString("description"),
                     rs.getDouble("price")
                 ));
