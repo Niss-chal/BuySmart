@@ -38,6 +38,7 @@ public class UserdaoTestIT {
         boolean result=dao.registerUser(user);
         Assert.assertFalse("Register should fail for existing details",result);
     }
+    @Test
     public void loginWithCorrectCreds() throws SQLException{
         LoginRequest req=new LoginRequest(correctemail,password);
         UserDAO dao= new UserDAO();
