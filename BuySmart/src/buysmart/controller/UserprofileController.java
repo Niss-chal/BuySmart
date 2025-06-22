@@ -150,11 +150,13 @@ public class UserprofileController {
         }
     }
     
+    
     class Deleteaccount implements ActionListener {
 
+        
         @Override
         public void actionPerformed(ActionEvent e) {
-  int response = JOptionPane.showConfirmDialog(view, "Are you sure you want to delete your Account?", "Confirm", JOptionPane.YES_NO_OPTION);
+        int response = JOptionPane.showConfirmDialog(view, "Are you sure you want to delete your Account?", "Confirm", JOptionPane.YES_NO_OPTION);
             if (response == JOptionPane.YES_OPTION) {
                 UserprofileDAO dao = new UserprofileDAO();
                 UserModel userToDelete = dao.getUserByEmail(email); // Fetch user based on email
