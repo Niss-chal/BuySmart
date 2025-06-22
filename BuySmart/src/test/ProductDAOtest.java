@@ -62,4 +62,23 @@ public class ProductDAOtest {
         Assert.assertEquals(newQuantity,cartItems.get(0).getQuantity());
         
     }
+    @Test
+    public void testDeleteCartItem() throws SQLException{
+        String description="Test Product";
+        double price=10.5;
+        int quantity=2;
+        ProductDAO.addToCart(correctUseremail,description,price,quantity);
+        int newQuantity=5;
+        ProductDAO.deleteCartItem(correctUseremail,description,price);
+        List<CartItem> cartItems=ProductDAO.getCartItems(correctUseremail);
+        Assert.assertTrue("Cart should be empty after delete",cartItems.isEmpty());
+        
+    }
+    public void testClearCart() throws SQLException{
+        ProductDAO.addToCart(correctUseremail,"Product1",5.0,1);
+        ProductDAO.addToCart(correctUseremail,"Product2",10.0,1);
+        ProductDAO.clearCart(correctUseremail);
+        List<CartItem> cartItems=ProductDAO.getCartItems(correctUseremail);
+        Assert.assertTrue("Cart should be empty after clear",cartItems.isEmpty());
+    }
 }
