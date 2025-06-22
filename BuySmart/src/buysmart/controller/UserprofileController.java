@@ -8,17 +8,19 @@ import buysmart.dao.UserprofileDAO;
 import buysmart.model.UserModel;
 import buysmart.view.Dashboard;
 import buysmart.view.Profileview;
+import buysmart.view.ChangePassword;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author loq
  */
 public class UserprofileController { 
-    private Profileview view;
-    private String email; // Change from username to email
+   private Profileview view;
+    private String email; 
 
     public UserprofileController(Profileview view, String email) {
         this.view = view;
@@ -30,6 +32,9 @@ public class UserprofileController {
         
         ChangeProfile changeProfile = new ChangeProfile();
         this.view.changeProfile(changeProfile);
+        
+        ChangePass changePassword = new ChangePass();
+        this.view.changePassword(changePassword);
     }
 
     public void open() {
@@ -45,10 +50,10 @@ public class UserprofileController {
         UserModel user = dao.getUserByEmail(email); // Use getUserByEmail
         
         if (user != null) {
-            view.getUpdatename().setText(user.getUsername());
-            view.getUpdateemail().setText(user.getEmail());
-            view.getUpdateaddress().setText(user.getAddress());
-            view.getUpdatecontact().setText(user.getContact());    
+            view.getUpdatename().setText(user.getUsername() != null ? user.getUsername() : "");
+            view.getUpdateemail().setText(user.getEmail() != null ? user.getEmail() : "");
+            view.getUpdateaddress().setText(user.getAddress() != null ? user.getAddress() : "");
+            view.getUpdatecontact().setText(user.getContact() != null ? user.getContact() : "");    
         } else {
             JOptionPane.showMessageDialog(view, "User Profile not found!", "Error", JOptionPane.ERROR_MESSAGE);
             view.dispose();
@@ -60,8 +65,8 @@ public class UserprofileController {
         public void actionPerformed(ActionEvent e) {
             view.dispose();
             Dashboard dashboard = new Dashboard();
-            DashboardController dashboardcontroller = new DashboardController(dashboard, email); // Pass email
-            dashboardcontroller.open();
+            DashboardController dashboardController = new DashboardController(dashboard, email); // Pass email
+            dashboardController.open();
         }
     }
         
@@ -127,6 +132,16 @@ public class UserprofileController {
                     view.setChangeProfileButtonText("Change Profile");
                 }
             }
+        }
+    }
+    
+    class ChangePass implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+           view.dispose();
+            ChangePassword changePasswordView = new ChangePassword();
+            ChangePasswordController changePassController = new ChangePasswordController(changePasswordView, email);
+            changePassController.open();
         }
     }
 }

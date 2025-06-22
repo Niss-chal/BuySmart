@@ -4,10 +4,14 @@
  */
 package buysmart.controller;
 
+import buysmart.dao.UserDAO;
+import buysmart.model.UserModel;
 import buysmart.view.ChangePassword;
 import buysmart.view.Dashboard;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,31 +19,79 @@ import java.awt.event.ActionListener;
  */
 public class ChangePasswordController {
     
-    private ChangePassword view;
+   
+    private ChangePassword password;
     private String email;
-    
-    public ChangePasswordController(ChangePassword view,String email){
-        this.view=view;
-        this.email=email;
-        PasswordBack changeBack = new PasswordBack();
-        this.view.changeBack(changeBack);
-        
-        
-        
+    private UserDAO userDAO;
+
+    public ChangePasswordController(ChangePassword view, String email) {
+        this.password = view;
+        this.email = email;
+        this.userDAO = new UserDAO();
+
+        if (email != null && !email.trim().isEmpty()) {
+            password.getchangeEmail().setText(email);
+        }
+
+        password.changeBack(new PasswordBack());
+        view.confirmChange(new ChangePasswordAction());
     }
     
+    public void open() {
+        password.setVisible(true);
+    }
     
-    class PasswordBack implements ActionListener{
+    public void close() {
+        password.dispose();
+    }
 
+    class PasswordBack implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            view.dispose();
+            password.dispose();
             Dashboard dashboard = new Dashboard();
-            DashboardController dashboardcontroller = new DashboardController(dashboard,email);
-            dashboardcontroller.open();
+            DashboardController dashboardController = new DashboardController(dashboard, email);
+            dashboardController.open();
         }
-        
     }
     
-    
+    class ChangePasswordAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String currentEmail = password.getchangeEmail().getText().trim();
+            String oldPassword = new String(password.getOldPass().getPassword()).trim();
+            String newPassword = new String(password.getNewPass().getPassword()).trim();
+            String confirmPassword = new String(password.getConfirmPass().getPassword()).trim();
+
+            if (currentEmail.isEmpty() || oldPassword.isEmpty() || newPassword.isEmpty() || confirmPassword.isEmpty()) {
+                JOptionPane.showMessageDialog(password, "All fields are required.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (!newPassword.equals(confirmPassword)) {
+                JOptionPane.showMessageDialog(password, "New password and confirm password do not match.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            try {
+                UserModel user = userDAO.loginUser(currentEmail, oldPassword);
+                if (user == null) {
+                    JOptionPane.showMessageDialog(password, "Invalid email or old password.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                boolean updated = userDAO.updatePassword(currentEmail, newPassword);
+                if (updated) {
+                    JOptionPane.showMessageDialog(password, "Password changed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    password.dispose();
+                    DashboardController dashboardController = new DashboardController(new Dashboard(), currentEmail);
+                    dashboardController.open();
+                } else {
+                    JOptionPane.showMessageDialog(password, "Failed to change password. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(password, "An error occurred: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
 }

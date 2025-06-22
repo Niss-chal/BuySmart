@@ -5,6 +5,7 @@
 package buysmart.view;
 
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 
 /**
  *
@@ -17,6 +18,7 @@ public class ChangePassword extends javax.swing.JFrame {
      */
     public ChangePassword() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -37,7 +39,7 @@ public class ChangePassword extends javax.swing.JFrame {
         EmailChangePassword = new javax.swing.JTextField();
         OldPassword = new javax.swing.JPasswordField();
         NewPassword = new javax.swing.JPasswordField();
-        ConformPassword = new javax.swing.JPasswordField();
+        ConfirmPassword = new javax.swing.JPasswordField();
         ConfirmChangePassword = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         BackChangePasswordPage = new javax.swing.JButton();
@@ -60,6 +62,7 @@ public class ChangePassword extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Conform Password");
 
+        EmailChangePassword.setEnabled(false);
         EmailChangePassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EmailChangePasswordActionPerformed(evt);
@@ -72,9 +75,9 @@ public class ChangePassword extends javax.swing.JFrame {
             }
         });
 
-        ConformPassword.addActionListener(new java.awt.event.ActionListener() {
+        ConfirmPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConformPasswordActionPerformed(evt);
+                ConfirmPasswordActionPerformed(evt);
             }
         });
 
@@ -105,7 +108,7 @@ public class ChangePassword extends javax.swing.JFrame {
                         .addGroup(DetailsPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(EmailChangePassword, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                             .addComponent(OldPassword)
-                            .addComponent(ConformPassword)
+                            .addComponent(ConfirmPassword)
                             .addComponent(NewPassword)))
                     .addGroup(DetailsPanelChnagePasswordLayout.createSequentialGroup()
                         .addGap(191, 191, 191)
@@ -130,7 +133,7 @@ public class ChangePassword extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(DetailsPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ConformPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(ConfirmChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(82, Short.MAX_VALUE))
@@ -193,9 +196,9 @@ public class ChangePassword extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_OldPasswordActionPerformed
 
-    private void ConformPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConformPasswordActionPerformed
+    private void ConfirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ConformPasswordActionPerformed
+    }//GEN-LAST:event_ConfirmPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,7 +241,7 @@ public class ChangePassword extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackChangePasswordPage;
     private javax.swing.JButton ConfirmChangePassword;
-    private javax.swing.JPasswordField ConformPassword;
+    private javax.swing.JPasswordField ConfirmPassword;
     private javax.swing.JPanel DetailsPanelChnagePassword;
     private javax.swing.JTextField EmailChangePassword;
     private javax.swing.JPanel MainPanelChnagePassword;
@@ -252,7 +255,23 @@ public class ChangePassword extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 
-public void changeBack(ActionListener listener){
+    public javax.swing.JTextField getchangeEmail(){
+        return EmailChangePassword;
+    }
+    
+    public javax.swing.JPasswordField getOldPass(){
+        return OldPassword;
+    }
+    
+    public javax.swing.JPasswordField getNewPass(){
+        return NewPassword;
+    }
+    
+    public javax.swing.JPasswordField getConfirmPass(){
+       return ConfirmPassword; 
+    }  
+    
+    public void changeBack(ActionListener listener){
     BackChangePasswordPage.addActionListener(listener);
 }
 

@@ -327,4 +327,8 @@ public void setFieldsEnabled(boolean enabled) {
     public void setChangeProfileButtonText(String text) {
         changeprofilebutton.setText(text);
     }
+    
+public void changePassword(ActionListener listener){
+    changepassbutton.addActionListener(listener);
+}
 }
