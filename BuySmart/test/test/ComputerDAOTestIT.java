@@ -19,8 +19,10 @@ public class ComputerDAOTestIT {
      @Test
     public void testGetComputers() throws SQLException{
         List<computersModel> computers=computersDAO.getComputers();
+        //basic assertions
         Assert.assertNotNull("Computer list should not be null",computers);
         Assert.assertFalse("Computers list should not be empty",computers.isEmpty());
+        //test first item
         computersModel computer=computers.get(0);
         Assert.assertNotNull("Image path should not be null",computer.getImagePath());
         Assert.assertNotNull("Description shouldnot be null",computer.getDescription());
