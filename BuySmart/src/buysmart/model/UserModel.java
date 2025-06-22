@@ -105,12 +105,6 @@ public class UserModel {
         this.address=address;
         this.contact=contact;
     }
-    
-    public UserModel(String email, String password){
-        this.email=email;
-        this.password=password;
-    }
-    
 }
     
 
