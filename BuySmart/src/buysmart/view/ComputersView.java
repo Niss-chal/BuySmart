@@ -22,7 +22,7 @@ public class ComputersView extends javax.swing.JFrame {
      */
     public ComputersView() {
         initComponents();
-        initComponents();
+        
         try {
             controller = new computersController(this, "av@gmail.com");
             controller.loadComputers();
