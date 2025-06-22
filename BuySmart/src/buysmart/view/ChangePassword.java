@@ -65,6 +65,7 @@ public class ChangePassword extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Confirm Password");
 
+        EmailChangePassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         EmailChangePassword.setEnabled(false);
         EmailChangePassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,12 +73,16 @@ public class ChangePassword extends javax.swing.JFrame {
             }
         });
 
+        OldPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         OldPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OldPasswordActionPerformed(evt);
             }
         });
 
+        NewPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        ConfirmPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         ConfirmPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmPasswordActionPerformed(evt);
@@ -329,7 +334,7 @@ public javax.swing.JCheckBox getnewpassshow(){
 public javax.swing.JCheckBox getconfirmpassshow(){
     return confirmshow;
 }
-public void addPasswordListners(ActionListener oldListener, ActionListener newListener , ActionListener confirmListener){
+public void addPasswordToggleListeners(ActionListener oldListener, ActionListener newListener , ActionListener confirmListener){
     oldshow.addActionListener(oldListener);
     newshow.addActionListener(newListener);
     confirmshow.addActionListener(confirmListener);
