@@ -36,7 +36,7 @@ public class ChangePassword extends javax.swing.JFrame {
         OldPassword = new javax.swing.JPasswordField();
         NewPassword = new javax.swing.JPasswordField();
         ConformPassword = new javax.swing.JPasswordField();
-        ConformChangePassword = new javax.swing.JButton();
+        ConfirmChangePassword = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         BackChangePasswordPage = new javax.swing.JButton();
 
@@ -76,7 +76,7 @@ public class ChangePassword extends javax.swing.JFrame {
             }
         });
 
-        ConformChangePassword.setText("Conform");
+        ConfirmChangePassword.setText("Confirm");
 
         javax.swing.GroupLayout DetailsPanelChnagePasswordLayout = new javax.swing.GroupLayout(DetailsPanelChnagePassword);
         DetailsPanelChnagePassword.setLayout(DetailsPanelChnagePasswordLayout);
@@ -88,10 +88,10 @@ public class ChangePassword extends javax.swing.JFrame {
                         .addGroup(DetailsPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(DetailsPanelChnagePasswordLayout.createSequentialGroup()
                                 .addGroup(DetailsPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(DetailsPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel3)
-                                        .addGroup(DetailsPanelChnagePasswordLayout.createSequentialGroup()
-                                            .addGap(17, 17, 17)
+                                    .addGroup(DetailsPanelChnagePasswordLayout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
+                                        .addGroup(DetailsPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel3)
                                             .addComponent(jLabel4)))
                                     .addGroup(DetailsPanelChnagePasswordLayout.createSequentialGroup()
                                         .addGap(47, 47, 47)
@@ -107,7 +107,7 @@ public class ChangePassword extends javax.swing.JFrame {
                             .addComponent(NewPassword)))
                     .addGroup(DetailsPanelChnagePasswordLayout.createSequentialGroup()
                         .addGap(191, 191, 191)
-                        .addComponent(ConformChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ConfirmChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(138, Short.MAX_VALUE))
         );
         DetailsPanelChnagePasswordLayout.setVerticalGroup(
@@ -130,7 +130,7 @@ public class ChangePassword extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ConformPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
-                .addComponent(ConformChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ConfirmChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(82, Short.MAX_VALUE))
         );
 
@@ -146,15 +146,11 @@ public class ChangePassword extends javax.swing.JFrame {
             .addGroup(MainPanelChnagePasswordLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BackChangePasswordPage, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(MainPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainPanelChnagePasswordLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                        .addComponent(DetailsPanelChnagePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(57, Short.MAX_VALUE))
-                    .addGroup(MainPanelChnagePasswordLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(DetailsPanelChnagePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MainPanelChnagePasswordLayout.setVerticalGroup(
             MainPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +235,7 @@ public class ChangePassword extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackChangePasswordPage;
-    private javax.swing.JButton ConformChangePassword;
+    private javax.swing.JButton ConfirmChangePassword;
     private javax.swing.JPasswordField ConformPassword;
     private javax.swing.JPanel DetailsPanelChnagePassword;
     private javax.swing.JTextField EmailChangePassword;
