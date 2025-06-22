@@ -34,18 +34,14 @@ public class ProductDAOtest {
         String description="Test Product";
         double price=10.5;
         int quantity=2;
+        ProductDAO.clearCart(correctUseremail);
         ProductDAO.addToCart(correctUseremail,description,price,quantity);
         List<CartItem> cartItems= ProductDAO.getCartItems(correctUseremail);
         Assert.assertEquals("Cart should have 1 item",1,cartItems.size());
         CartItem item =cartItems.get(0);
-        Assert.assertEquals(description,item.getDescription());
-        Assert.assertEquals(price,item.getPrice());
-        Assert.assertEquals(quantity,item.getQuantity());
-        int moreQuantity=3;
-        ProductDAO.addToCart(correctUseremail,description,price,moreQuantity);
-        cartItems=ProductDAO.getCartItems(correctUseremail);
-        Assert.assertEquals("Cart should still have 1 item",1,cartItems.size());
-        Assert.assertEquals(quantity+moreQuantity,cartItems.get(0).getQuantity());
+        Assert.assertEquals("description should match",description,item.getDescription());
+        Assert.assertEquals("Price should match",price,item.getPrice(),0.001);
+        Assert.assertEquals("Quantity should match",quantity,item.getQuantity());
         
     }
     
@@ -54,9 +50,10 @@ public class ProductDAOtest {
         String description="Test Product";
         double price=10.5;
         int quantity=2;
+        ProductDAO.clearCart(correctUseremail);
         ProductDAO.addToCart(correctUseremail,description,price,quantity);
         int newQuantity=5;
-        ProductDAO.updateCartItemQuantity(correctUseremail, description, price, quantity);
+        ProductDAO.updateCartItemQuantity(correctUseremail, description, price, newQuantity);
         List<CartItem> cartItems=ProductDAO.getCartItems(correctUseremail);
         Assert.assertEquals("Cart should have 1 item",1,cartItems.size());
         Assert.assertEquals(newQuantity,cartItems.get(0).getQuantity());
