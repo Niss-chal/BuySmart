@@ -331,4 +331,9 @@ public void setFieldsEnabled(boolean enabled) {
 public void changePassword(ActionListener listener){
     changepassbutton.addActionListener(listener);
 }
+
+public void deleteAccount(ActionListener listener){
+    deleteaccbutton.addActionListener(listener);
+    
+}
 }
