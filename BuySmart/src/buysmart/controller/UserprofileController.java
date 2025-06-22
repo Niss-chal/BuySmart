@@ -9,6 +9,7 @@ import buysmart.model.UserModel;
 import buysmart.view.Dashboard;
 import buysmart.view.Profileview;
 import buysmart.view.ChangePassword;
+import buysmart.view.LoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -21,6 +22,7 @@ import javax.swing.JOptionPane;
 public class UserprofileController { 
    private Profileview view;
     private String email; 
+    private UserModel user;
 
     public UserprofileController(Profileview view, String email) {
         this.view = view;
@@ -34,7 +36,10 @@ public class UserprofileController {
         this.view.changeProfile(changeProfile);
         
         ChangePass changePassword = new ChangePass();
-        this.view.changePassword(changePassword);
+        this.view.changePassword(changePassword); 
+        
+        Deleteaccount deleteAccount=new Deleteaccount();
+        this.view.deleteAccount(deleteAccount);
     }
 
     public void open() {
@@ -143,5 +148,33 @@ public class UserprofileController {
             ChangePasswordController changePassController = new ChangePasswordController(changePasswordView, email);
             changePassController.open();
         }
+    }
+    
+    class Deleteaccount implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+  int response = JOptionPane.showConfirmDialog(view, "Are you sure you want to delete your Account?", "Confirm", JOptionPane.YES_NO_OPTION);
+            if (response == JOptionPane.YES_OPTION) {
+                UserprofileDAO dao = new UserprofileDAO();
+                UserModel userToDelete = dao.getUserByEmail(email); // Fetch user based on email
+                if (userToDelete == null) {
+                    JOptionPane.showMessageDialog(view, "User not found or error retrieving profile!", "Error", JOptionPane.ERROR_MESSAGE);
+                    System.err.println("Debug: getUserByEmail returned null for email: " + email);
+                    return; // Exit if user is not found
+                }
+                if (dao.deleteAccount(userToDelete)) {
+                    JOptionPane.showMessageDialog(view, "Account deleted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    view.dispose();
+                    LoginView loginview = new LoginView();
+                    LoginController loginController = new LoginController(loginview);
+                    loginController.open();
+                } else {
+                    JOptionPane.showMessageDialog(view, "Failed to delete Account", "Error", JOptionPane.ERROR_MESSAGE);
+                    System.err.println("Debug: deleteAccount failed for email: " + email);
+                }
+            }           
+        }
+    
     }
 }
