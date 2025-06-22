@@ -49,9 +49,17 @@ public class ProductDAOtest {
         
     }
     
-//    @Test
-//    public void testUpdateCartItemQuantity(){
-//        String description="Test Product";
-//        double price=10.5
-//    }
+    @Test
+    public void testUpdateCartItemQuantity() throws SQLException{
+        String description="Test Product";
+        double price=10.5;
+        int quantity=2;
+        ProductDAO.addToCart(correctUseremail,description,price,quantity);
+        int newQuantity=5;
+        ProductDAO.updateCartItemQuantity(correctUseremail, description, price, quantity);
+        List<CartItem> cartItems=ProductDAO.getCartItems(correctUseremail);
+        Assert.assertEquals("Cart should have 1 item",1,cartItems.size());
+        Assert.assertEquals(newQuantity,cartItems.get(0).getQuantity());
+        
+    }
 }
