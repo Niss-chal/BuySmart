@@ -82,7 +82,7 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersPicture1.setText("pic");
         ComputersPicture1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        ProductAddToCartButton.setBackground(new java.awt.Color(0, 204, 204));
+        ProductAddToCartButton.setBackground(new java.awt.Color(51, 255, 204));
         ProductAddToCartButton.setText("Add To Card");
 
         ComputersPrice1.setBackground(new java.awt.Color(255, 255, 255));
@@ -124,7 +124,7 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersPicture2.setText("pic");
         ComputersPicture2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        ProductAddToCartButton1.setBackground(new java.awt.Color(0, 204, 204));
+        ProductAddToCartButton1.setBackground(new java.awt.Color(51, 255, 204));
         ProductAddToCartButton1.setText("Add To Cart");
 
         ComputersPrice2.setBackground(new java.awt.Color(255, 255, 255));
@@ -163,7 +163,7 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersPicture3.setText("pic");
         ComputersPicture3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        ProductAddToCartButton2.setBackground(new java.awt.Color(0, 204, 204));
+        ProductAddToCartButton2.setBackground(new java.awt.Color(51, 255, 204));
         ProductAddToCartButton2.setText("Add To Cart");
 
         ComputersPrice3.setBackground(new java.awt.Color(255, 255, 255));
@@ -202,7 +202,7 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersPicture4.setText("pic");
         ComputersPicture4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        ProductAddToCartButton3.setBackground(new java.awt.Color(0, 204, 204));
+        ProductAddToCartButton3.setBackground(new java.awt.Color(51, 255, 204));
         ProductAddToCartButton3.setText("Add To Cart");
 
         ComputersPrice4.setBackground(new java.awt.Color(255, 255, 255));
@@ -243,7 +243,7 @@ public class ComputersView extends javax.swing.JFrame {
         ComputersPicture5.setText("pic");
         ComputersPicture5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        ProductAddToCartButton4.setBackground(new java.awt.Color(0, 204, 204));
+        ProductAddToCartButton4.setBackground(new java.awt.Color(51, 255, 204));
         ProductAddToCartButton4.setText("Add To Cart");
 
         ComputersPrice5.setBackground(new java.awt.Color(255, 255, 255));
