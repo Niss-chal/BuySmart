@@ -17,14 +17,13 @@ public class MysqlConnection1 {
 
     private static final String URL = "jdbc:mysql://localhost:3306/buysmart?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";    
     private static final String USER = "root";
-
     private static final String PASSWORD = "admin";
 
     public static Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            throw new SQLException("MySQL JDBC Driver bhetena ta. Aba connector JAR bhanne package hala project maa.", e);
+            throw new SQLException("MySQL JDBC Driver Not Found.", e);
         }
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
@@ -32,10 +31,10 @@ public class MysqlConnection1 {
     public static void main(String[] args) {
         try {
             Connection conn = MysqlConnection1.getConnection();
-            System.out.println("Connection bhayo hai saathi!!");
+            System.out.println("Connection Established!!");
             conn.close();
         } catch (SQLException e) {
-            System.out.println("Connection Bhayena ta babu!!");
+            System.out.println("Connection Not Established!!");
         }
     }
 }
