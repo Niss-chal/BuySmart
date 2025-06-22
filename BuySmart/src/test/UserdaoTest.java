@@ -30,5 +30,12 @@ public class UserdaoTest {
         boolean result=dao.registerUser(user);
         Assert.assertTrue("Register should be successful",result);
     }
-            
+    @Test
+    public void registerWithExistingCredentials() throws SQLException{
+        UserModel user =new UserModel(correctUsername,correctemail,password,contact,address,gender,security_question,security_answer);
+        UserDAO dao=new UserDAO();
+        boolean result=dao.registerUser(user);
+        Assert.assertFalse("Register should fail for existing details",result);
+    }
+
 }
