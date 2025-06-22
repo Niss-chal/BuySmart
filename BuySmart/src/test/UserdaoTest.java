@@ -48,5 +48,4 @@ public class UserdaoTest {
         Assert.assertEquals("Correct email should be retrieved",correctemail,user.getEmail());
         Assert.assertEquals("Correct name should be retrieved",correctUsername,user.getUsername());
     }
-
 }
