@@ -9,23 +9,24 @@ package buysmart.model;
  * @author fahmi
  */
 public class computersModel {
-    private String imagePath;
+//    private String imagePath;
     private String description;
     private double price;
 
-    public computersModel(String imagePath, String description, double price) {
-        this.imagePath = imagePath;
+//    public computersModel(String imagePath, String description, double price) {
+    public computersModel(String description, double price) {
+//        this.imagePath = imagePath;
         this.description = description;
         this.price = price;
     }
 
-    public String getImagePath() {
-        return imagePath;
-    }
+//    public String getImagePath() {
+//        return imagePath;
+//    }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
+//    public void setImagePath(String imagePath) {
+//        this.imagePath = imagePath;
+//    }
 
     public String getDescription() {
         return description;
