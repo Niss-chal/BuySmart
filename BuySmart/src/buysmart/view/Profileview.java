@@ -267,6 +267,8 @@ public class Profileview extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -327,4 +329,13 @@ public void setFieldsEnabled(boolean enabled) {
     public void setChangeProfileButtonText(String text) {
         changeprofilebutton.setText(text);
     }
+    
+public void changePassword(ActionListener listener){
+    changepassbutton.addActionListener(listener);
+}
+
+public void deleteAccount(ActionListener listener){
+    deleteaccbutton.addActionListener(listener);
+    
+}
 }
