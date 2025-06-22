@@ -103,8 +103,17 @@ public class UserModel {
         this.username = username;
         this.email=email;
         this.address=address;
-        this.contact=contact;
+        this.contact=contact;   
     }
+    
+    public UserModel loginUser(String email, String password) {
+ 
+       this.email=email;
+       this.password=password;
+        return null;
+
+    
+}
 }
     
 
