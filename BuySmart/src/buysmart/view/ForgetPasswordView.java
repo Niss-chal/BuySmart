@@ -5,6 +5,7 @@
 package buysmart.view;
 
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 
 /**
  *
@@ -17,6 +18,7 @@ public class ForgetPasswordView extends javax.swing.JFrame {
      */
     public ForgetPasswordView() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -53,8 +55,10 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 229, 209));
+        jPanel1.setToolTipText("BuySmart-ForgetPasswordPage");
 
         jPanel2.setBackground(new java.awt.Color(230, 255, 250));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         Email.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Email.setText("Email");
@@ -67,11 +71,13 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         SecurityAnswer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         SecurityAnswer.setText("Security Answer");
 
+        otpButton.setBackground(new java.awt.Color(51, 255, 0));
         otpButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         otpButton.setText("Send OTP");
 
         otpBox.setEnabled(false);
 
+        ClickButton.setBackground(new java.awt.Color(51, 255, 0));
         ClickButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ClickButton.setText("Click");
         ClickButton.setEnabled(false);
@@ -89,10 +95,12 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         ConfirmPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ConfirmPassword.setText("Confirm Password");
 
+        Confirm.setBackground(new java.awt.Color(51, 255, 0));
         Confirm.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Confirm.setText("Confirm");
         Confirm.setEnabled(false);
 
+        Back.setBackground(new java.awt.Color(0, 255, 51));
         Back.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Back.setText("Back");
 
@@ -150,11 +158,11 @@ public class ForgetPasswordView extends javax.swing.JFrame {
                             .addComponent(otpButton))))
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Confirm)
-                    .addComponent(Back))
-                .addGap(177, 177, 177))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Confirm))
+                .addGap(187, 187, 187))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,12 +193,11 @@ public class ForgetPasswordView extends javax.swing.JFrame {
                         .addComponent(otp)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addComponent(NpasswordCheckBox)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CpasswordcheckBox)
-                        .addGap(39, 39, 39))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(CpasswordcheckBox))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(NewPasswordBox, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(NewPassword))
@@ -198,11 +205,11 @@ public class ForgetPasswordView extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CPasswordBox, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ConfirmPassword))
-                        .addGap(18, 18, 18)))
-                .addComponent(Confirm)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Back)
-                .addContainerGap(69, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(Confirm)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Back)))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         ResetPassword.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -213,18 +220,20 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(131, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ResetPassword)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ResetPassword)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
+                .addContainerGap(98, Short.MAX_VALUE)
                 .addComponent(ResetPassword)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(167, Short.MAX_VALUE))
         );
