@@ -5,6 +5,7 @@
 package test;
 
 import buysmart.dao.UserDAO;
+import buysmart.model.LoginRequest;
 import buysmart.model.UserModel;
 import java.sql.SQLException;
 import org.junit.Assert;
@@ -36,6 +37,15 @@ public class UserdaoTestIT {
         UserDAO dao=new UserDAO();
         boolean result=dao.registerUser(user);
         Assert.assertFalse("Register should fail for existing details",result);
+    }
+    @Test
+    public void loginWithCorrectCreds() throws SQLException{
+        LoginRequest req=new LoginRequest(correctemail,password);
+        UserDAO dao= new UserDAO();
+        UserModel user = dao.loginUser(req);
+        Assert.assertNotNull("User should not be null",user);
+        Assert.assertEquals("Correct email should be retrieved",correctemail,user.getEmail());
+        Assert.assertEquals("Correct name should be retrieved",correctUsername,user.getUsername());
     }
  }
     
