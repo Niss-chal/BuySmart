@@ -58,6 +58,20 @@ public class UserprofileDAO {
     }
 }
     
+    public boolean changePassword(UserModel user){
+        String query ="UPDATE users SET password=? WHERE email=?";
+        try(Connection conn =MysqlConnection1.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(query)){
+            stmt.setString(1, user.getPassword());
+            stmt.setString(2,user.getEmail());
+            return stmt.executeUpdate()>0;            
+        }catch(SQLException e){
+            System.err.println("Error updating user in database.");
+        e.printStackTrace();
+        return false;
+        }
+    }
+    
     }
     
 
