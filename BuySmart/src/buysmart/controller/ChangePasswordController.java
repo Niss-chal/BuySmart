@@ -29,6 +29,9 @@ public class ChangePasswordController {
         this.password = view;
         this.email = email;
         this.userDAO = new UserDAO();
+        this.password.getoldpassShow().addActionListener(new ToggleOldPassword());
+        this.password.getnewpassshow().addActionListener(new ToggleNewPassword());
+        this.password.getconfirmpassshow().addActionListener(new ToggleConfirmPassword());
 
         if (email != null && !email.trim().isEmpty()) {
             password.getchangeEmail().setText(email);
@@ -95,5 +98,36 @@ public class ChangePasswordController {
                 JOptionPane.showMessageDialog(password, "An error occurred: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
+    }
+    
+    class ToggleOldPassword implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean show=password.getoldpassShow().isSelected();
+            password.getOldPass().setEchoChar(show ? (char) 0 : '•');
+
+        }
+        
+    }
+    
+    class ToggleNewPassword implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean show=password.getnewpassshow().isSelected();
+            password.getNewPass().setEchoChar(show ? (char) 0 : '•');
+
+        }
+        
+    }
+    
+    class ToggleConfirmPassword implements ActionListener{
+         @Override
+        public void actionPerformed(ActionEvent e) {
+            boolean show=password.getconfirmpassshow().isSelected();
+            password.getConfirmPass().setEchoChar(show ? (char) 0 : '•');
+
+        }
+        
     }
 }
