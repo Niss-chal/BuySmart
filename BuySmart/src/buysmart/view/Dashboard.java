@@ -23,13 +23,14 @@ public class Dashboard extends javax.swing.JFrame {
     private ProductController productController;
     private DashboardController dashboardController;
     private javax.swing.JButton[] cartButtons;
-    private String email = "av@gmail.com";
+    private String email;
     
    
     /**
      * Creates new form Dashboard
      */
-    public Dashboard() {
+    public Dashboard(String userEmail) {
+        this.email=userEmail;
         
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -977,11 +978,7 @@ public class Dashboard extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dashboard().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

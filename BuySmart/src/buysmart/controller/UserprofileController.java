@@ -69,7 +69,7 @@ public class UserprofileController {
         @Override
         public void actionPerformed(ActionEvent e) {
             view.dispose();
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(email);
             DashboardController dashboardController = new DashboardController(dashboard, email); // Pass email
             dashboardController.open();
         }

@@ -53,7 +53,7 @@ public class ChangePasswordController {
         @Override
         public void actionPerformed(ActionEvent e) {
             password.dispose();
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(email);
             DashboardController dashboardController = new DashboardController(dashboard, email);
             dashboardController.open();
         }
@@ -89,7 +89,7 @@ public class ChangePasswordController {
                 if (updated) {
                     JOptionPane.showMessageDialog(password, "Password changed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                     password.dispose();
-                    DashboardController dashboardController = new DashboardController(new Dashboard(), currentEmail);
+                    DashboardController dashboardController = new DashboardController(new Dashboard(email), currentEmail);
                     dashboardController.open();
                 } else {
                     JOptionPane.showMessageDialog(password, "Failed to change password. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
