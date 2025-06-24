@@ -28,8 +28,7 @@ public class ProductController {
         try {
             List<ProductModel> products = ProductDAO.getProduct();
             if (!products.isEmpty()) {
-                
-                // 1st product ko lagi
+                // 1st product
                 if (products.size() > 0) {
                     ProductModel product0 = products.get(0);
                     if (product0 != null) {
@@ -38,7 +37,7 @@ public class ProductController {
                         dashboard.getProductCardPrice().setText("Rs. " + product0.getPrice());
                     }
                 }
-                // 2nd product ko lagi
+                // 2nd product
                 if (products.size() > 1) {
                     ProductModel product1 = products.get(1);
                     if (product1 != null) {
@@ -47,8 +46,7 @@ public class ProductController {
                         dashboard.getProductCardPrice1().setText("Rs. " + product1.getPrice());
                     }
                 }
-
-                // 3rd product ko lagi
+                // 3rd product
                 if (products.size() > 2) {
                     ProductModel product2 = products.get(2);
                     if (product2 != null) {
@@ -57,8 +55,7 @@ public class ProductController {
                         dashboard.getProductCardPrice2().setText("Rs. " + product2.getPrice());
                     }
                 }
-                
-                // 4th product ko lagi
+                // 4th product
                 if (products.size() > 3) {
                     ProductModel product3 = products.get(3);
                     if (product3 != null) {
@@ -67,8 +64,7 @@ public class ProductController {
                         dashboard.getProductCardPrice3().setText("Rs. " + product3.getPrice());
                     }
                 }
-                
-                // 5th product ko lagi
+                // 5th product
                 if (products.size() > 4) {
                     ProductModel product4 = products.get(4);
                     if (product4 != null) {

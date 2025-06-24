@@ -32,10 +32,10 @@ public class MysqlConnection1 {
     public static void main(String[] args) {
         try {
             Connection conn = MysqlConnection1.getConnection();
-            System.out.println("Connection Established!!");
+            System.out.println("Connection Successfull!!");
             conn.close();
         } catch (SQLException e) {
-            System.out.println("Connection Not established!!");
+            System.out.println("Connection Unsuccessfull!!");
         }
     }
 }

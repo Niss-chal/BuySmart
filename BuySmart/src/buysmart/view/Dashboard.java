@@ -4,6 +4,7 @@
  */
 package buysmart.view;
 
+import buysmart.controller.DashboardController;
 import buysmart.controller.ProductController;
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -20,21 +21,36 @@ import javax.swing.JFrame;
  */
 public class Dashboard extends javax.swing.JFrame {
     private ProductController productController;
+    private DashboardController dashboardController;
+    private javax.swing.JButton[] cartButtons;
+    private String email = "av@gmail.com";
+    
+   
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
+        
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         cartButtons = new JButton[] {
             ProductAddToCartButton, ProductAddToCartButton1, ProductAddToCartButton2, 
             ProductAddToCartButton3, ProductAddToCartButton4
         };
+        
+        dashboardController = new DashboardController(this, email);
 
         productController = new ProductController(this);
         productController.loadProduct();
+        
+    }
+    
+    public DashboardController getDashboardController() {
+        return dashboardController;
     }
     // Getter methods for Add to Cart buttons
+    
+    
     public JButton getProductAddToCartButton() {
         return ProductAddToCartButton;
     }
@@ -60,6 +76,14 @@ public class Dashboard extends javax.swing.JFrame {
         return cartButtons;
     }
     
+    public void showAllView() {
+        dashboardController.showAllView();
+    }
+    
+    public void showComputersView() {
+        dashboardController.showComputersView();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -821,11 +845,11 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAllActionPerformed
-        // TODO add your handling code here:
+        showAllView();
     }//GEN-LAST:event_buttonAllActionPerformed
 
     private void ButtonComputersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonComputersActionPerformed
-        // TODO add your handling code here:
+        showComputersView();
     }//GEN-LAST:event_ButtonComputersActionPerformed
 
     private void buttonSportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSportsActionPerformed
@@ -1023,13 +1047,22 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel userProfile;
     private javax.swing.JLabel wishlistIcon;
     // End of variables declaration//GEN-END:variables
+    
+    public javax.swing.JPanel getProductPanel1() {
+        return productPanel1;
+    }
+    public javax.swing.JPanel getProductPanel2() {
+        return productPanel2;
+    }
+    
+    
     public void logout(ActionListener listener){ // Logoutbutton function
         buttonLogout.addActionListener(listener);
     }
     public void cart(MouseListener listener){ 
         cartIcon.addMouseListener(listener);
     }
-    private javax.swing.JButton[] cartButtons;
+    
 
     public void addCart(MouseListener listener){ 
         for (JButton button : cartButtons){

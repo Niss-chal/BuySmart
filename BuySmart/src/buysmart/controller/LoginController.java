@@ -4,6 +4,8 @@
  */
 package buysmart.controller;
 import buysmart.dao.UserDAO;
+import buysmart.model.LoginRequest;
+import buysmart.model.UserModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,7 +19,7 @@ import buysmart.view.RegistrationView;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import buysmart.model.UserModel;
+
 
 
 /**
@@ -58,10 +60,11 @@ if(email.isEmpty() || password.isEmpty()){
     JOptionPane.showMessageDialog(view, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
 } else {
     try {
+        LoginRequest loginData =new LoginRequest(email,password);
         UserDAO dao = new UserDAO();
-        UserModel usermodel = dao.loginUser(email, password);
+        UserModel user =dao.loginUser(loginData);
  
-        if (usermodel!=null) {
+        if (user!=null) {
             JOptionPane.showMessageDialog(view, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE);
             Dashboard dashboard = new Dashboard();
             DashboardController dashboardController = new DashboardController(dashboard,email);
