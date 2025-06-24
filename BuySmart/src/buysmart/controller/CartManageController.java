@@ -127,7 +127,7 @@ import javax.swing.table.DefaultTableModel;
         @Override
         public void actionPerformed(ActionEvent e) {
             cartmanage.dispose();
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(email);
             DashboardController dashboardController = new DashboardController(dashboard, email);
             dashboardController.open();
         }

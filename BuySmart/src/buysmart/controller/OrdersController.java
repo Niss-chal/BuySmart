@@ -81,7 +81,7 @@ public class OrdersController {
         @Override
         public void actionPerformed(ActionEvent e) {
             ordersView.dispose();
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(email);
             DashboardController dashboardController = new DashboardController(dashboard, email);
             dashboardController.open();
         }

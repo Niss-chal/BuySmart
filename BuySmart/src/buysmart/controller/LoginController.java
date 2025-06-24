@@ -66,7 +66,7 @@ if(email.isEmpty() || password.isEmpty()){
  
         if (user!=null) {
             JOptionPane.showMessageDialog(view, "Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE);
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(email);
             DashboardController dashboardController = new DashboardController(dashboard,email);
             dashboardController.open();
             close();
