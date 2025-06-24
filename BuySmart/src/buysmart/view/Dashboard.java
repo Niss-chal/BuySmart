@@ -1033,6 +1033,10 @@ public class Dashboard extends javax.swing.JFrame {
 
     public void addCart(MouseListener listener){ 
         for (JButton button : cartButtons){
+            MouseListener[] existingListeners = button.getMouseListeners();
+            for(MouseListener existingListener: existingListeners){
+                button.removeMouseListener(existingListener);
+            }
             button.addMouseListener(listener);
         }
     }
