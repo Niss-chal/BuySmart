@@ -24,7 +24,7 @@ public class MysqlConnection1 {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            throw new SQLException("MySQL JDBC Driver bhetena ta. Aba connector JAR bhanne package hala project maa.", e);
+            throw new SQLException("MySQL JDBC Driver Not Found.", e);
         }
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
@@ -32,10 +32,10 @@ public class MysqlConnection1 {
     public static void main(String[] args) {
         try {
             Connection conn = MysqlConnection1.getConnection();
-            System.out.println("Connection bhayo hai saathi!!");
+            System.out.println("Connection Established!!");
             conn.close();
         } catch (SQLException e) {
-            System.out.println("Connection Bhayena ta babu!!");
+            System.out.println("Connection Not established!!");
         }
     }
 }
