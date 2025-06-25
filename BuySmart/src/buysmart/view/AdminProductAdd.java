@@ -37,6 +37,7 @@ public class AdminProductAdd extends javax.swing.JFrame {
         AdminProductImagePath = new javax.swing.JTextField();
         AdminJustImage = new javax.swing.JLabel();
         AdminProductPrice = new javax.swing.JTextField();
+        AdminProductAddButton = new javax.swing.JButton();
         AdminAddProductPanel = new javax.swing.JPanel();
         AdminBackButton = new javax.swing.JButton();
         AdminLogout = new javax.swing.JButton();
@@ -82,64 +83,65 @@ public class AdminProductAdd extends javax.swing.JFrame {
 
         AdminProductPrice.setEditable(false);
 
+        AdminProductAddButton.setBackground(new java.awt.Color(153, 204, 255));
+        AdminProductAddButton.setText("Add Product");
+
         javax.swing.GroupLayout AdminProductCardPanelLayout = new javax.swing.GroupLayout(AdminProductCardPanel);
         AdminProductCardPanel.setLayout(AdminProductCardPanelLayout);
         AdminProductCardPanelLayout.setHorizontalGroup(
             AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminProductCardPanelLayout.createSequentialGroup()
+                .addContainerGap(77, Short.MAX_VALUE)
                 .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AdminImageLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(AdminDescriptionLabel)
+                        .addComponent(AdminProductPriceLabel)
+                        .addComponent(AdminProductCategoryLabel)))
+                .addGap(30, 30, 30)
+                .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(AdminProductCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminProductCardPanelLayout.createSequentialGroup()
+                            .addComponent(AdminPriceIndicator)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(AdminProductPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(AdminProductCardPanelLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(AdminProductCategoryLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminProductCardPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(AdminDescriptionLabel)
-                            .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(AdminImageLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(AdminProductCardPanelLayout.createSequentialGroup()
-                                    .addGap(54, 54, 54)
-                                    .addComponent(AdminProductPriceLabel))))
-                        .addGap(30, 30, 30)))
-                .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AdminJustImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(AdminProductCardPanelLayout.createSequentialGroup()
-                        .addComponent(AdminPriceIndicator)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(AdminProductPrice))
-                    .addComponent(AdminDescription)
-                    .addComponent(AdminProductCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AdminProductImagePath))
-                .addGap(94, 94, 94))
+                        .addGap(1, 1, 1)
+                        .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AdminJustImage)
+                            .addComponent(AdminDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AdminProductImagePath, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(AdminProductCardPanelLayout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(AdminProductAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(93, 93, 93))
         );
         AdminProductCardPanelLayout.setVerticalGroup(
             AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminProductCardPanelLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(43, 43, 43)
                 .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AdminProductCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AdminProductCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AdminProductCardPanelLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(AdminPriceIndicator)
-                            .addComponent(AdminProductPriceLabel)))
-                    .addGroup(AdminProductCardPanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(AdminProductPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AdminDescriptionLabel)
-                    .addComponent(AdminDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AdminJustImage)
+                    .addComponent(AdminProductPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AdminPriceIndicator)
+                    .addComponent(AdminProductPriceLabel))
+                .addGap(18, 18, 18)
+                .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AdminDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AdminDescriptionLabel))
+                .addGap(18, 18, 18)
+                .addComponent(AdminJustImage, javax.swing.GroupLayout.PREFERRED_SIZE, 178, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AdminProductImagePath, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AdminImageLabel))
-                .addGap(52, 52, 52))
+                .addGap(18, 18, 18)
+                .addComponent(AdminProductAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
         AdminAddProductPanel.setBackground(new java.awt.Color(204, 204, 204));
@@ -189,7 +191,7 @@ public class AdminProductAdd extends javax.swing.JFrame {
                 .addComponent(AdminBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(183, 183, 183)
                 .addComponent(AdminLogo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addComponent(AdminLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
         );
@@ -209,17 +211,17 @@ public class AdminProductAdd extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(AdminAddProductPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(111, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(AdminProductCardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110))
+                .addGap(117, 117, 117))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(AdminAddProductPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(34, 34, 34)
                 .addComponent(AdminProductCardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();
@@ -302,6 +304,7 @@ public class AdminProductAdd extends javax.swing.JFrame {
     private javax.swing.JLabel AdminLogo;
     private javax.swing.JButton AdminLogout;
     private javax.swing.JLabel AdminPriceIndicator;
+    private javax.swing.JButton AdminProductAddButton;
     private javax.swing.JPanel AdminProductCardPanel;
     private javax.swing.JComboBox<String> AdminProductCategory;
     private javax.swing.JLabel AdminProductCategoryLabel;
