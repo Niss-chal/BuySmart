@@ -73,6 +73,10 @@ public class LoginView extends javax.swing.JFrame {
         Password_Label.setText("Password");
 
         ShowPassword.setText("Show ");
+        ShowPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            }
+        });
 
         signUp.setText("Don't have an account register?");
 
@@ -108,7 +112,7 @@ public class LoginView extends javax.swing.JFrame {
                                     .addComponent(emailLogin, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(loginformLayout.createSequentialGroup()
                                         .addComponent(forgetPass)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                                         .addComponent(signUp))
                                     .addComponent(PasswordField, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -116,7 +120,7 @@ public class LoginView extends javax.swing.JFrame {
                     .addGroup(loginformLayout.createSequentialGroup()
                         .addGap(224, 224, 224)
                         .addComponent(Login_Label)
-                        .addGap(0, 226, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginformLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -154,11 +158,11 @@ public class LoginView extends javax.swing.JFrame {
         loginformPannelLayout.setHorizontalGroup(
             loginformPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginformPannelLayout.createSequentialGroup()
-                .addGap(287, 287, 287)
+                .addContainerGap(287, Short.MAX_VALUE)
                 .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addComponent(loginform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         loginformPannelLayout.setVerticalGroup(
             loginformPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,9 +180,7 @@ public class LoginView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(loginformPannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(loginformPannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

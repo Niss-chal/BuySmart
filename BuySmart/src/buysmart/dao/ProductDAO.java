@@ -21,25 +21,99 @@ import java.util.List;
  */
 public class ProductDAO {
     
-    public static List<ProductModel> getProduct() throws SQLException {
-        String sql = "SELECT image_path, description, price FROM products"; 
+   public static List<ProductModel> getProduct() throws SQLException {
+        String sql = "SELECT id, user_email, image_path, description, price, category, quantity FROM products ORDER BY created_at DESC"; 
         List<ProductModel> products = new ArrayList<>();
+        
         try (Connection conn = MysqlConnection1.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
+            
             while (rs.next()) {
-                products.add(new ProductModel(
-                    rs.getString("image_path"),
+                ProductModel product = new ProductModel(
+                    rs.getInt("id"),
+                    rs.getString("user_email"),
+                    rs.getString("category"),
+                    rs.getDouble("price"),
                     rs.getString("description"),
-                    rs.getDouble("price")
-                ));
+                    rs.getString("image_path"),
+                    rs.getInt("quantity")
+                );
+                products.add(product);
             }
+            
+            System.out.println("Retrieved " + products.size() + " products from database");
             return products;
+            
         } catch (SQLException e) {
-            System.err.println("Database Error in getProducts: " + e.getMessage());
+            System.err.println("Database Error in getProduct: " + e.getMessage());
             throw e;
         }
     }
+
+    public static List<ProductModel> getProductsByCategory(String category) throws SQLException {
+        String sql = "SELECT id, user_email, image_path, description, price, category, quantity FROM products WHERE category = ? ORDER BY created_at DESC"; 
+        List<ProductModel> products = new ArrayList<>();
+        
+        try (Connection conn = MysqlConnection1.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, category);
+            
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    ProductModel product = new ProductModel(
+                        rs.getInt("id"),
+                        rs.getString("user_email"),
+                        rs.getString("category"),
+                        rs.getDouble("price"),
+                        rs.getString("description"),
+                        rs.getString("image_path"),
+                        rs.getInt("quantity")
+                    );
+                    products.add(product);
+                }
+            }
+            
+            System.out.println("Retrieved " + products.size() + " products for category: " + category);
+            return products;
+            
+        } catch (SQLException e) {
+            System.err.println("Database Error in getProductsByCategory: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public static List<ProductModel> getComputerProducts() throws SQLException {
+        String sql = "SELECT id, user_email, image_path, description, price, category, quantity FROM computers ORDER BY created_at DESC"; 
+        List<ProductModel> products = new ArrayList<>();
+        
+        try (Connection conn = MysqlConnection1.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            
+            while (rs.next()) {
+                ProductModel product = new ProductModel(
+                    rs.getInt("id"),
+                    rs.getString("user_email"),
+                    rs.getString("category"),
+                    rs.getDouble("price"),
+                    rs.getString("description"),
+                    rs.getString("image_path"),
+                    rs.getInt("quantity")
+                );
+                products.add(product);
+            }
+            
+            System.out.println("Retrieved " + products.size() + " computer products");
+            return products;
+            
+        } catch (SQLException e) {
+            System.err.println("Database Error in getComputerProducts: " + e.getMessage());
+            throw e;
+        }
+    }
+
     
     public static void addToCart(String userEmail, String description, double price, int quantity) throws SQLException {
         System.out.println("Attempting to add to cart: " + description + ", " + price + ", Quantity: " + quantity + ", User: " + userEmail);

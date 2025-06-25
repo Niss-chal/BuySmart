@@ -4,17 +4,21 @@
  */
 package buysmart.view;
 
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+
 /**
  *
  * @author fahmi
  */
-public class AdminProductAdd extends javax.swing.JFrame {
+public class AdminDashboard extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminProductAdd
      */
-    public AdminProductAdd() {
+    public AdminDashboard() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -31,13 +35,12 @@ public class AdminProductAdd extends javax.swing.JFrame {
         AdminDescriptionLabel = new javax.swing.JLabel();
         AdminProductPriceLabel = new javax.swing.JLabel();
         AdminProductCategoryLabel = new javax.swing.JLabel();
-        AdminImageLabel = new javax.swing.JLabel();
         AdminPriceIndicator = new javax.swing.JLabel();
         AdminProductCategory = new javax.swing.JComboBox<>();
-        AdminProductImagePath = new javax.swing.JTextField();
         AdminJustImage = new javax.swing.JLabel();
         AdminProductPrice = new javax.swing.JTextField();
         AdminProductAddButton = new javax.swing.JButton();
+        imageUpload = new javax.swing.JButton();
         AdminAddProductPanel = new javax.swing.JPanel();
         AdminBackButton = new javax.swing.JButton();
         AdminLogout = new javax.swing.JButton();
@@ -47,7 +50,6 @@ public class AdminProductAdd extends javax.swing.JFrame {
 
         AdminProductCardPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 153, 255), 3, true));
 
-        AdminDescription.setEditable(false);
         AdminDescription.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         AdminDescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,35 +58,24 @@ public class AdminProductAdd extends javax.swing.JFrame {
         });
 
         AdminDescriptionLabel.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 18)); // NOI18N
-        AdminDescriptionLabel.setText("description :");
+        AdminDescriptionLabel.setText("Description :");
 
         AdminProductPriceLabel.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 18)); // NOI18N
-        AdminProductPriceLabel.setText("price :");
+        AdminProductPriceLabel.setText("Price :");
 
         AdminProductCategoryLabel.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 18)); // NOI18N
-        AdminProductCategoryLabel.setText("category :");
-
-        AdminImageLabel.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 18)); // NOI18N
-        AdminImageLabel.setText("Image Path :");
+        AdminProductCategoryLabel.setText("Category :");
 
         AdminPriceIndicator.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 0, 18)); // NOI18N
         AdminPriceIndicator.setText("Rs.");
 
         AdminProductCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Products", "Computers" }));
 
-        AdminProductImagePath.setEditable(false);
-        AdminProductImagePath.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdminProductImagePathActionPerformed(evt);
-            }
-        });
-
-        AdminJustImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/imageloader (1).png"))); // NOI18N
-
-        AdminProductPrice.setEditable(false);
 
         AdminProductAddButton.setBackground(new java.awt.Color(153, 204, 255));
         AdminProductAddButton.setText("Add Product");
+
+        imageUpload.setText("Upload Image");
 
         javax.swing.GroupLayout AdminProductCardPanelLayout = new javax.swing.GroupLayout(AdminProductCardPanel);
         AdminProductCardPanel.setLayout(AdminProductCardPanelLayout);
@@ -92,12 +83,10 @@ public class AdminProductAdd extends javax.swing.JFrame {
             AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminProductCardPanelLayout.createSequentialGroup()
                 .addContainerGap(77, Short.MAX_VALUE)
-                .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AdminImageLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(AdminDescriptionLabel)
-                        .addComponent(AdminProductPriceLabel)
-                        .addComponent(AdminProductCategoryLabel)))
+                .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AdminDescriptionLabel)
+                    .addComponent(AdminProductPriceLabel)
+                    .addComponent(AdminProductCategoryLabel))
                 .addGap(30, 30, 30)
                 .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,13 +97,13 @@ public class AdminProductAdd extends javax.swing.JFrame {
                             .addComponent(AdminProductPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(AdminProductCardPanelLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AdminJustImage)
-                            .addComponent(AdminDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AdminProductImagePath, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(AdminDescription, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                             .addGroup(AdminProductCardPanelLayout.createSequentialGroup()
                                 .addGap(24, 24, 24)
-                                .addComponent(AdminProductAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(AdminProductAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(imageUpload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(AdminJustImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(93, 93, 93))
         );
         AdminProductCardPanelLayout.setVerticalGroup(
@@ -134,12 +123,10 @@ public class AdminProductAdd extends javax.swing.JFrame {
                     .addComponent(AdminDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AdminDescriptionLabel))
                 .addGap(18, 18, 18)
-                .addComponent(AdminJustImage, javax.swing.GroupLayout.PREFERRED_SIZE, 178, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(AdminProductCardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AdminProductImagePath, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AdminImageLabel))
-                .addGap(18, 18, 18)
+                .addComponent(AdminJustImage, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                .addGap(2, 2, 2)
+                .addComponent(imageUpload)
+                .addGap(35, 35, 35)
                 .addComponent(AdminProductAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
@@ -191,9 +178,9 @@ public class AdminProductAdd extends javax.swing.JFrame {
                 .addComponent(AdminBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(183, 183, 183)
                 .addComponent(AdminLogo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
                 .addComponent(AdminLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addGap(65, 65, 65))
         );
         AdminAddProductPanelLayout.setVerticalGroup(
             AdminAddProductPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,18 +197,18 @@ public class AdminProductAdd extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(AdminAddProductPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(AdminProductCardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(AdminAddProductPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(AdminProductCardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         pack();
@@ -255,10 +242,6 @@ public class AdminProductAdd extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AdminLogoutActionPerformed
 
-    private void AdminProductImagePathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminProductImagePathActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AdminProductImagePathActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -276,20 +259,21 @@ public class AdminProductAdd extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminProductAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminProductAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminProductAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminProductAdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminProductAdd().setVisible(true);
+                new AdminDashboard().setVisible(true);
             }
         });
     }
@@ -299,7 +283,6 @@ public class AdminProductAdd extends javax.swing.JFrame {
     private javax.swing.JButton AdminBackButton;
     private javax.swing.JTextField AdminDescription;
     private javax.swing.JLabel AdminDescriptionLabel;
-    private javax.swing.JLabel AdminImageLabel;
     private javax.swing.JLabel AdminJustImage;
     private javax.swing.JLabel AdminLogo;
     private javax.swing.JButton AdminLogout;
@@ -308,8 +291,41 @@ public class AdminProductAdd extends javax.swing.JFrame {
     private javax.swing.JPanel AdminProductCardPanel;
     private javax.swing.JComboBox<String> AdminProductCategory;
     private javax.swing.JLabel AdminProductCategoryLabel;
-    private javax.swing.JTextField AdminProductImagePath;
     private javax.swing.JTextField AdminProductPrice;
     private javax.swing.JLabel AdminProductPriceLabel;
+    private javax.swing.JButton imageUpload;
     // End of variables declaration//GEN-END:variables
+
+ 
+public javax.swing.JComboBox<String>getCategoryname(){      
+return AdminProductCategory;    
+}
+
+public javax.swing.JTextField getPrice(){  
+return AdminProductPrice;    
+}
+    
+public javax.swing.JTextField getDescription(){     
+return AdminDescription;   
+}
+   
+public javax.swing.JLabel getImage(){       
+return AdminJustImage;  
+}
+
+public void imageUpload(ActionListener listener){
+    imageUpload.addActionListener(listener);    
+}
+
+public void adminBack(ActionListener listener){
+AdminBackButton.addActionListener(listener);   
+}
+
+public void adminLogout (ActionListener  listener){ 
+AdminLogout.addActionListener(listener);   
+}
+    
+public void addProduct(ActionListener  listener){       
+AdminProductAddButton.addActionListener(listener);    
+}
 }

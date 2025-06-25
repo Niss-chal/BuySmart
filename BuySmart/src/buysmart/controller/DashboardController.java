@@ -6,8 +6,8 @@ package buysmart.controller;
 
 import buysmart.dao.ProductDAO;
 import buysmart.model.ProductModel;
+import buysmart.view.AdminDashboard;
 import buysmart.view.CartManage;
-import buysmart.view.ComputersView;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
 import buysmart.view.OrdersView;
@@ -20,7 +20,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+
 
 /**
  *
@@ -31,12 +31,11 @@ public class DashboardController {
     private List<ProductModel> products; // Store products for mapping buttons
     private String email; 
     private ProductController productController; // Add ProductController field
-    private computersController computersController;
 
     public DashboardController(Dashboard dashboard,String email) {
         this.dashboard = dashboard;
         this.email = email;
-        productController = new ProductController(this.dashboard);
+        productController = new ProductController(this.dashboard,email);
        
         
         // Load products to map buttons to product data
@@ -50,20 +49,15 @@ public class DashboardController {
         
         Logout logout = new Logout();
         this.dashboard.logout(logout);
-        
-        Cart cart = new Cart();
-        this.dashboard.cart(cart);
-        
-        AddCart addCart = new AddCart();
-        this.dashboard.addCart(addCart);
-        
-        this.dashboard=dashboard;
-        this.email=email;
+    
         OpenProfile openProfile = new OpenProfile();
         this.dashboard.openProfile(openProfile); 
         
         OpenOrders openOrdersHistory = new OpenOrders();
         this.dashboard.openOrdersHistory(openOrdersHistory);
+        
+        SellerRegistration sellerRegister = new SellerRegistration();
+        this.dashboard.sellerRegister(sellerRegister);
         
         
     }
@@ -91,10 +85,10 @@ public class DashboardController {
     class Cart implements MouseListener {
         @Override
         public void mouseClicked(MouseEvent e) {
-            dashboard.dispose();
-            CartManage cartmanage = new CartManage(email);
-            CartManageController cartmanageController = new CartManageController(cartmanage, email);
-            cartmanageController.open();
+                dashboard.dispose();
+                CartManage cartmanage = new CartManage(email);
+                CartManageController cartmanageController = new CartManageController(cartmanage, email);
+                cartmanageController.open();
         }
 
         @Override
@@ -124,9 +118,7 @@ public class DashboardController {
 
             JButton sourceButton = (JButton) e.getSource();
             int productIndex = -1;
-            JButton[] cartButtons = {dashboard.getProductAddToCartButton(), dashboard.getProductAddToCartButton1(),
-                                     dashboard.getProductAddToCartButton2(), dashboard.getProductAddToCartButton3(),
-                                     dashboard.getProductAddToCartButton4()};
+            JButton[] cartButtons = {dashboard.getProductAddToCartButton()};
             
             // Find which button was clicked
             for (int i = 0; i < cartButtons.length; i++) {
@@ -170,10 +162,10 @@ public class DashboardController {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            dashboard.setVisible(false);
-            Profileview userprofileview = new Profileview();
-            UserprofileController userprofilecontroller = new UserprofileController(userprofileview,email);
-            userprofilecontroller.open();
+                dashboard.setVisible(false);
+                Profileview userprofileview = new Profileview();
+                UserprofileController userprofilecontroller = new UserprofileController(userprofileview, email);
+                userprofilecontroller.open();
             
         }
         
@@ -226,28 +218,36 @@ public class DashboardController {
      
      // New method to show Computers view
     public void showComputersView() {
-        ComputersView computersView = new ComputersView();
-        JPanel computersPanel = (JPanel) computersView.getContentPane().getComponent(0);
-
-        if (computersPanel != null) {
-            dashboard.getProductPanel1().removeAll();
-            dashboard.getProductPanel1().setLayout(new java.awt.BorderLayout());
-            dashboard.getProductPanel1().add(computersPanel, java.awt.BorderLayout.CENTER);
-            dashboard.getProductPanel1().revalidate();
-            dashboard.getProductPanel1().repaint();
-        } else {
-            System.out.println("Error: Could not retrieve jPanel1 from ComputersView at " + 
-                               java.time.LocalDateTime.now() + " +0545");
-        }
+        System.out.println("Switching to Computers view");
+        productController.loadProductsByCategory("Computers");
     }
 
-    // New method to show All view
+    /**
+     * ✅ FIXED - Show All products view using ProductController
+     */
     public void showAllView() {
-        dashboard.getProductPanel1().removeAll();
-        dashboard.getProductPanel1().setLayout(new java.awt.BorderLayout());
-        dashboard.getProductPanel1().add(dashboard.getProductPanel2(), java.awt.BorderLayout.CENTER);
-        dashboard.getProductPanel1().revalidate();
-        dashboard.getProductPanel1().repaint();
+        System.out.println("Switching to All Products view");
+        productController.loadProductsByCategory("All Products");
+    }
+    
+    /**
+     * Show products by category using ProductController
+     */
+    public void showCategoryView(String category) {
+        System.out.println("Switching to " + category + " view");
+        productController.loadProductsByCategory(category);
+    }
+    
+    class SellerRegistration implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            dashboard.setVisible(false);
+            AdminDashboard adminDashboard = new AdminDashboard();
+            AdminController adminController = new AdminController(adminDashboard,email);
+            adminController.open();
+        }
+        
     }
 }
 
