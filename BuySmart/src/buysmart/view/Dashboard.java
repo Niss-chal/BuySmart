@@ -4,6 +4,7 @@
  */
 package buysmart.view;
 
+import buysmart.controller.DashboardController;
 import buysmart.controller.ProductController;
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -20,21 +21,37 @@ import javax.swing.JFrame;
  */
 public class Dashboard extends javax.swing.JFrame {
     private ProductController productController;
+    private DashboardController dashboardController;
+    private javax.swing.JButton[] cartButtons;
+    private String email;
+    
+   
     /**
      * Creates new form Dashboard
      */
-    public Dashboard() {
+    public Dashboard(String userEmail) {
+        this.email=userEmail;
+        
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         cartButtons = new JButton[] {
             ProductAddToCartButton, ProductAddToCartButton1, ProductAddToCartButton2, 
             ProductAddToCartButton3, ProductAddToCartButton4
         };
+        
+        dashboardController = new DashboardController(this, email);
 
         productController = new ProductController(this);
         productController.loadProduct();
+        
+    }
+    
+    public DashboardController getDashboardController() {
+        return dashboardController;
     }
     // Getter methods for Add to Cart buttons
+    
+    
     public JButton getProductAddToCartButton() {
         return ProductAddToCartButton;
     }
@@ -60,6 +77,14 @@ public class Dashboard extends javax.swing.JFrame {
         return cartButtons;
     }
     
+    public void showAllView() {
+        dashboardController.showAllView();
+    }
+    
+    public void showComputersView() {
+        dashboardController.showComputersView();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,7 +129,6 @@ public class Dashboard extends javax.swing.JFrame {
         searchField = new javax.swing.JTextField();
         jPanel25 = new javax.swing.JPanel();
         productPanel1 = new javax.swing.JPanel();
-        productPanel2 = new javax.swing.JPanel();
         PanelProductCard = new javax.swing.JPanel();
         PicProduct = new javax.swing.JLabel();
         ProductAddToCartButton = new javax.swing.JButton();
@@ -266,7 +290,12 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonLogout.setBackground(new java.awt.Color(153, 204, 255));
         buttonLogout.setText("Logout");
-        buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));      
+        buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        buttonLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                // buttonLogoutActionPerformed(evt);
+            }
+        });
 
         userProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/user (1).png"))); // NOI18N
 
@@ -277,7 +306,7 @@ public class Dashboard extends javax.swing.JFrame {
         logoutPanel1Layout.setHorizontalGroup(
             logoutPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoutPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(48, 48, 48)
                 .addComponent(dashboardLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -358,11 +387,6 @@ public class Dashboard extends javax.swing.JFrame {
                 buttonBooksMouseExited(evt);
             }
         });
-        buttonBooks.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBooksActionPerformed(evt);
-            }
-        });
 
         buttonClothing.setBackground(new java.awt.Color(153, 204, 255));
         buttonClothing.setText("Clothing");
@@ -434,23 +458,23 @@ public class Dashboard extends javax.swing.JFrame {
         buttonPanel3Layout.setHorizontalGroup(
             buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanel3Layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonAll, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(buttonElectronics, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 22, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(buttonElectronics, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(ButtonComputers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(buttonClothing, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 22, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(buttonBooks, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(buttonBeauties, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 22, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(buttonToys, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(buttonSports, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         buttonPanel3Layout.setVerticalGroup(
             buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -458,9 +482,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(11, Short.MAX_VALUE)
                 .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(buttonSports, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(buttonToys, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buttonBeauties, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonToys, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonBeauties, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonAll, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(buttonBooks, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -516,7 +539,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(orderlistIcon)
                 .addGap(18, 18, 18))
-            .addComponent(buttonPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(statusPanel2Layout.createSequentialGroup()
+                .addComponent(buttonPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         statusPanel2Layout.setVerticalGroup(
             statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -534,7 +559,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(orderlistIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(cartIcon)
                         .addComponent(wishlistIcon)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(buttonPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -542,8 +567,6 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel25.setLayout(new java.awt.CardLayout());
 
         productPanel1.setBackground(new java.awt.Color(204, 204, 204));
-
-        productPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
         PicProduct.setText("pic");
         PicProduct.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -677,7 +700,6 @@ public class Dashboard extends javax.swing.JFrame {
         PanelProductCard3.setLayout(PanelProductCard3Layout);
         PanelProductCard3Layout.setHorizontalGroup(
             PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PicProduct3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProductCard3Layout.createSequentialGroup()
                 .addGroup(PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PanelProductCard3Layout.createSequentialGroup()
@@ -689,6 +711,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addComponent(ProductAddToCartButton3)))
                 .addGap(16, 16, 16))
+            .addComponent(PicProduct3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelProductCard3Layout.setVerticalGroup(
             PanelProductCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -742,29 +765,29 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(0, 17, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout productPanel2Layout = new javax.swing.GroupLayout(productPanel2);
-        productPanel2.setLayout(productPanel2Layout);
-        productPanel2Layout.setHorizontalGroup(
-            productPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(productPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout productPanel1Layout = new javax.swing.GroupLayout(productPanel1);
+        productPanel1.setLayout(productPanel1Layout);
+        productPanel1Layout.setHorizontalGroup(
+            productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(productPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addGroup(productPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelProductCard4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(productPanel2Layout.createSequentialGroup()
+                    .addGroup(productPanel1Layout.createSequentialGroup()
                         .addComponent(PanelProductCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addGap(37, 37, 37)
                         .addComponent(PanelProductCard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addGap(38, 38, 38)
                         .addComponent(PanelProductCard2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(PanelProductCard3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(51, 51, 51))
         );
-        productPanel2Layout.setVerticalGroup(
-            productPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(productPanel2Layout.createSequentialGroup()
+        productPanel1Layout.setVerticalGroup(
+            productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(productPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(productPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PanelProductCard3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelProductCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelProductCard1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -774,58 +797,38 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout productPanel1Layout = new javax.swing.GroupLayout(productPanel1);
-        productPanel1.setLayout(productPanel1Layout);
-        productPanel1Layout.setHorizontalGroup(
-            productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1037, Short.MAX_VALUE)
-            .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(productPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(productPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        productPanel1Layout.setVerticalGroup(
-            productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 637, Short.MAX_VALUE)
-            .addGroup(productPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(productPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(productPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(productPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(statusPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(logoutPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(logoutPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(statusPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(productPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addComponent(logoutPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addGap(18, 24, Short.MAX_VALUE)
                 .addComponent(statusPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(productPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(productPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAllActionPerformed
-        // TODO add your handling code here:
+        showAllView();
     }//GEN-LAST:event_buttonAllActionPerformed
 
     private void ButtonComputersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonComputersActionPerformed
-        // TODO add your handling code here:
+        showComputersView();
     }//GEN-LAST:event_ButtonComputersActionPerformed
 
     private void buttonSportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSportsActionPerformed
@@ -952,12 +955,10 @@ public class Dashboard extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        //</editor-fold>
+
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dashboard().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1016,23 +1017,33 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel logoutPanel1;
     private javax.swing.JLabel orderlistIcon;
     private javax.swing.JPanel productPanel1;
-    private javax.swing.JPanel productPanel2;
     private javax.swing.JTextField searchField;
     private javax.swing.JLabel searchIcon;
     private javax.swing.JPanel statusPanel2;
     private javax.swing.JLabel userProfile;
     private javax.swing.JLabel wishlistIcon;
     // End of variables declaration//GEN-END:variables
+    
+    public javax.swing.JPanel getProductPanel1() {
+        return productPanel1;
+    }
+    
+    
+    
     public void logout(ActionListener listener){ // Logoutbutton function
         buttonLogout.addActionListener(listener);
     }
     public void cart(MouseListener listener){ 
         cartIcon.addMouseListener(listener);
     }
-    private javax.swing.JButton[] cartButtons;
+    
 
     public void addCart(MouseListener listener){ 
         for (JButton button : cartButtons){
+            MouseListener[] existingListeners = button.getMouseListeners();
+            for(MouseListener existingListener: existingListeners){
+                button.removeMouseListener(existingListener);
+            }
             button.addMouseListener(listener);
         }
     }
@@ -1108,5 +1119,8 @@ public class Dashboard extends javax.swing.JFrame {
         userProfile.addMouseListener(listener); 
     }
 
+    public void openOrdersHistory(MouseListener listener){
+        orderlistIcon.addMouseListener(listener);
+    }
     
 }

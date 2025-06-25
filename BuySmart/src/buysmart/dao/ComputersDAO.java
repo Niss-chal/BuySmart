@@ -1,12 +1,12 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nb://SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nb://SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package buysmart.dao;
 
 import buysmart.database.MysqlConnection1;
 import buysmart.model.CartItem;
-import buysmart.model.ProductModel;
+import buysmart.model.ComputersModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,35 +14,35 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  *
  * @author fahmi
  */
-public class ProductDAO {
+public class ComputersDAO {
     
-    public static List<ProductModel> getProduct() throws SQLException {
-        String sql = "SELECT image_path, description, price FROM products"; 
-        List<ProductModel> products = new ArrayList<>();
+    public static List<ComputersModel> getComputers() throws SQLException {
+        String sql = "SELECT image_path, description, price FROM computers WHERE category = 'Computers'";
+        List<ComputersModel> computers = new ArrayList<>();
         try (Connection conn = MysqlConnection1.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
-                products.add(new ProductModel(
+                computers.add(new ComputersModel(
                     rs.getString("image_path"),
                     rs.getString("description"),
                     rs.getDouble("price")
                 ));
             }
-            return products;
+            System.out.println("Fetched " + computers.size() + " computers from database.");
+            return computers;
         } catch (SQLException e) {
-            System.err.println("Database Error in getProducts: " + e.getMessage());
+            System.err.println("Database Error in getComputers: " + e.getMessage());
             throw e;
         }
     }
     
     public static void addToCart(String userEmail, String description, double price, int quantity) throws SQLException {
-        System.out.println("Attempting to add to cart: " + description + ", " + price + ", Quantity: " + quantity + ", User: " + userEmail);
+        System.out.println("Attempting to add to cart: Description=" + description + ", Price=" + price + ", Quantity=" + quantity + ", User=" + userEmail);
         String sqlCheck = "SELECT quantity FROM cart WHERE user_email = ? AND description = ? AND price = ?";
         String sqlUpdate = "UPDATE cart SET quantity = quantity + ? WHERE user_email = ? AND description = ? AND price = ?";
         String sqlInsert = "INSERT INTO cart (user_email, description, price, quantity) VALUES (?, ?, ?, ?)";
@@ -97,11 +97,12 @@ public class ProductDAO {
                     ));
                 }
             }
+            System.out.println("Fetched " + cartItems.size() + " cart items for user: " + userEmail);
+            return cartItems;
         } catch (SQLException e) {
             System.err.println("Database Error in getCartItems: " + e.getMessage());
             throw e;
         }
-        return cartItems;
     }
     
     public static void clearCart(String userEmail) throws SQLException {
@@ -147,57 +148,4 @@ public class ProductDAO {
             throw e;
         }
     }
-
-    public static void saveOrder(String userEmail, String description, double price, int quantity) throws SQLException {
-        String sql = "INSERT INTO orders (user_email, description, price, quantity) VALUES (?, ?, ?, ?)";
-        try (Connection conn = MysqlConnection1.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, userEmail);
-            pstmt.setString(2, description);
-            pstmt.setDouble(3, price); // Maps to DECIMAL(10,2)
-            pstmt.setInt(4, quantity);
-            int rowsAffected = pstmt.executeUpdate();
-            System.out.println("Saved order for user " + userEmail + ", rows affected: " + rowsAffected);
-        } catch (SQLException e) {
-            System.err.println("Database Error in saveOrder: " + e.getMessage());
-            throw e;
-        }
-    }
-
-    public static List<CartItem> getOrderHistory(String userEmail) throws SQLException {
-        String sql = "SELECT order_id, description, price, quantity FROM orders WHERE user_email = ?";
-        List<CartItem> orderItems = new ArrayList<>();
-        try (Connection conn = MysqlConnection1.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, userEmail);
-            try (ResultSet rs = pstmt.executeQuery()) {
-                while (rs.next()) {
-                    orderItems.add(new CartItem(
-                            rs.getInt("order_id"),
-                            rs.getString("description"),
-                            rs.getDouble("price"),
-                            rs.getInt("quantity")
-                    ));
-                }
-            }
-        } catch (SQLException e) {
-            System.err.println("Database Error in getOrderHistory: " + e.getMessage());
-            throw e;
-        }
-        return orderItems;
-    }
-
-    public static void deleteOrderItem(int orderId) throws SQLException {
-        String sql = "DELETE FROM orders WHERE order_id = ?";
-        try (Connection conn = MysqlConnection1.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, orderId);
-            int rowsAffected = pstmt.executeUpdate();
-            System.out.println("Deleted order item with ID " + orderId + ", rows affected: " + rowsAffected);
-        } catch (SQLException e) {
-            System.err.println("Database Error in deleteOrderItem: " + e.getMessage());
-            throw e;
-        }
-    }
-
 }

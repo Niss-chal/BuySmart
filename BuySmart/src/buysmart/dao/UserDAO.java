@@ -15,6 +15,7 @@ package buysmart.dao;
 
 
 import buysmart.database.MysqlConnection1;
+import buysmart.model.LoginRequest;
 import buysmart.model.UserModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -51,12 +52,12 @@ public class UserDAO {
     }
     }
     
-    public UserModel loginUser(String email, String password) throws SQLException {
+    public UserModel loginUser(LoginRequest loginReq) throws SQLException {
     String query = "SELECT * FROM users WHERE email = ? AND password = ?";
     try (Connection conn = MysqlConnection1.getConnection();
          PreparedStatement ps = conn.prepareStatement(query)) {
-        ps.setString(1, email);
-        ps.setString(2, password);
+        ps.setString(1, loginReq.getemail());
+        ps.setString(2, loginReq.getpassword());
         try (ResultSet rs = ps.executeQuery()) {
             if (rs.next()) {
                 return new UserModel(
@@ -75,6 +76,7 @@ public class UserDAO {
     return null; 
 }
     
+      
 public boolean validateSecurityAnswer(String email,String security_question,String security_answer){
     try(Connection conn=MysqlConnection1.getConnection()){
         String query="SELECT * FROM users WHERE " +

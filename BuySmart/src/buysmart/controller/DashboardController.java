@@ -7,8 +7,10 @@ package buysmart.controller;
 import buysmart.dao.ProductDAO;
 import buysmart.model.ProductModel;
 import buysmart.view.CartManage;
+import buysmart.view.ComputersView;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
+import buysmart.view.OrdersView;
 import buysmart.view.Profileview;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +20,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -26,16 +29,23 @@ import javax.swing.JOptionPane;
 public class DashboardController {
     private Dashboard dashboard;
     private List<ProductModel> products; // Store products for mapping buttons
-    private String email;
+    private String email; 
+    private ProductController productController; // Add ProductController field
+    private ComputersController computersController;
 
     public DashboardController(Dashboard dashboard,String email) {
         this.dashboard = dashboard;
+        this.email = email;
+        productController = new ProductController(this.dashboard);
+        computersController = new ComputersController(new ComputersView(email), email);
+       
         
         // Load products to map buttons to product data
         try {
             products = ProductDAO.getProduct();
+            productController.loadProduct(); // Load products initially
         } catch (SQLException e) {
-            System.out.println("Error loading products: " + e.getMessage());
+            System.err.println("Error loading products: " + e.getMessage());
             products = null;
         }
         
@@ -48,10 +58,13 @@ public class DashboardController {
         AddCart addCart = new AddCart();
         this.dashboard.addCart(addCart);
         
-        this.dashboard=dashboard;
-        this.email=email;
         OpenProfile openProfile = new OpenProfile();
         this.dashboard.openProfile(openProfile); 
+        
+        OpenOrders openOrdersHistory = new OpenOrders();
+        this.dashboard.openOrdersHistory(openOrdersHistory);
+        
+        
     }
 
 
@@ -179,6 +192,63 @@ public class DashboardController {
         public void mouseExited(MouseEvent e) {
         }
     
+    }
+     
+     class OpenOrders implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+        dashboard.setVisible(false);
+        OrdersView ordersview = new OrdersView();
+        OrdersController ordersController = new OrdersController(ordersview, email);
+        ordersController.open();
+           
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+         
+    }
+     
+     // New method to show Computers view
+    public void showComputersView() {
+        ComputersView computersView = new ComputersView(email);
+        computersController = new ComputersController(computersView, email); 
+        computersController.loadComputers(); 
+        JPanel computersPanel = (JPanel) computersView.getContentPane().getComponent(0);
+
+        if (computersPanel != null) {
+            dashboard.getProductPanel1().removeAll();
+            dashboard.getProductPanel1().setLayout(new java.awt.BorderLayout());
+            dashboard.getProductPanel1().add(computersPanel, java.awt.BorderLayout.CENTER);
+            dashboard.getProductPanel1().revalidate();
+            dashboard.getProductPanel1().repaint();
+        } else {
+            System.out.println("Error: Could not retrieve jPanel1 from ComputersView at " + 
+                               java.time.LocalDateTime.now() + " +0545");
+        }
+    }
+
+    // New method to show All view
+    public void showAllView() {
+        dashboard.getProductPanel1().removeAll();
+        dashboard.getProductPanel1().setLayout(new java.awt.BorderLayout());
+        dashboard.getProductPanel1().add(dashboard.getProductPanel1(), java.awt.BorderLayout.CENTER);
+        dashboard.getProductPanel1().revalidate();
+        dashboard.getProductPanel1().repaint();
     }
 }
 

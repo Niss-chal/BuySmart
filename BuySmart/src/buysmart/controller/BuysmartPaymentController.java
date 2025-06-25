@@ -6,6 +6,7 @@ package buysmart.controller;
 
 import buysmart.dao.ProductDAO;
 import buysmart.model.BuysmartPaymentModel;
+import buysmart.model.CartItem;
 import buysmart.view.CartManage;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
@@ -13,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -71,8 +73,13 @@ public class BuysmartPaymentController {
                     boolean paymentStatus = model.checkPaymentStatus(sessionUrl);
                     view.getPlaceOrderButton().setEnabled(true);
                     if (paymentStatus) {
-                        // Clear cart on successful payment
+                        // Save cart items to order history
                         try {
+                            List<CartItem> cartItems = ProductDAO.getCartItems(email);
+                            for (CartItem item : cartItems) {
+                                ProductDAO.saveOrder(email, item.getDescription(), item.getPrice(), item.getQuantity());
+                            }
+                            // Clear cart on successful payment
                             ProductDAO.clearCart(email);
                             // Verify cart is empty
                             if (ProductDAO.getCartItems(email).isEmpty()) {
@@ -84,8 +91,8 @@ public class BuysmartPaymentController {
                                 Logger.getLogger(BuysmartPaymentController.class.getName()).log(Level.SEVERE, "Cart not fully cleared for user: " + email);
                             }
                         } catch (SQLException ex) {
-                            view.showPaymentFailure("Error clearing cart: " + ex.getMessage());
-                            Logger.getLogger(BuysmartPaymentController.class.getName()).log(Level.SEVERE, "SQLException during cart clear: ", ex);
+                            view.showPaymentFailure("Error saving order: " + ex.getMessage());
+                            Logger.getLogger(BuysmartPaymentController.class.getName()).log(Level.SEVERE, "SQLException during order saving: ", ex);
                         }
                     } else {
                         view.showPaymentFailure("Payment failed or not completed.");
