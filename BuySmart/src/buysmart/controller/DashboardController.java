@@ -6,8 +6,8 @@ package buysmart.controller;
 
 import buysmart.dao.ProductDAO;
 import buysmart.model.ProductModel;
+import buysmart.view.AdminDashboard;
 import buysmart.view.CartManage;
-import buysmart.view.ComputersView;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
 import buysmart.view.OrdersView;
@@ -18,9 +18,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.util.List;
+import javax.swing.Timer;
+
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+
 
 /**
  *
@@ -32,16 +34,10 @@ public class DashboardController {
     private String email; 
     private ProductController productController; // Add ProductController field
 
-    private ComputersController computersController;
-
-  
-
     public DashboardController(Dashboard dashboard,String email) {
         this.dashboard = dashboard;
         this.email = email;
-        productController = new ProductController(this.dashboard);
-
-        computersController = new ComputersController(new ComputersView(email), email);
+        productController = new ProductController(this.dashboard,email);
        
         
         // Load products to map buttons to product data
@@ -52,21 +48,33 @@ public class DashboardController {
             System.err.println("Error loading products: " + e.getMessage());
             products = null;
         }
+
+        
         
         Logout logout = new Logout();
         this.dashboard.logout(logout);
-        
+
         Cart cart = new Cart();
         this.dashboard.cart(cart);
-        
-        AddCart addCart = new AddCart();
-        this.dashboard.addCart(addCart);
-        
+    
         OpenProfile openProfile = new OpenProfile();
         this.dashboard.openProfile(openProfile); 
         
         OpenOrders openOrdersHistory = new OpenOrders();
         this.dashboard.openOrdersHistory(openOrdersHistory);
+        
+        SellerRegistration sellerRegister = new SellerRegistration();
+        this.dashboard.sellerRegister(sellerRegister);
+
+        AddCart addCart = new AddCart();
+        this.dashboard.addCart(addCart);
+        
+        ShowComputers getComputers = new ShowComputers();
+        this.dashboard.getComputers(getComputers);
+        
+        ShowAll getAll = new ShowAll();
+        this.dashboard.getAll(getAll);
+                
         
         
     }
@@ -92,12 +100,21 @@ public class DashboardController {
     }
     
     class Cart implements MouseListener {
+        private static boolean isOpen = false;
         @Override
         public void mouseClicked(MouseEvent e) {
+            if (isOpen) return; // Stop if already open
+        
+            isOpen = true;
             dashboard.dispose();
             CartManage cartmanage = new CartManage(email);
             CartManageController cartmanageController = new CartManageController(cartmanage, email);
             cartmanageController.open();
+
+             // Reset after 2 seconds
+            Timer timer = new Timer(2000, ae -> isOpen = false);
+            timer.setRepeats(false);
+            timer.start();
         }
 
         @Override
@@ -127,9 +144,7 @@ public class DashboardController {
 
             JButton sourceButton = (JButton) e.getSource();
             int productIndex = -1;
-            JButton[] cartButtons = {dashboard.getProductAddToCartButton(), dashboard.getProductAddToCartButton1(),
-                                     dashboard.getProductAddToCartButton2(), dashboard.getProductAddToCartButton3(),
-                                     dashboard.getProductAddToCartButton4()};
+            JButton[] cartButtons = {dashboard.getProductAddToCartButton()};
             
             // Find which button was clicked
             for (int i = 0; i < cartButtons.length; i++) {
@@ -170,13 +185,23 @@ public class DashboardController {
     }
     
      class OpenProfile implements MouseListener{
+        private static boolean isOpen = false;
 
         @Override
         public void mouseClicked(MouseEvent e) {
+            if (isOpen) return; // Stop if already open
+        
+            isOpen = true;
             dashboard.setVisible(false);
             Profileview userprofileview = new Profileview();
-            UserprofileController userprofilecontroller = new UserprofileController(userprofileview,email);
+            UserprofileController userprofilecontroller = new UserprofileController(userprofileview, email);
             userprofilecontroller.open();
+
+             // Reset after 2 seconds
+            Timer timer = new Timer(2000, ae -> isOpen = false);
+            timer.setRepeats(false);
+            timer.start();
+                
             
         }
         
@@ -199,13 +224,22 @@ public class DashboardController {
     }
      
      class OpenOrders implements MouseListener{
+        private static boolean isOpen = false;
 
         @Override
         public void mouseClicked(MouseEvent e) {
-        dashboard.setVisible(false);
-        OrdersView ordersview = new OrdersView();
-        OrdersController ordersController = new OrdersController(ordersview, email);
-        ordersController.open();
+            if (isOpen) return; // Stop if already open
+        
+            isOpen = true;
+            dashboard.setVisible(false);
+            OrdersView ordersview = new OrdersView();
+            OrdersController ordersController = new OrdersController(ordersview, email);
+            ordersController.open();
+
+             // Reset after 2 seconds
+            Timer timer = new Timer(2000, ae -> isOpen = false);
+            timer.setRepeats(false);
+            timer.start();
            
         }
 
@@ -227,36 +261,84 @@ public class DashboardController {
          
     }
      
+    class ShowComputers implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            showComputersView();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+    
+    class ShowAll implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            showAllView();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+     
      // New method to show Computers view
     public void showComputersView() {
-
-        ComputersView computersView = new ComputersView(email);
-        computersController = new ComputersController(computersView, email); 
-        computersController.loadComputers(); 
-
-        JPanel computersPanel = (JPanel) computersView.getContentPane().getComponent(0);
-
-        if (computersPanel != null) {
-            dashboard.getProductPanel1().removeAll();
-            dashboard.getProductPanel1().setLayout(new java.awt.BorderLayout());
-            dashboard.getProductPanel1().add(computersPanel, java.awt.BorderLayout.CENTER);
-            dashboard.getProductPanel1().revalidate();
-            dashboard.getProductPanel1().repaint();
-        } else {
-            System.out.println("Error: Could not retrieve jPanel1 from ComputersView at " + 
-                               java.time.LocalDateTime.now() + " +0545");
-        }
+        System.out.println("Switching to Computers view");
+        productController.loadProductsByCategory("Computers");
     }
 
-    // New method to show All view
+    // ✅ FIXED - Show All products view using ProductController
     public void showAllView() {
-        dashboard.getProductPanel1().removeAll();
-        dashboard.getProductPanel1().setLayout(new java.awt.BorderLayout());
+        System.out.println("Switching to All Products view");
+        productController.loadProductsByCategory("All Products");
+    }
+    
+    //Show products by category using ProductController
+    public void showCategoryView(String category) {
+        System.out.println("Switching to " + category + " view");
+        productController.loadProductsByCategory(category);
+    }
+    
+    class SellerRegistration implements ActionListener{
 
-        dashboard.getProductPanel1().add(dashboard.getProductPanel1(), java.awt.BorderLayout.CENTER);
-
-        dashboard.getProductPanel1().revalidate();
-        dashboard.getProductPanel1().repaint();
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            dashboard.setVisible(false);
+            AdminDashboard adminDashboard = new AdminDashboard();
+            AdminController adminController = new AdminController(adminDashboard,email);
+            adminController.open();
+        }
+        
     }
 }
 

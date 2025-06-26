@@ -6,6 +6,8 @@ package buysmart.dao;
 
 import buysmart.database.MysqlConnection1;
 import buysmart.model.computersModel;
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

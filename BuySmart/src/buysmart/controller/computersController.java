@@ -39,42 +39,7 @@ public class computersController {
                         computersView.getComputersPrice1().setText("Rs. " + computer0.getPrice());
                     }
                 }
-                // 2nd computer
-                if (computers.size() > 1) {
-                    computersModel computer1 = computers.get(1);
-                    if (computer1 != null) {
-                        computersView.getComputersPicture2().setText(computer1.getImagePath());
-                        computersView.getComputersDescription2().setText(computer1.getDescription());
-                        computersView.getComputersPrice2().setText("Rs. " + computer1.getPrice());
-                    }
-                }
-                // 3rd computer
-                if (computers.size() > 2) {
-                    computersModel computer2 = computers.get(2);
-                    if (computer2 != null) {
-                        computersView.getComputersPicture3().setText(computer2.getImagePath());
-                        computersView.getComputersDescription3().setText(computer2.getDescription());
-                        computersView.getComputersPrice3().setText("Rs. " + computer2.getPrice());
-                    }
-                }
-                // 4th computer
-                if (computers.size() > 3) {
-                    computersModel computer3 = computers.get(3);
-                    if (computer3 != null) {
-                        computersView.getComputersPicture4().setText(computer3.getImagePath());
-                        computersView.getComputersDescription4().setText(computer3.getDescription());
-                        computersView.getComputersPrice4().setText("Rs. " + computer3.getPrice());
-                    }
-                }
-                // 5th computer
-                if (computers.size() > 4) {
-                    computersModel computer4 = computers.get(4);
-                    if (computer4 != null) {
-                        computersView.getComputersPicture5().setText(computer4.getImagePath());
-                        computersView.getComputersDescription5().setText(computer4.getDescription());
-                        computersView.getComputersPrice5().setText("Rs. " + computer4.getPrice());
-                    }
-                }
+               
             } else {
                 computersView.getComputersPrice1().setText("No computers found");
             }
