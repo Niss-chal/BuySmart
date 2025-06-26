@@ -18,6 +18,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.util.List;
+import javax.swing.Timer;
+
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -46,9 +48,14 @@ public class DashboardController {
             System.err.println("Error loading products: " + e.getMessage());
             products = null;
         }
+
+        
         
         Logout logout = new Logout();
         this.dashboard.logout(logout);
+
+        Cart cart = new Cart();
+        this.dashboard.cart(cart);
     
         OpenProfile openProfile = new OpenProfile();
         this.dashboard.openProfile(openProfile); 
@@ -58,6 +65,16 @@ public class DashboardController {
         
         SellerRegistration sellerRegister = new SellerRegistration();
         this.dashboard.sellerRegister(sellerRegister);
+
+        AddCart addCart = new AddCart();
+        this.dashboard.addCart(addCart);
+        
+        ShowComputers getComputers = new ShowComputers();
+        this.dashboard.getComputers(getComputers);
+        
+        ShowAll getAll = new ShowAll();
+        this.dashboard.getAll(getAll);
+                
         
         
     }
@@ -83,12 +100,21 @@ public class DashboardController {
     }
     
     class Cart implements MouseListener {
+        private static boolean isOpen = false;
         @Override
         public void mouseClicked(MouseEvent e) {
-                dashboard.dispose();
-                CartManage cartmanage = new CartManage(email);
-                CartManageController cartmanageController = new CartManageController(cartmanage, email);
-                cartmanageController.open();
+            if (isOpen) return; // Stop if already open
+        
+            isOpen = true;
+            dashboard.dispose();
+            CartManage cartmanage = new CartManage(email);
+            CartManageController cartmanageController = new CartManageController(cartmanage, email);
+            cartmanageController.open();
+
+             // Reset after 2 seconds
+            Timer timer = new Timer(2000, ae -> isOpen = false);
+            timer.setRepeats(false);
+            timer.start();
         }
 
         @Override
@@ -159,13 +185,23 @@ public class DashboardController {
     }
     
      class OpenProfile implements MouseListener{
+        private static boolean isOpen = false;
 
         @Override
         public void mouseClicked(MouseEvent e) {
-                dashboard.setVisible(false);
-                Profileview userprofileview = new Profileview();
-                UserprofileController userprofilecontroller = new UserprofileController(userprofileview, email);
-                userprofilecontroller.open();
+            if (isOpen) return; // Stop if already open
+        
+            isOpen = true;
+            dashboard.setVisible(false);
+            Profileview userprofileview = new Profileview();
+            UserprofileController userprofilecontroller = new UserprofileController(userprofileview, email);
+            userprofilecontroller.open();
+
+             // Reset after 2 seconds
+            Timer timer = new Timer(2000, ae -> isOpen = false);
+            timer.setRepeats(false);
+            timer.start();
+                
             
         }
         
@@ -188,13 +224,22 @@ public class DashboardController {
     }
      
      class OpenOrders implements MouseListener{
+        private static boolean isOpen = false;
 
         @Override
         public void mouseClicked(MouseEvent e) {
-        dashboard.setVisible(false);
-        OrdersView ordersview = new OrdersView();
-        OrdersController ordersController = new OrdersController(ordersview, email);
-        ordersController.open();
+            if (isOpen) return; // Stop if already open
+        
+            isOpen = true;
+            dashboard.setVisible(false);
+            OrdersView ordersview = new OrdersView();
+            OrdersController ordersController = new OrdersController(ordersview, email);
+            ordersController.open();
+
+             // Reset after 2 seconds
+            Timer timer = new Timer(2000, ae -> isOpen = false);
+            timer.setRepeats(false);
+            timer.start();
            
         }
 
@@ -216,23 +261,69 @@ public class DashboardController {
          
     }
      
+    class ShowComputers implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            showComputersView();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+    
+    class ShowAll implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            showAllView();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+     
      // New method to show Computers view
     public void showComputersView() {
         System.out.println("Switching to Computers view");
         productController.loadProductsByCategory("Computers");
     }
 
-    /**
-     * ✅ FIXED - Show All products view using ProductController
-     */
+    // ✅ FIXED - Show All products view using ProductController
     public void showAllView() {
         System.out.println("Switching to All Products view");
         productController.loadProductsByCategory("All Products");
     }
     
-    /**
-     * Show products by category using ProductController
-     */
+    //Show products by category using ProductController
     public void showCategoryView(String category) {
         System.out.println("Switching to " + category + " view");
         productController.loadProductsByCategory(category);

@@ -786,6 +786,16 @@ public class Dashboard extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
      
     
+    public void getComputers(MouseListener listener){
+        ButtonComputers.addMouseListener(listener);
+    }
+    
+    public void getAll(MouseListener listener){
+        buttonAll.addMouseListener(listener);
+    }
+    
+    
+    
     public void logout(ActionListener listener){ // Logoutbutton function
         buttonLogout.addActionListener(listener);
     }

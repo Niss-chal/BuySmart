@@ -40,7 +40,7 @@ public class ProductController {
 
     public ProductController(Dashboard dashboard, String email) {
         this.dashboard = dashboard;
-        this.userEmail = email; // pass this from Dashboard constructor
+        this.userEmail = email; // pass Dashboard constructor
         
         // Create container for multiple products
         productsContainer = new JPanel();
@@ -51,9 +51,8 @@ public class ProductController {
         dashboard.getproductPanel1().setViewportView(productsContainer);
     }
 
-    /**
-     * Load and display all products in the dashboard
-     */
+    //Load and display all products in the dashboard
+     
     public void loadProduct() {
         try {
             currentProducts = ProductDAO.getProduct();
@@ -64,9 +63,8 @@ public class ProductController {
         }
     }
     
-    /**
-     * Load products by category
-     */
+    //Load products by category
+     
     public void loadProductsByCategory(String category) {
         try {
             if ("All Products".equals(category) || category == null) {
@@ -87,9 +85,8 @@ public class ProductController {
         }
     }
     
-    /**
-     * Display all products by creating multiple product cards
-     */
+    //Display all products by creating multiple product cards
+     
     private void displayProducts() {
         // Clear existing products
         productsContainer.removeAll();
@@ -121,9 +118,8 @@ public class ProductController {
         refreshDisplay();
     }
     
-    /**
-     * Create a single product card panel
-     */
+    //Create a single product card panel
+     
     private JPanel createProductCard(ProductModel product, int index) {
         JPanel card = new JPanel();
         card.setLayout(new BorderLayout());
@@ -141,7 +137,7 @@ public class ProductController {
         // Load product image
         loadProductImage(imageLabel, product.getImagePath());
         
-        // Info panel (description + price + button)
+        // Info panel 
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
         infoPanel.setBackground(Color.WHITE);
@@ -188,9 +184,8 @@ public class ProductController {
         return card;
     }
     
-    /**
-     * Load and display product image with proper scaling
-     */
+    //Load and display product image with proper scaling
+     
     private void loadProductImage(JLabel imageLabel, String imagePath) {
         System.out.println("Loading image for path: '" + imagePath + "'");
         
@@ -230,9 +225,8 @@ public class ProductController {
         }
     }
     
-    /**
-     * Add product to cart
-     */
+    //Add product to cart
+     
     private void addToCart(ProductModel product) {
         try {
             ProductDAO.addToCart(userEmail, product.getDescription(), product.getPrice(), 1);
@@ -248,9 +242,8 @@ public class ProductController {
         }
     }
     
-    /**
-     * Show error message to user
-     */
+    //Show error message to user
+     
     private void showErrorMessage(String message) {
         JOptionPane.showMessageDialog(
             dashboard, 
@@ -260,9 +253,8 @@ public class ProductController {
         );
     }
     
-    /**
-     * Refresh the display
-     */
+    //Refresh the display
+     
     private void refreshDisplay() {
         productsContainer.revalidate();
         productsContainer.repaint();
@@ -270,23 +262,20 @@ public class ProductController {
         dashboard.getproductPanel1().repaint();
     }
     
-    /**
-     * Get current products list
-     */
+    //Get current products list
+    
     public List<ProductModel> getCurrentProducts() {
         return currentProducts;
     }
     
-    /**
-     * Get total number of loaded products
-     */
+    //Get total number of loaded products
+     
     public int getProductCount() {
         return currentProducts != null ? currentProducts.size() : 0;
     }
     
-    /**
-     * Check if products are loaded
-     */
+    //Check if products are loaded
+     
     public boolean hasProducts() {
         return currentProducts != null && !currentProducts.isEmpty();
     }
