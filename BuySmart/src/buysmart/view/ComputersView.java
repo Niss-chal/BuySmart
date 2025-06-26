@@ -4,7 +4,8 @@
  */
 package buysmart.view;
 
-import buysmart.controller.computersController;
+import buysmart.controller.ComputersController;
+import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -14,24 +15,17 @@ import javax.swing.JOptionPane;
  * @author fahmi
  */
 public class ComputersView extends javax.swing.JFrame {
-    private computersController controller;
+    private ComputersController controller;
     private JButton[] cartButtons;
+    private String email;
 
     /**
      * Creates new form ComputersView
      */
-    public ComputersView() {
+    public ComputersView(String userEmail) {
+        this.email=userEmail;
         initComponents();
         
-        try {
-            controller = new computersController(this, "av@gmail.com");
-            controller.loadComputers();
-        } catch (Exception e) {
-            System.err.println("Error initializing ComputersController: " + e.getMessage());
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Failed to load Computers View: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
         cartButtons = new JButton[] {
             ProductAddToCartButton
         };
@@ -140,12 +134,13 @@ public class ComputersView extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ComputersView().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -164,7 +159,6 @@ public class ComputersView extends javax.swing.JFrame {
     public JLabel getComputersPicture1() {
         return ComputersPicture1;
     }
-    
 
     public JLabel getComputersDescription1() {
         return ComputersDescription1;
@@ -178,5 +172,11 @@ public class ComputersView extends javax.swing.JFrame {
         return ProductAddToCartButton;
     }
 
+
+    // Getter for cartButtons array (similar to Dashboard)
+    public JButton[] getCartButtons() {
+        return cartButtons;
+    }
+   
 
 }
