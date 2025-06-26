@@ -98,19 +98,11 @@ public class Dashboard extends javax.swing.JFrame {
         registerSeller = new javax.swing.JButton();
         statusPanel2 = new javax.swing.JPanel();
         buttonPanel3 = new javax.swing.JPanel();
-        buttonSports = new javax.swing.JButton();
-        buttonToys = new javax.swing.JButton();
-        buttonBeauties = new javax.swing.JButton();
-        buttonBooks = new javax.swing.JButton();
-        buttonClothing = new javax.swing.JButton();
         ButtonComputers = new javax.swing.JButton();
-        buttonElectronics = new javax.swing.JButton();
         buttonAll = new javax.swing.JButton();
         wishlistIcon = new javax.swing.JLabel();
         orderlistIcon = new javax.swing.JLabel();
         cartIcon = new javax.swing.JLabel();
-        searchIcon = new javax.swing.JLabel();
-        searchField = new javax.swing.JTextField();
         jPanel25 = new javax.swing.JPanel();
         productPanel = new javax.swing.JScrollPane();
         PanelProductCard = new javax.swing.JPanel();
@@ -307,77 +299,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonPanel3.setBackground(new java.awt.Color(51, 153, 255));
 
-        buttonSports.setBackground(new java.awt.Color(153, 204, 255));
-        buttonSports.setText("Sports");
-        buttonSports.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        buttonSports.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonSportsMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonSportsMouseExited(evt);
-            }
-        });
-        buttonSports.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSportsActionPerformed(evt);
-            }
-        });
-
-        buttonToys.setBackground(new java.awt.Color(153, 204, 255));
-        buttonToys.setText("Toys");
-        buttonToys.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        buttonToys.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonToysMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonToysMouseExited(evt);
-            }
-        });
-
-        buttonBeauties.setBackground(new java.awt.Color(153, 204, 255));
-        buttonBeauties.setForeground(new java.awt.Color(51, 51, 51));
-        buttonBeauties.setText("Beauties");
-        buttonBeauties.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        buttonBeauties.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonBeautiesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonBeautiesMouseExited(evt);
-            }
-        });
-
-        buttonBooks.setBackground(new java.awt.Color(153, 204, 255));
-        buttonBooks.setText("Books");
-        buttonBooks.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        buttonBooks.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonBooksMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonBooksMouseExited(evt);
-            }
-        });
-
-        buttonClothing.setBackground(new java.awt.Color(153, 204, 255));
-        buttonClothing.setText("Clothing");
-        buttonClothing.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        buttonClothing.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonClothingMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonClothingMouseExited(evt);
-            }
-        });
-        buttonClothing.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonClothingActionPerformed(evt);
-            }
-        });
-
         ButtonComputers.setBackground(new java.awt.Color(153, 204, 255));
         ButtonComputers.setText("Computers");
         ButtonComputers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
@@ -393,18 +314,6 @@ public class Dashboard extends javax.swing.JFrame {
         ButtonComputers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonComputersActionPerformed(evt);
-            }
-        });
-
-        buttonElectronics.setBackground(new java.awt.Color(153, 204, 255));
-        buttonElectronics.setText("Electronics");
-        buttonElectronics.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        buttonElectronics.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonElectronicsMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonElectronicsMouseExited(evt);
             }
         });
 
@@ -431,38 +340,19 @@ public class Dashboard extends javax.swing.JFrame {
         buttonPanel3Layout.setHorizontalGroup(
             buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addComponent(buttonAll, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(buttonElectronics, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
                 .addComponent(ButtonComputers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(buttonClothing, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(buttonBooks, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(buttonBeauties, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(buttonToys, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(buttonSports, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         buttonPanel3Layout.setVerticalGroup(
             buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanel3Layout.createSequentialGroup()
                 .addContainerGap(11, Short.MAX_VALUE)
-                .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(buttonSports, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonToys, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonBeauties, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonAll, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(buttonBooks, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buttonClothing, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ButtonComputers, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buttonElectronics, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(ButtonComputers, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -475,25 +365,6 @@ public class Dashboard extends javax.swing.JFrame {
         cartIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/shopping-cart.png"))); // NOI18N
         cartIcon.setText("Cart");
 
-        searchIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/search.png"))); // NOI18N
-
-        searchField.setForeground(new java.awt.Color(153, 153, 153));
-        searchField.setText("    Search for products ....");
-        searchField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 153, 255), 2, true));
-        searchField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                searchFieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                searchFieldFocusLost(evt);
-            }
-        });
-        searchField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchFieldActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout statusPanel2Layout = new javax.swing.GroupLayout(statusPanel2);
         statusPanel2.setLayout(statusPanel2Layout);
         statusPanel2Layout.setHorizontalGroup(
@@ -503,12 +374,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(statusPanel2Layout.createSequentialGroup()
-                        .addGroup(statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(statusPanel2Layout.createSequentialGroup()
-                                .addGap(236, 236, 236)
-                                .addComponent(searchIcon)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(236, 835, Short.MAX_VALUE)
                         .addComponent(cartIcon)
                         .addGap(18, 18, 18)
                         .addComponent(wishlistIcon)
@@ -520,19 +386,11 @@ public class Dashboard extends javax.swing.JFrame {
             statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(statusPanel2Layout.createSequentialGroup()
                 .addContainerGap(10, Short.MAX_VALUE)
-                .addGroup(statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(statusPanel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(statusPanel2Layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(searchIcon))))
-                    .addGroup(statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(orderlistIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cartIcon)
-                        .addComponent(wishlistIcon)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGroup(statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(orderlistIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cartIcon)
+                    .addComponent(wishlistIcon))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(buttonPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -609,25 +467,6 @@ public class Dashboard extends javax.swing.JFrame {
         showComputersView();
     }//GEN-LAST:event_ButtonComputersActionPerformed
 
-    private void buttonSportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSportsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSportsActionPerformed
-
-    private void buttonClothingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClothingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonClothingActionPerformed
-
-    private void buttonElectronicsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonElectronicsMouseEntered
-        buttonElectronics.setBackground(new Color(51,204,255 ));
-         // semi-transparent background
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonElectronicsMouseEntered
-
-    private void buttonElectronicsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonElectronicsMouseExited
-        buttonElectronics.setBackground(new Color(153,204,255));
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonElectronicsMouseExited
-
     private void buttonAllMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonAllMouseEntered
         buttonAll.setBackground(new Color (51, 204, 255));                // TODO add your handling code here:
     }//GEN-LAST:event_buttonAllMouseEntered
@@ -643,64 +482,6 @@ public class Dashboard extends javax.swing.JFrame {
     private void ButtonComputersMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonComputersMouseExited
         ButtonComputers.setBackground(new Color(153,204,255));        // TODO add your handling code here:
     }//GEN-LAST:event_ButtonComputersMouseExited
-
-    private void buttonClothingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClothingMouseEntered
-        buttonClothing.setBackground(new Color(51,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonClothingMouseEntered
-
-    private void buttonClothingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClothingMouseExited
-        buttonClothing.setBackground(new Color(153,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonClothingMouseExited
-
-    private void buttonBooksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonBooksMouseEntered
-        buttonBooks.setBackground(new Color(51,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonBooksMouseEntered
-
-    private void buttonBooksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonBooksMouseExited
-        buttonBooks.setBackground(new Color(153,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonBooksMouseExited
-
-    private void buttonBeautiesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonBeautiesMouseEntered
-        buttonBeauties.setBackground(new Color(51,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonBeautiesMouseEntered
-
-    private void buttonBeautiesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonBeautiesMouseExited
-        buttonBeauties.setBackground(new Color(153,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonBeautiesMouseExited
-
-    private void buttonToysMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonToysMouseEntered
-        buttonToys.setBackground(new Color(51,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonToysMouseEntered
-
-    private void buttonToysMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonToysMouseExited
-        buttonToys.setBackground(new Color(153,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonToysMouseExited
-
-    private void buttonSportsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSportsMouseEntered
-        buttonSports.setBackground(new Color(51,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSportsMouseEntered
-
-    private void buttonSportsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSportsMouseExited
-        buttonSports.setBackground(new Color(153,204,255));        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSportsMouseExited
-
-    private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchFieldActionPerformed
-
-    private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusGained
-        if (searchField.getText().equals("    Search for products ....")) {
-        searchField.setText("    ");
-        searchField.setForeground(Color.BLACK);
-      }
-    }//GEN-LAST:event_searchFieldFocusGained
-
-    private void searchFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusLost
-        if (searchField.getText().trim().isEmpty()) {
-        searchField.setText("    Search for products ....");
-        searchField.setForeground(Color.GRAY);
-      }
-    }//GEN-LAST:event_searchFieldFocusLost
 
     private void buttonBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBooksActionPerformed
         // TODO add your handling code here:
@@ -749,14 +530,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton ProductAddToCartButton;
     private javax.swing.JLabel ProductCardPrice;
     private javax.swing.JButton buttonAll;
-    private javax.swing.JButton buttonBeauties;
-    private javax.swing.JButton buttonBooks;
-    private javax.swing.JButton buttonClothing;
-    private javax.swing.JButton buttonElectronics;
     private javax.swing.JButton buttonLogout;
     private javax.swing.JPanel buttonPanel3;
-    private javax.swing.JButton buttonSports;
-    private javax.swing.JButton buttonToys;
     private javax.swing.JLabel cartIcon;
     private javax.swing.JLabel dashboardLogo;
     private javax.swing.JLabel jLabel13;
@@ -778,8 +553,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel orderlistIcon;
     private javax.swing.JScrollPane productPanel;
     private javax.swing.JButton registerSeller;
-    private javax.swing.JTextField searchField;
-    private javax.swing.JLabel searchIcon;
     private javax.swing.JPanel statusPanel2;
     private javax.swing.JLabel userProfile;
     private javax.swing.JLabel wishlistIcon;
