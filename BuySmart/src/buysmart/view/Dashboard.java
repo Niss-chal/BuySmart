@@ -248,6 +248,7 @@ public class Dashboard extends javax.swing.JFrame {
         buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         buttonLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                
             }
         });
 
@@ -370,11 +371,11 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(statusPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(cartIcon)
                         .addGap(18, 18, 18)
                         .addComponent(orderlistIcon)
-                        .addGap(18, 18, 18))))
+                        .addGap(14, 14, 14))))
         );
         statusPanel2Layout.setVerticalGroup(
             statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
