@@ -31,12 +31,17 @@ public class DashboardController {
     private List<ProductModel> products; // Store products for mapping buttons
     private String email; 
     private ProductController productController; // Add ProductController field
-    private computersController computersController;
+
+    private ComputersController computersController;
+
+  
 
     public DashboardController(Dashboard dashboard,String email) {
         this.dashboard = dashboard;
         this.email = email;
         productController = new ProductController(this.dashboard);
+
+        computersController = new ComputersController(new ComputersView(email), email);
        
         
         // Load products to map buttons to product data
@@ -57,8 +62,6 @@ public class DashboardController {
         AddCart addCart = new AddCart();
         this.dashboard.addCart(addCart);
         
-        this.dashboard=dashboard;
-        this.email=email;
         OpenProfile openProfile = new OpenProfile();
         this.dashboard.openProfile(openProfile); 
         
@@ -226,7 +229,11 @@ public class DashboardController {
      
      // New method to show Computers view
     public void showComputersView() {
-        ComputersView computersView = new ComputersView();
+
+        ComputersView computersView = new ComputersView(email);
+        computersController = new ComputersController(computersView, email); 
+        computersController.loadComputers(); 
+
         JPanel computersPanel = (JPanel) computersView.getContentPane().getComponent(0);
 
         if (computersPanel != null) {
@@ -245,7 +252,9 @@ public class DashboardController {
     public void showAllView() {
         dashboard.getProductPanel1().removeAll();
         dashboard.getProductPanel1().setLayout(new java.awt.BorderLayout());
-        dashboard.getProductPanel1().add(dashboard.getProductPanel2(), java.awt.BorderLayout.CENTER);
+
+        dashboard.getProductPanel1().add(dashboard.getProductPanel1(), java.awt.BorderLayout.CENTER);
+
         dashboard.getProductPanel1().revalidate();
         dashboard.getProductPanel1().repaint();
     }
