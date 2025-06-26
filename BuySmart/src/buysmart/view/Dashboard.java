@@ -1027,7 +1027,13 @@ public class Dashboard extends javax.swing.JFrame {
     public javax.swing.JPanel getProductPanel1() {
         return productPanel1;
     }
+<<<<<<< Aaryaman_Shakya
     
+=======
+    public javax.swing.JPanel getProductPanel2() {
+        return productPanel2;
+    }
+>>>>>>> main
     
     
     public void logout(ActionListener listener){ // Logoutbutton function
@@ -1122,5 +1128,8 @@ public class Dashboard extends javax.swing.JFrame {
     public void openOrdersHistory(MouseListener listener){
         orderlistIcon.addMouseListener(listener);
     }
+<<<<<<< Aaryaman_Shakya
     
+=======
+>>>>>>> main
 }

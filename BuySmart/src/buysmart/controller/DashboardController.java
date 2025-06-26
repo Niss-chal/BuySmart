@@ -31,12 +31,16 @@ public class DashboardController {
     private List<ProductModel> products; // Store products for mapping buttons
     private String email; 
     private ProductController productController; // Add ProductController field
+
     private ComputersController computersController;
+
+  
 
     public DashboardController(Dashboard dashboard,String email) {
         this.dashboard = dashboard;
         this.email = email;
         productController = new ProductController(this.dashboard);
+
         computersController = new ComputersController(new ComputersView(email), email);
        
         
@@ -225,9 +229,11 @@ public class DashboardController {
      
      // New method to show Computers view
     public void showComputersView() {
+
         ComputersView computersView = new ComputersView(email);
         computersController = new ComputersController(computersView, email); 
         computersController.loadComputers(); 
+
         JPanel computersPanel = (JPanel) computersView.getContentPane().getComponent(0);
 
         if (computersPanel != null) {
@@ -246,7 +252,9 @@ public class DashboardController {
     public void showAllView() {
         dashboard.getProductPanel1().removeAll();
         dashboard.getProductPanel1().setLayout(new java.awt.BorderLayout());
+
         dashboard.getProductPanel1().add(dashboard.getProductPanel1(), java.awt.BorderLayout.CENTER);
+
         dashboard.getProductPanel1().revalidate();
         dashboard.getProductPanel1().repaint();
     }
