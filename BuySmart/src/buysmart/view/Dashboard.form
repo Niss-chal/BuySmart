@@ -374,10 +374,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="buttonPanel3" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="236" pref="835" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="cartIcon" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="wishlistIcon" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="orderlistIcon" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -393,7 +391,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="orderlistIcon" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="cartIcon" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="wishlistIcon" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="16" max="32767" attributes="0"/>
                   <Component id="buttonPanel3" min="-2" max="-2" attributes="0"/>
@@ -417,7 +414,7 @@
                       <Component id="buttonAll" min="-2" pref="105" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Component id="ButtonComputers" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="822" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -483,14 +480,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="wishlistIcon">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imag/wishlist.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Wishlist"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="orderlistIcon">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">

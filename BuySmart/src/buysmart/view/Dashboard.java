@@ -100,7 +100,6 @@ public class Dashboard extends javax.swing.JFrame {
         buttonPanel3 = new javax.swing.JPanel();
         ButtonComputers = new javax.swing.JButton();
         buttonAll = new javax.swing.JButton();
-        wishlistIcon = new javax.swing.JLabel();
         orderlistIcon = new javax.swing.JLabel();
         cartIcon = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
@@ -344,7 +343,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(buttonAll, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(ButtonComputers, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(822, Short.MAX_VALUE))
         );
         buttonPanel3Layout.setVerticalGroup(
             buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,9 +354,6 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(ButtonComputers, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
-
-        wishlistIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/wishlist.png"))); // NOI18N
-        wishlistIcon.setText("Wishlist");
 
         orderlistIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/list.png"))); // NOI18N
         orderlistIcon.setText("Orders");
@@ -374,10 +370,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(statusPanel2Layout.createSequentialGroup()
-                        .addGap(236, 835, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cartIcon)
-                        .addGap(18, 18, 18)
-                        .addComponent(wishlistIcon)
                         .addGap(18, 18, 18)
                         .addComponent(orderlistIcon)
                         .addGap(18, 18, 18))))
@@ -388,8 +382,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE)
                 .addGroup(statusPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(orderlistIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cartIcon)
-                    .addComponent(wishlistIcon))
+                    .addComponent(cartIcon))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(buttonPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -555,7 +548,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton registerSeller;
     private javax.swing.JPanel statusPanel2;
     private javax.swing.JLabel userProfile;
-    private javax.swing.JLabel wishlistIcon;
     // End of variables declaration//GEN-END:variables
      
     
