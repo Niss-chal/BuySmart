@@ -8,19 +8,19 @@ package buysmart.model;
  *
  * @author fahmi
  */
-public class computersModel {
+public class ComputersModel {
     private String imagePath;
     private String description;
     private double price;
     private int quantity;
 
-    public computersModel(String imagePath, String description, double price, int quantity) {
+    public ComputersModel(String imagePath, String description, double price, int quantity) {
         this.imagePath = imagePath;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
     }
-    public computersModel(String imagePath, String description, double price) {
+    public ComputersModel(String imagePath, String description, double price) {
         this(imagePath, description, price, 1); // Default quantity is 1
     }
 

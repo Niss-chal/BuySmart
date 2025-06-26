@@ -4,8 +4,8 @@
  */
 package buysmart.controller;
 
-import buysmart.dao.computersDAO;
-import buysmart.model.computersModel;
+import buysmart.dao.ComputersDAO;
+import buysmart.model.ComputersModel;
 import buysmart.view.ComputersView;
 import java.util.List;
 
@@ -14,13 +14,13 @@ import java.util.List;
  *
  * @author fahmi
  */
-public class computersController {
+public class ComputersController {
     
     private ComputersView computersView;
-    private List<computersModel> computers;
+    private List<ComputersModel> computers;
     private String email;
 
-    public computersController(ComputersView computersView, String email) {
+    public ComputersController(ComputersView computersView, String email) {
         this.computersView = computersView;
         this.email = email;
         
@@ -28,11 +28,11 @@ public class computersController {
 
     public void loadComputers() {
         try {
-            computers = computersDAO.getComputers();
+            computers = ComputersDAO.getComputers();
             if (!computers.isEmpty()) {
                 // 1st computer
                 if (computers.size() > 0) {
-                    computersModel computer0 = computers.get(0);
+                    ComputersModel computer0 = computers.get(0);
                     if (computer0 != null) {
                         computersView.getComputersPicture1().setText(computer0.getImagePath());
                         computersView.getComputersDescription1().setText(computer0.getDescription());
