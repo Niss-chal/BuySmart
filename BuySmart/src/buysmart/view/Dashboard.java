@@ -114,8 +114,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/shirt (1) copy.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -137,11 +135,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel15.setText("Black Tshirt Cotton Men");
-
-        jLabel16.setText("Rs. 800");
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/AdobeStock_529639780_Preview (1).png"))); // NOI18N
+        
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -178,7 +172,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel10.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/shirt (1) copy.png"))); // NOI18N
+      
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -201,11 +195,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel25.setText("Black Tshirt Cotton Men");
-
-        jLabel26.setText("Rs. 800");
-
-        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/AdobeStock_529639780_Preview (1).png"))); // NOI18N
+        
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
