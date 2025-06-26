@@ -5,7 +5,7 @@
 package buysmart.dao;
 
 import buysmart.database.MysqlConnection1;
-import buysmart.model.computersModel;
+import buysmart.model.ComputersModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,16 +17,16 @@ import java.util.List;
  *
  * @author fahmi
  */
-public class computersDAO {
+public class ComputersDAO {
     
-    public static List<computersModel> getComputers() throws SQLException {
+    public static List<ComputersModel> getComputers() throws SQLException {
         String sql = "SELECT image_path, description, price FROM computers WHERE category = 'Computers'";
-        List<computersModel> computers = new ArrayList<>();
+        List<ComputersModel> computers = new ArrayList<>();
         try (Connection conn = MysqlConnection1.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
-                computers.add(new computersModel(
+                computers.add(new ComputersModel(
                     rs.getString("image_path"),
                     rs.getString("description"),
                     rs.getDouble("price")
