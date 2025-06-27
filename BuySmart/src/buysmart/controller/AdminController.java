@@ -7,6 +7,9 @@ package buysmart.controller;
 import buysmart.dao.AdminDao;
 import buysmart.model.ProductModel;
 import buysmart.view.AdminDashboard;
+import buysmart.view.Dashboard;
+
+import buysmart.view.SellerLoginView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -45,6 +48,8 @@ this.view.addProduct(addProduct);
 UploadImage imageUpload=new UploadImage();
 this.view.imageUpload(imageUpload); 
 
+this.view.adminBack(new BackButtonListener());
+this.view.adminLogout(new LogoutButtonListener());
 }
 
 
@@ -177,6 +182,29 @@ class UploadImage implements ActionListener{
         }
     }
 
+
+class BackButtonListener implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        view.dispose(); // Close current view
+
+        Dashboard dashboard = new Dashboard(adminEmail); 
+        DashboardController dashboardController = new DashboardController(dashboard, adminEmail); 
+        dashboardController.open(); 
+    }
+}
+
+class LogoutButtonListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            view.dispose();
+            SellerLoginView loginView=new SellerLoginView();
+            SellerLoginController loginController = new SellerLoginController(loginView);
+            loginController.open();
+        }
+    
+}
     private void clearForm() {
         view.getPrice().setText("");
         view.getDescription().setText("");
