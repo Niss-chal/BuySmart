@@ -599,5 +599,6 @@ public class Dashboard extends javax.swing.JFrame {
     
     public void sellerRegister(ActionListener listener){
         registerSeller.addActionListener(listener);
+        
     }
 }

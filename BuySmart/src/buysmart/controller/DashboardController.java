@@ -6,12 +6,12 @@ package buysmart.controller;
 
 import buysmart.dao.ProductDAO;
 import buysmart.model.ProductModel;
-import buysmart.view.AdminDashboard;
 import buysmart.view.CartManage;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
 import buysmart.view.OrdersView;
 import buysmart.view.Profileview;
+import buysmart.view.SellerRegistrationView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -334,9 +334,9 @@ public class DashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             dashboard.setVisible(false);
-            AdminDashboard adminDashboard = new AdminDashboard();
-            AdminController adminController = new AdminController(adminDashboard,email);
-            adminController.open();
+             SellerRegistrationView sellerregister = new SellerRegistrationView();
+            SellerRegistrationController sellerController = new SellerRegistrationController(sellerregister);
+            sellerController.open();
         }
         
     }
