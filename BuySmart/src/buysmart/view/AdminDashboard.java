@@ -5,6 +5,9 @@
 package buysmart.view;
 
 import java.awt.event.ActionListener;
+import java.net.URL;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**
@@ -19,6 +22,22 @@ public class AdminDashboard extends javax.swing.JFrame {
     public AdminDashboard() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
+
+     private ImageIcon loadImageIcon(String path) {
+        try {
+            URL imageURL = getClass().getResource(path);
+            if (imageURL != null) {
+                return new ImageIcon(imageURL);
+            } else {
+                System.err.println("Image not found: " + path);
+                // Return an empty ImageIcon instead of null
+                return new ImageIcon();
+            }
+        } catch (Exception e) {
+            System.err.println("Error loading image " + path + ": " + e.getMessage());
+            return new ImageIcon();
+        }
     }
 
     /**
@@ -71,7 +90,7 @@ public class AdminDashboard extends javax.swing.JFrame {
 
         AdminProductCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Products", "Computers" }));
 
-        AdminJustImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/imageloader (1).png"))); // NOI18N
+        AdminJustImage.setIcon(loadImageIcon("/imag/imageloader (1).png"));
 
         AdminProductAddButton.setBackground(new java.awt.Color(153, 204, 255));
         AdminProductAddButton.setText("Add Product");
@@ -169,7 +188,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             }
         });
 
-        AdminLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/logo2 (1).png"))); // NOI18N
+        AdminLogo.setIcon(loadImageIcon("/imag/logo2 (1).png"));
 
         javax.swing.GroupLayout AdminAddProductPanelLayout = new javax.swing.GroupLayout(AdminAddProductPanel);
         AdminAddProductPanel.setLayout(AdminAddProductPanelLayout);

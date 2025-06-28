@@ -76,6 +76,23 @@ public class UserDAO {
     return null; 
 }
     
+    public static boolean isBuyer(String email) throws SQLException {
+        String query = "SELECT COUNT(*) FROM users WHERE email = ?";
+        try (Connection conn = MysqlConnection1.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, email);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1) > 0;
+                }
+            }
+            return false;
+        } catch (SQLException e) {
+            System.err.println("Database Error in isSeller: " + e.getMessage());
+            throw e;
+        }
+    }
+    
       
 public boolean validateSecurityAnswer(String email,String security_question,String security_answer){
     try(Connection conn=MysqlConnection1.getConnection()){

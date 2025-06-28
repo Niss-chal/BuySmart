@@ -619,6 +619,10 @@ public class Dashboard extends javax.swing.JFrame {
         
     }
     
+    public JButton getsellerRegister(){
+        return registerSeller;
+    }
+    
     public JButton getAdminProductAdd() {
         return AdminProductAdd;
     }

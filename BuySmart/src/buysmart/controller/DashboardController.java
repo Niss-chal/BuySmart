@@ -6,6 +6,7 @@ package buysmart.controller;
 
 import buysmart.dao.ProductDAO;
 import buysmart.dao.SellerDAO;
+import buysmart.dao.UserDAO;
 import buysmart.model.ProductModel;
 import buysmart.view.AdminDashboard;
 import buysmart.view.CartManage;
@@ -41,6 +42,8 @@ public class DashboardController {
         this.dashboard = dashboard;
         this.email = email;
         productController = new ProductController(this.dashboard,email);
+        dashboard.getAdminProductAdd().setVisible(false);
+        checkSellerStatusAndSetButtonVisibility();
        
         
         // Load products to map buttons to product data
@@ -88,6 +91,20 @@ public class DashboardController {
     }
 
 
+    
+    private void checkSellerStatusAndSetButtonVisibility() {
+    try {
+        boolean isSeller = SellerDAO.isSeller(email);
+        boolean isBuyer=UserDAO.isBuyer(email);
+        dashboard.getAdminProductAdd().setVisible(isSeller);
+        dashboard.getsellerRegister().setVisible(isBuyer);
+    } catch (SQLException ex) {
+        // If there's an error checking seller status, hide the button by default
+        dashboard.getAdminProductAdd().setVisible(false);
+        System.err.println("Error checking seller status: " + ex.getMessage());
+        }
+    }
+    
     public void open(){
         dashboard.setVisible(true);
     }
