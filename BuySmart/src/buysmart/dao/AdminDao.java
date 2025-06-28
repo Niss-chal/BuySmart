@@ -138,46 +138,6 @@ public class AdminDao {
         return products;
     }
     
-    // Delete a product
-    public boolean deleteProduct(int productId) {
-        String deleteSQL = "DELETE FROM products WHERE id = ?";
-        
-        try (Connection conn = MysqlConnection1.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(deleteSQL)) {
-            
-            pstmt.setInt(1, productId);
-            int rowsAffected = pstmt.executeUpdate();
-            return rowsAffected > 0;
-            
-        } catch (SQLException e) {
-            System.err.println("Error deleting product: " + e.getMessage());
-            return false;
-        }
-    }
-    
-    // Update a product
-    public boolean updateProduct(ProductModel product) {
-        String updateSQL = "UPDATE products SET category = ?, price = ?, description = ?, image_path = ?, quantity = ? WHERE id = ?";
-        
-        try (Connection conn = MysqlConnection1.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(updateSQL)) {
-            
-            pstmt.setString(1, product.getCategory());
-            pstmt.setDouble(2, product.getPrice());
-            pstmt.setString(3, product.getDescription());
-            pstmt.setString(4, product.getImagePath());
-            pstmt.setInt(5, product.getQuantity());
-            pstmt.setInt(6, product.getProductId());
-            
-            int rowsAffected = pstmt.executeUpdate();
-            return rowsAffected > 0;
-            
-        } catch (SQLException e) {
-            System.err.println("Error updating product: " + e.getMessage());
-            return false;
-        }
-    }
-    
     // Add product to computers table specifically
    public boolean addComputerProduct(ProductModel product, String adminEmail) {
         String insertSQL = "INSERT INTO computers (user_email, image_path, description, price, category, quantity) VALUES (?, ?, ?, ?, ?, ?)";

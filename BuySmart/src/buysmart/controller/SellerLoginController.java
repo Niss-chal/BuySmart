@@ -2,15 +2,15 @@ package buysmart.controller;
 
 import buysmart.dao.SellerDAO;
 import buysmart.model.SellerModel;
-import buysmart.view.AdminDashboard;
-import buysmart.view.ForgetPasswordView;
+
+import buysmart.view.Dashboard;
+
 import buysmart.view.LoginView;
 import buysmart.view.SellerLoginView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+
 
 import javax.swing.JOptionPane;
 
@@ -54,9 +54,9 @@ public class SellerLoginController {
                 if (seller != null) {
                     JOptionPane.showMessageDialog(view, "Seller Login Successful", "Success", JOptionPane.INFORMATION_MESSAGE);
                     
-                    AdminDashboard dashboard = new AdminDashboard();  
-                    AdminController adminController = new AdminController(dashboard, email);
-                    adminController.open();
+                    Dashboard dashboard = new Dashboard(email);  
+                    DashboardController dashboardController = new DashboardController(dashboard, email);
+                    dashboardController.open();
                     close();
                 } else {
                     JOptionPane.showMessageDialog(view, "Invalid Credentials or Business Name", "Login Failed", JOptionPane.ERROR_MESSAGE);
