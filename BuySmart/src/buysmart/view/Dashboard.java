@@ -618,4 +618,12 @@ public class Dashboard extends javax.swing.JFrame {
         registerSeller.addActionListener(listener);
         
     }
+    
+    public JButton getAdminProductAdd() {
+        return AdminProductAdd;
+    }
+    
+    public void toAdminDashboard(ActionListener listener) {
+        AdminProductAdd.addActionListener(listener);
+    }
 }

@@ -5,6 +5,7 @@
 package buysmart.controller;
 
 import buysmart.dao.ProductDAO;
+import buysmart.dao.SellerDAO;
 import buysmart.model.ProductModel;
 import buysmart.view.AdminDashboard;
 import buysmart.view.CartManage;
@@ -34,7 +35,8 @@ public class DashboardController {
     private List<ProductModel> products; // Store products for mapping buttons
     private String email; 
     private ProductController productController; // Add ProductController field
-
+    private boolean isProcessingClick = false;
+    
     public DashboardController(Dashboard dashboard,String email) {
         this.dashboard = dashboard;
         this.email = email;
@@ -75,7 +77,11 @@ public class DashboardController {
         
         ShowAll getAll = new ShowAll();
         this.dashboard.getAll(getAll);
+        
                 
+        for (ActionListener al : dashboard.getAdminProductAdd().getActionListeners()) {
+            dashboard.getAdminProductAdd().removeActionListener(al);
+        }
         this.dashboard.toAdminDashboard(new ToAdminDashboard());
         
         
@@ -346,13 +352,27 @@ public class DashboardController {
     class ToAdminDashboard implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            dashboard.dispose(); // Close Dashboard
-            AdminDashboard adminDashboard = new AdminDashboard();
-            AdminController adminController = new AdminController(adminDashboard, email);
-            adminController.open(); // Open AdminDashboard
+            if (isProcessingClick) return; // Debounce
+            isProcessingClick = true;
+            try {
+                if (SellerDAO.isSeller(email)) {
+                    dashboard.dispose();
+                    AdminDashboard adminDashboard = new AdminDashboard();
+                    AdminController adminController = new AdminController(adminDashboard, email);
+                    adminController.open();
+                } else {
+                    JOptionPane.showMessageDialog(dashboard, "Please register as seller", "Access Denied", JOptionPane.WARNING_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(dashboard, "Error checking seller status: " + ex.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                // Reset debounce after a short delay
+                Timer timer = new Timer(500, ae -> isProcessingClick = false);
+                timer.setRepeats(false);
+                timer.start();
+            }
         }
     }
-    
     
 }
 

@@ -72,5 +72,23 @@ public class SellerDAO {
 
         return null; // Login failed
     }
+    
+    
+    public static boolean isSeller(String email) throws SQLException {
+        String query = "SELECT COUNT(*) FROM sellers WHERE email = ?";
+        try (Connection conn = MysqlConnection1.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, email);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1) > 0;
+                }
+            }
+            return false;
+        } catch (SQLException e) {
+            System.err.println("Database Error in isSeller: " + e.getMessage());
+            throw e;
+        }
+    }
 }
 
