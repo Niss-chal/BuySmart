@@ -15,6 +15,7 @@ import buysmart.view.Dashboard;
 import buysmart.view.ForgetPasswordView;
 import buysmart.view.LoginView;
 import buysmart.view.RegistrationView;
+import buysmart.view.SellerLoginView;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -36,8 +37,11 @@ public class LoginController {
         ForgotPassword forgotPassword = new ForgotPassword();
         this.view.forgotPassword(forgotPassword);
         
-       SignUp SignIn = new SignUp();
-       this.view.SignIn(SignIn);
+        SignUp SignIn = new SignUp();
+        this.view.SignIn(SignIn);
+       
+        SellerLoginRedirect sellerLogin = new SellerLoginRedirect();
+        this.view.sellerLogin(sellerLogin);
        
        this.view.ShowPassword().addActionListener(new LoginController.ToggleNewPassword());
     }
@@ -166,6 +170,16 @@ if(email.isEmpty() || password.isEmpty()){
 
         }
         
+    }
+    
+    class SellerLoginRedirect implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            view.dispose(); // Close LoginView
+            SellerLoginView sellerLoginView = new SellerLoginView();
+            SellerLoginController sellerLoginController = new SellerLoginController(sellerLoginView);
+            sellerLoginController.open(); // Open SellerLoginView
+        }
     }
 }
 

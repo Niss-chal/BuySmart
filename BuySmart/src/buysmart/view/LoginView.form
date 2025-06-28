@@ -101,18 +101,20 @@
                               <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Username_Label" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Password_Label" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="Username_Label" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="Password_Label" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="forgetPass" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                           <Component id="emailLogin" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="forgetPass" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace pref="119" max="32767" attributes="0"/>
+                                              <Component id="SellerLoginDirectLabel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace pref="133" max="32767" attributes="0"/>
                                               <Component id="signUp" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="PasswordField" alignment="0" max="32767" attributes="0"/>
@@ -147,7 +149,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="emailLogin" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Password_Label" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Password_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="forgetPass" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="PasswordField" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
@@ -155,8 +160,8 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="forgetPass" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="signUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SellerLoginDirectLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="26" max="32767" attributes="0"/>
                       <Component id="LoginButtonLoginPage" pref="42" max="32767" attributes="0"/>
@@ -231,6 +236,14 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailLoginActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="SellerLoginDirectLabel">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Login as seller"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

@@ -5,7 +5,10 @@
 package buysmart.view;
 
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 
@@ -44,6 +47,7 @@ public class SellerLoginView extends javax.swing.JFrame {
         emailLogin = new javax.swing.JTextField();
         BusinessName = new javax.swing.JLabel();
         BusinessNameBox = new javax.swing.JTextField();
+        CustomerLoginDirectLabel = new javax.swing.JLabel();
         logoLabel = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
@@ -73,11 +77,7 @@ public class SellerLoginView extends javax.swing.JFrame {
         Password_Label.setText("Password");
 
         ShowPassword.setText("Show ");
-        ShowPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
-            }
-        });
+        
 
         LoginButtonLoginPage.setBackground(new java.awt.Color(51, 255, 153));
         LoginButtonLoginPage.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -91,6 +91,9 @@ public class SellerLoginView extends javax.swing.JFrame {
 
         BusinessName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         BusinessName.setText("Business Name");
+
+        CustomerLoginDirectLabel.setForeground(new java.awt.Color(0, 102, 255));
+        CustomerLoginDirectLabel.setText("Login as customer");
 
         javax.swing.GroupLayout loginformLayout = new javax.swing.GroupLayout(loginform);
         loginform.setLayout(loginformLayout);
@@ -119,6 +122,7 @@ public class SellerLoginView extends javax.swing.JFrame {
                         .addComponent(ShowPassword))
                     .addGroup(loginformLayout.createSequentialGroup()
                         .addGroup(loginformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CustomerLoginDirectLabel)
                             .addComponent(BusinessName)
                             .addComponent(Username_Label))
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -143,7 +147,9 @@ public class SellerLoginView extends javax.swing.JFrame {
                 .addGroup(loginformLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ShowPassword))
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CustomerLoginDirectLabel)
+                .addGap(14, 14, 14)
                 .addComponent(LoginButtonLoginPage, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -246,6 +252,7 @@ public class SellerLoginView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BusinessName;
     private javax.swing.JTextField BusinessNameBox;
+    private javax.swing.JLabel CustomerLoginDirectLabel;
     private javax.swing.JButton LoginButtonLoginPage;
     private javax.swing.JLabel Login_Label;
     private javax.swing.JPasswordField PasswordField;
@@ -259,26 +266,41 @@ public class SellerLoginView extends javax.swing.JFrame {
     private javax.swing.JLabel logoLabel;
     // End of variables declaration//GEN-END:variables
 
-public javax.swing.JTextField getEmail(){
-    return emailLogin;
-}
-public javax.swing.JTextField getBusinessNameBox(){
-    return BusinessNameBox;
-}
+    public javax.swing.JTextField getEmail(){
+        return emailLogin;
+    }
+    public javax.swing.JTextField getBusinessNameBox(){
+        return BusinessNameBox;
+    }
 
-public javax.swing.JPasswordField getPassword(){
-    return PasswordField;
-}
+    public javax.swing.JPasswordField getPassword(){
+        return PasswordField;
+    }
 
-public void loginUser(ActionListener listener){
-    LoginButtonLoginPage.addActionListener(listener);    
-}
+    public void loginUser(ActionListener listener){
+        LoginButtonLoginPage.addActionListener(listener);    
+    }
 
-public javax.swing.JCheckBox ShowPassword(){
-    return ShowPassword;
-}
+    public javax.swing.JCheckBox ShowPassword(){
+        return ShowPassword;
+    }
 
-public void addPasswordToggleListeners (ActionListener listener){
-    ShowPassword.addActionListener(listener); 
-}
+    public void addPasswordToggleListeners (ActionListener listener){
+        ShowPassword.addActionListener(listener); 
+    }
+    
+    public javax.swing.JLabel getCustomerLoginDirectLabel() {
+        return CustomerLoginDirectLabel;
+    }
+
+    public void customerLogin(ActionListener listener) {
+        CustomerLoginDirectLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // Convert mouse click to ActionEvent
+                ActionEvent actionEvent = new ActionEvent(CustomerLoginDirectLabel, ActionEvent.ACTION_PERFORMED, "CustomerLogin");
+                listener.actionPerformed(actionEvent);
+            }
+        });
+    }
 }

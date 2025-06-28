@@ -4,6 +4,7 @@ import buysmart.dao.SellerDAO;
 import buysmart.model.SellerModel;
 import buysmart.view.AdminDashboard;
 import buysmart.view.ForgetPasswordView;
+import buysmart.view.LoginView;
 import buysmart.view.SellerLoginView;
 
 import java.awt.event.ActionEvent;
@@ -22,6 +23,7 @@ public class SellerLoginController {
         this.view.loginUser(new LoginSeller());
         
         this.view.addPasswordToggleListeners(new ToggleSellerPassword());
+        this.view.customerLogin(new CustomerLoginRedirect());
     }
 
     public void open() {
@@ -75,6 +77,16 @@ public class SellerLoginController {
         public void actionPerformed(ActionEvent e) {
             boolean show = view.ShowPassword().isSelected();
             view.getPassword().setEchoChar(show ? (char) 0 : '•');
+        }
+    }
+    
+    class CustomerLoginRedirect implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            view.dispose(); // Close SellerLoginView
+            LoginView loginView = new LoginView();
+            LoginController loginController = new LoginController(loginView);
+            loginController.open(); // Open LoginView
         }
     }
 }
