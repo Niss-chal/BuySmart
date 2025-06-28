@@ -120,6 +120,7 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="CustomerLoginDirectLabel" min="-2" max="-2" attributes="0"/>
                                   <Component id="BusinessName" min="-2" max="-2" attributes="0"/>
                                   <Component id="Username_Label" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -150,7 +151,9 @@
                           <Component id="PasswordField" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="ShowPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="CustomerLoginDirectLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Component id="LoginButtonLoginPage" pref="48" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -220,6 +223,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="BusinessNameBox">
+            </Component>
+            <Component class="javax.swing.JLabel" name="CustomerLoginDirectLabel">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Login as customer"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

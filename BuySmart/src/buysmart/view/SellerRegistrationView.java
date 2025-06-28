@@ -51,6 +51,7 @@ public class SellerRegistrationView extends javax.swing.JFrame {
         Password = new javax.swing.JLabel();
         SellerPasswordBox = new javax.swing.JPasswordField();
         PCheckbox = new javax.swing.JCheckBox();
+        sellerBackToDashboardButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -241,12 +242,17 @@ public class SellerRegistrationView extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
+        sellerBackToDashboardButton.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        sellerBackToDashboardButton.setText("Go Back");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(183, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
+                .addComponent(sellerBackToDashboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -256,6 +262,10 @@ public class SellerRegistrationView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(55, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(sellerBackToDashboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -354,20 +364,21 @@ public class SellerRegistrationView extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JButton sellerBackToDashboardButton;
     // End of variables declaration//GEN-END:variables
 
-public javax.swing.JLabel getBusinessname(){
-return BusinessName3;
+    public javax.swing.JLabel getBusinessname(){
+    return BusinessName3;
+        }
+    public javax.swing.JTextField getSelleremailbox(){
+        return SelleremailBox;
     }
-public javax.swing.JTextField getSelleremailbox(){
-    return SelleremailBox;
-}
-public javax.swing.JPasswordField getSellerPasswordbox(){
-    return SellerPasswordBox;
-}
-public javax.swing.JCheckBox getPcheckbox(){
-    return PCheckbox;
-}
+    public javax.swing.JPasswordField getSellerPasswordbox(){
+        return SellerPasswordBox;
+    }
+    public javax.swing.JCheckBox getPcheckbox(){
+        return PCheckbox;
+    }
     public javax.swing.JTextField getBusinessnameField(){
         return BusinessNameField3;
     }
@@ -401,6 +412,14 @@ public javax.swing.JCheckBox getPcheckbox(){
     public void addPasswordToggleListeners(ActionListener Listener) {
         PCheckbox.addActionListener(Listener);
         
+    }
+    
+    public javax.swing.JButton getSellerBackToDashboardButton() {
+        return sellerBackToDashboardButton;
+    }
+    
+    public void backDashboard(ActionListener listener) {
+        sellerBackToDashboardButton.addActionListener(listener);
     }
 }
 

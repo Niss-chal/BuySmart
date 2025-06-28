@@ -2,6 +2,7 @@ package buysmart.controller;
 
 import buysmart.dao.SellerDAO;
 import buysmart.model.SellerModel;
+import buysmart.view.Dashboard;
 import buysmart.view.SellerRegistrationView;
 import buysmart.view.SellerLoginView;
 import java.awt.event.ActionEvent;
@@ -11,6 +12,7 @@ import java.sql.SQLException;
 
 public class SellerRegistrationController {
     private SellerRegistrationView view;
+    private String email;
 
     private static final String email_Regex = "^[\\w.-]+@[\\w.-]+\\.\\w{2,}$";
     private static final String phoneRegex = "^[0-9]{10}$";
@@ -19,9 +21,12 @@ public class SellerRegistrationController {
 
     public SellerRegistrationController(SellerRegistrationView view) {
         this.view = view;
+        this.email = email;
         RegisterSeller registerSeller = new RegisterSeller();
         this.view.registerSeller(registerSeller);
         this.view.getPcheckbox().addActionListener(new ToggleNewPassword());
+        
+        this.view.backDashboard(new BackDashboard());
     }
 
     class RegisterSeller implements ActionListener {
@@ -98,6 +103,16 @@ public class SellerRegistrationController {
             }
         }
     }
+    
+    class BackDashboard implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            view.dispose(); 
+            Dashboard dashboard = new Dashboard(email);
+            DashboardController dashboardController = new DashboardController(dashboard, email);
+            dashboardController.open(); 
+        }
+    }
 
     public void open() {
         view.setVisible(true);
@@ -106,4 +121,7 @@ public class SellerRegistrationController {
     public void close() {
         view.dispose();
     }
+    
+    
+    
 }
