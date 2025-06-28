@@ -82,5 +82,8 @@ public class SellerModel {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+    public SellerModel() {
+    // no-arg constructor
+}
+
 }
