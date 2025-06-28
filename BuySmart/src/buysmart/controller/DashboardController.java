@@ -6,6 +6,7 @@ package buysmart.controller;
 
 import buysmart.dao.ProductDAO;
 import buysmart.model.ProductModel;
+import buysmart.view.AdminDashboard;
 import buysmart.view.CartManage;
 import buysmart.view.Dashboard;
 import buysmart.view.LoginView;
@@ -75,6 +76,7 @@ public class DashboardController {
         ShowAll getAll = new ShowAll();
         this.dashboard.getAll(getAll);
                 
+        this.dashboard.toAdminDashboard(new ToAdminDashboard());
         
         
     }
@@ -340,6 +342,18 @@ public class DashboardController {
         }
         
     }
+    
+    class ToAdminDashboard implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            dashboard.dispose(); // Close Dashboard
+            AdminDashboard adminDashboard = new AdminDashboard();
+            AdminController adminController = new AdminController(adminDashboard, email);
+            adminController.open(); // Open AdminDashboard
+        }
+    }
+    
+    
 }
 
 
