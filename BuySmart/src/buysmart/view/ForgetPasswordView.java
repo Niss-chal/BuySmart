@@ -71,13 +71,13 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         SecurityAnswer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         SecurityAnswer.setText("Security Answer");
 
-        otpButton.setBackground(new java.awt.Color(51, 255, 0));
+        otpButton.setBackground(new java.awt.Color(51, 255, 153));
         otpButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         otpButton.setText("Send OTP");
 
         otpBox.setEnabled(false);
 
-        ClickButton.setBackground(new java.awt.Color(51, 255, 0));
+        ClickButton.setBackground(new java.awt.Color(51, 255, 153));
         ClickButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ClickButton.setText("Click");
         ClickButton.setEnabled(false);
@@ -95,12 +95,12 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         ConfirmPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ConfirmPassword.setText("Confirm Password");
 
-        Confirm.setBackground(new java.awt.Color(51, 255, 0));
+        Confirm.setBackground(new java.awt.Color(51, 255, 153));
         Confirm.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Confirm.setText("Confirm");
         Confirm.setEnabled(false);
 
-        Back.setBackground(new java.awt.Color(0, 255, 51));
+        Back.setBackground(new java.awt.Color(51, 255, 153));
         Back.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Back.setText("Back");
 
@@ -159,9 +159,9 @@ public class ForgetPasswordView extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Confirm))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Confirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(187, 187, 187))
         );
         jPanel2Layout.setVerticalGroup(
@@ -206,9 +206,9 @@ public class ForgetPasswordView extends javax.swing.JFrame {
                             .addComponent(CPasswordBox, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ConfirmPassword))
                         .addGap(18, 18, 18)
-                        .addComponent(Confirm)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Back)))
+                        .addComponent(Confirm)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Back)
                 .addContainerGap(75, Short.MAX_VALUE))
         );
 
@@ -220,12 +220,10 @@ public class ForgetPasswordView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ResetPassword)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ResetPassword))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

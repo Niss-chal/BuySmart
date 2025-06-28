@@ -57,24 +57,30 @@ public class Profileview extends javax.swing.JFrame {
         emailupdatebox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         emailupdatebox.setEnabled(false);
 
+        changeprofilebutton.setBackground(new java.awt.Color(153, 204, 255));
         changeprofilebutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         changeprofilebutton.setText("Change Profile ");
+        changeprofilebutton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         changeprofilebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 changeprofilebuttonActionPerformed(evt);
             }
         });
 
+        deleteaccbutton.setBackground(new java.awt.Color(153, 204, 255));
         deleteaccbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         deleteaccbutton.setText("Delete Account");
+        deleteaccbutton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         deleteaccbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteaccbuttonActionPerformed(evt);
             }
         });
 
+        changepassbutton.setBackground(new java.awt.Color(153, 204, 255));
         changepassbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         changepassbutton.setText("Change Password");
+        changepassbutton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         changepassbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 changepassbuttonActionPerformed(evt);
@@ -180,8 +186,10 @@ public class Profileview extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
+        backDashboard.setBackground(new java.awt.Color(153, 204, 255));
         backDashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         backDashboard.setText("Back");
+        backDashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -202,9 +210,9 @@ public class Profileview extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(backDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

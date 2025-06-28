@@ -89,7 +89,9 @@ public class ChangePassword extends javax.swing.JFrame {
             }
         });
 
+        ConfirmChangePassword.setBackground(new java.awt.Color(153, 204, 255));
         ConfirmChangePassword.setText("Confirm");
+        ConfirmChangePassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         oldshow.setText("Show");
         oldshow.addActionListener(new java.awt.event.ActionListener() {
@@ -174,23 +176,24 @@ public class ChangePassword extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Change Password");
 
+        BackChangePasswordPage.setBackground(new java.awt.Color(153, 204, 255));
         BackChangePasswordPage.setText("Back");
+        BackChangePasswordPage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         javax.swing.GroupLayout MainPanelChnagePasswordLayout = new javax.swing.GroupLayout(MainPanelChnagePassword);
         MainPanelChnagePassword.setLayout(MainPanelChnagePasswordLayout);
         MainPanelChnagePasswordLayout.setHorizontalGroup(
             MainPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPanelChnagePasswordLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BackChangePasswordPage, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelChnagePasswordLayout.createSequentialGroup()
-                .addContainerGap(188, Short.MAX_VALUE)
-                .addComponent(DetailsPanelChnagePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(189, Short.MAX_VALUE))
-            .addGroup(MainPanelChnagePasswordLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addGroup(MainPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainPanelChnagePasswordLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BackChangePasswordPage, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainPanelChnagePasswordLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(MainPanelChnagePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DetailsPanelChnagePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MainPanelChnagePasswordLayout.setVerticalGroup(

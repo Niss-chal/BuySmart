@@ -71,9 +71,11 @@ public class AdminDashboard extends javax.swing.JFrame {
 
         AdminProductCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All Products", "Computers" }));
 
+        AdminJustImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/imageloader (1).png"))); // NOI18N
 
         AdminProductAddButton.setBackground(new java.awt.Color(153, 204, 255));
         AdminProductAddButton.setText("Add Product");
+        AdminProductAddButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         imageUpload.setText("Upload Image");
 
@@ -133,7 +135,7 @@ public class AdminDashboard extends javax.swing.JFrame {
 
         AdminAddProductPanel.setBackground(new java.awt.Color(204, 204, 204));
 
-        AdminBackButton.setBackground(new java.awt.Color(51, 204, 255));
+        AdminBackButton.setBackground(new java.awt.Color(153, 204, 255));
         AdminBackButton.setText("Back");
         AdminBackButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         AdminBackButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,7 +152,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             }
         });
 
-        AdminLogout.setBackground(new java.awt.Color(102, 204, 255));
+        AdminLogout.setBackground(new java.awt.Color(153, 204, 255));
         AdminLogout.setText("Logout");
         AdminLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         AdminLogout.addMouseListener(new java.awt.event.MouseAdapter() {

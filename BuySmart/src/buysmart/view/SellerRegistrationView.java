@@ -242,8 +242,10 @@ public class SellerRegistrationView extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        sellerBackToDashboardButton.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        sellerBackToDashboardButton.setBackground(new java.awt.Color(153, 204, 255));
+        sellerBackToDashboardButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         sellerBackToDashboardButton.setText("Go Back");
+        sellerBackToDashboardButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

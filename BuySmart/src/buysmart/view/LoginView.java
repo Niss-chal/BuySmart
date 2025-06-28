@@ -77,7 +77,10 @@ public class LoginView extends javax.swing.JFrame {
         Password_Label.setText("Password");
 
         ShowPassword.setText("Show ");
-        
+        ShowPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            }
+        });
 
         signUp.setText("Don't have an account register?");
 
@@ -166,7 +169,7 @@ public class LoginView extends javax.swing.JFrame {
         loginformPannelLayout.setHorizontalGroup(
             loginformPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginformPannelLayout.createSequentialGroup()
-                .addContainerGap(287, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addComponent(loginform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
