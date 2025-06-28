@@ -8,9 +8,8 @@ import buysmart.controller.DashboardController;
 import buysmart.controller.ProductController;
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
 import java.awt.event.MouseListener;
-
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
@@ -96,6 +95,7 @@ public class Dashboard extends javax.swing.JFrame {
         userProfile = new javax.swing.JLabel();
         dashboardLogo = new javax.swing.JLabel();
         registerSeller = new javax.swing.JButton();
+        AdminProductAdd = new javax.swing.JButton();
         statusPanel2 = new javax.swing.JPanel();
         buttonPanel3 = new javax.swing.JPanel();
         ButtonComputers = new javax.swing.JButton();
@@ -110,9 +110,7 @@ public class Dashboard extends javax.swing.JFrame {
         DescriptionProductCard = new javax.swing.JLabel();
         PicProduct = new javax.swing.JLabel();
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -168,11 +166,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel10.setBackground(new java.awt.Color(204, 204, 204));
-
-      
+        
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -236,12 +230,7 @@ public class Dashboard extends javax.swing.JFrame {
         buttonLogout.setBackground(new java.awt.Color(153, 204, 255));
         buttonLogout.setText("Logout");
         buttonLogout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        buttonLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
-            }
-        });
-
+        
         userProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/user (1).png"))); // NOI18N
 
         dashboardLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/logo40.png"))); // NOI18N
@@ -255,15 +244,25 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        AdminProductAdd.setBackground(new java.awt.Color(153, 204, 255));
+        AdminProductAdd.setText("Add Product");
+        AdminProductAdd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        AdminProductAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdminProductAddActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout logoutPanel1Layout = new javax.swing.GroupLayout(logoutPanel1);
         logoutPanel1.setLayout(logoutPanel1Layout);
         logoutPanel1Layout.setHorizontalGroup(
             logoutPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoutPanel1Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addGap(48, 48, 48)
                 .addComponent(dashboardLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AdminProductAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(registerSeller, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(buttonLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -280,9 +279,10 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(logoutPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(logoutPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(registerSeller, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(dashboardLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(buttonLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AdminProductAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(registerSeller, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -435,7 +435,7 @@ public class Dashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(logoutPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(statusPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(productPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -476,6 +476,10 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_registerSellerActionPerformed
 
+    private void AdminProductAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminProductAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AdminProductAddActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -505,11 +509,24 @@ public class Dashboard extends javax.swing.JFrame {
 
         //</editor-fold>
 
+        //</editor-fold>
+
+        //</editor-fold>
+
+        //</editor-fold>
+
+        //</editor-fold>
+
+        //</editor-fold>
+
+        //</editor-fold>
+
         /* Create and display the form */
         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AdminProductAdd;
     private javax.swing.JButton ButtonComputers;
     private javax.swing.JLabel DescriptionProductCard;
     private javax.swing.JPanel PanelProductCard;
