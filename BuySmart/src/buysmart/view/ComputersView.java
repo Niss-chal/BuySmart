@@ -4,7 +4,7 @@
  */
 package buysmart.view;
 
-import buysmart.controller.ComputersController;
+import buysmart.controller.computersController;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author fahmi
  */
 public class ComputersView extends javax.swing.JFrame {
-    private ComputersController controller;
+    private computersController controller;
     private JButton[] cartButtons;
     private String email;
 
